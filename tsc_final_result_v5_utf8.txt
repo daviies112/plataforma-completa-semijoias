@@ -1,0 +1,699 @@
+﻿server/formularios/routes.ts(164,45): error TS2345: Argument of type 'Record<string, never>' is not assignable to parameter of type '{ tenantId: string; title: string; questions: unknown; id?: string; createdAt?: Date; updatedAt?: Date; description?: string; isPublic?: boolean; designConfig?: unknown; slug?: string; welcomeTitle?: string; ... 5 more ...; completionPageId?: string; }'.
+  Type 'Record<string, never>' is missing the following properties from type '{ tenantId: string; title: string; questions: unknown; id?: string; createdAt?: Date; updatedAt?: Date; description?: string; isPublic?: boolean; designConfig?: unknown; slug?: string; welcomeTitle?: string; ... 5 more ...; completionPageId?: string; }': tenantId, title, questions
+server/formularios/routes.ts(450,54): error TS2345: Argument of type '{ tenantId: any; id: string; createdAt: Date; updatedAt: Date; formId: string; answers: unknown; totalScore: number; passed: boolean; participantId: string; contactName: string; contactEmail: string; ... 16 more ...; followUpEncerrado: boolean; }' is not assignable to parameter of type '{ id: string; formId: string; tenantId?: string; contactPhone?: string; contactName?: string; contactEmail?: string; contactCpf?: string; instagramHandle?: string; birthDate?: string; addressCep?: string; ... 13 more ...; formularioIniciado?: boolean; }'.
+  Types of property 'dataAgendamento' are incompatible.
+    Type 'Date' is not assignable to type 'string'.
+server/formularios/routes.ts(493,57): error TS2345: Argument of type 'Record<string, never>' is not assignable to parameter of type '{ tenantId: string; name: string; designConfig: unknown; questions: unknown; id?: string; createdAt?: Date; updatedAt?: Date; description?: string; thumbnailUrl?: string; isDefault?: boolean; }'.
+  Type 'Record<string, never>' is missing the following properties from type '{ tenantId: string; name: string; designConfig: unknown; questions: unknown; id?: string; createdAt?: Date; updatedAt?: Date; description?: string; thumbnailUrl?: string; isDefault?: boolean; }': tenantId, name, designConfig, questions
+server/formularios/routes.ts(512,65): error TS2345: Argument of type '{ supabaseUrl: string; supabaseKey: string; }' is not assignable to parameter of type 'string'.
+server/formularios/routes.ts(541,9): error TS2345: Argument of type '{ title: any; description: any; passingScore: any; }' is not assignable to parameter of type 'string'.
+server/formularios/routes.ts(564,9): error TS2345: Argument of type '{ supabaseUrl: string; supabaseKey: string; }' is not assignable to parameter of type 'string'.
+server/formularios/routes.ts(602,55): error TS2345: Argument of type 'Record<string, never>' is not assignable to parameter of type '{ tenantId: string; name: string; id?: string; createdAt?: Date; updatedAt?: Date; title?: string; subtitle?: string; successMessage?: string; failureMessage?: string; showScore?: boolean; ... 12 more ...; designConfig?: unknown; }'.
+  Type 'Record<string, never>' is missing the following properties from type '{ tenantId: string; name: string; id?: string; createdAt?: Date; updatedAt?: Date; title?: string; subtitle?: string; successMessage?: string; failureMessage?: string; showScore?: boolean; ... 12 more ...; designConfig?: unknown; }': tenantId, name
+server/formularios/routes.ts(689,43): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { tenantId: string | SQL<unknown> | Placeholder<string, any>; supabaseUrl: string | SQL<unknown> | Placeholder<string, any>; supabaseAnonKey: string | SQL<...> | Placeholder<...>; id?: number | ... 1 more ... | Placeholder<...>; createdAt?: SQL<...> | ... 1 more ... | Placeholder<...>; updatedAt?: SQL<...> | ... 1 more ... | Placeholder<...>; supabaseBucket?: string | ... 1 more ... | Placeholder<...>; }): PgInsertBase<...>', gave the following error.
+    Argument of type '{ supabaseUrl: string; supabaseAnonKey: string; supabaseBucket: string; }' is not assignable to parameter of type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; supabaseUrl: string | SQL<unknown> | Placeholder<string, any>; supabaseAnonKey: string | SQL<...> | Placeholder<...>; id?: number | ... 1 more ... | Placeholder<...>; createdAt?: SQL<...> | ... 1 more ... | Placeholder<...>; updatedAt?: SQL<...> | ... 1 m...'.
+      Property 'tenantId' is missing in type '{ supabaseUrl: string; supabaseAnonKey: string; supabaseBucket: string; }' but required in type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; supabaseUrl: string | SQL<unknown> | Placeholder<string, any>; supabaseAnonKey: string | SQL<...> | Placeholder<...>; id?: number | ... 1 more ... | Placeholder<...>; createdAt?: SQL<...> | ... 1 more ... | Placeholder<...>; updatedAt?: SQL<...> | ... 1 m...'.
+  Overload 2 of 2, '(values: { tenantId: string | SQL<unknown> | Placeholder<string, any>; supabaseUrl: string | SQL<unknown> | Placeholder<string, any>; supabaseAnonKey: string | SQL<...> | Placeholder<...>; id?: number | ... 1 more ... | Placeholder<...>; createdAt?: SQL<...> | ... 1 more ... | Placeholder<...>; updatedAt?: SQL<...> | ... 1 more ... | Placeholder<...>; supabaseBucket?: string | ... 1 more ... | Placeholder<...>; }[]): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'supabaseUrl' does not exist in type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; supabaseUrl: string | SQL<unknown> | Placeholder<string, any>; supabaseAnonKey: string | SQL<...> | Placeholder<...>; id?: number | ... 1 more ... | Placeholder<...>; createdAt?: SQL<...> | ... 1 more ... | Placeholder<...>; updatedAt?: SQL<...> | ... 1 m...'.
+server/formularios/routes.ts(747,58): error TS2345: Argument of type 'Record<string, never>' is not assignable to parameter of type '{ tenantId: string; apiUrlWhatsapp: string; apiKeyWhatsapp: string; instanceWhatsapp: string; id?: number; createdAtWhatsapp?: Date; updatedAtWhatsapp?: Date; }'.
+  Type 'Record<string, never>' is missing the following properties from type '{ tenantId: string; apiUrlWhatsapp: string; apiKeyWhatsapp: string; instanceWhatsapp: string; id?: number; createdAtWhatsapp?: Date; updatedAtWhatsapp?: Date; }': tenantId, apiUrlWhatsapp, apiKeyWhatsapp, instanceWhatsapp
+server/formularios/routes.ts(2828,9): error TS2353: Object literal may only specify known properties, and 'telefoneNormalizado' does not exist in type 'CreateLeadData'.
+server/formularios/scripts/init-from-seed.ts(5,32): error TS2307: Cannot find module '../../shared_form/schema.js' or its corresponding type declarations.
+server/formularios/services/leadService.ts(50,42): error TS2339: Property 'leads' does not exist on type '{}'.
+server/formularios/services/leadService.ts(190,33): error TS2339: Property 'leads' does not exist on type '{}'.
+server/formularios/services/leadService.ts(210,39): error TS2339: Property 'leads' does not exist on type '{}'.
+server/formularios/services/leadService.ts(232,39): error TS2339: Property 'leads' does not exist on type '{}'.
+server/formularios/services/leadService.ts(264,39): error TS2339: Property 'formSubmissions' does not exist on type '{}'.
+server/formularios/services/leadService.ts(294,9): error TS2353: Object literal may only specify known properties, and 'formCompletedAt' does not exist in type '{ tenantId?: string | SQL<unknown> | PgColumn<ColumnBaseConfig<ColumnDataType, string>, {}, {}>; telefone?: string | SQL<unknown> | PgColumn<...>; ... 42 more ...; observacoes?: string | ... 1 more ... | PgColumn<...>; }'.
+server/formularios/services/leadTracking.ts(32,51): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { tenantId: string | SQL<unknown> | Placeholder<string, any>; telefone: string | SQL<unknown> | Placeholder<string, any>; telefoneNormalizado: string | SQL<...> | Placeholder<...>; ... 41 more ...; observacoes?: string | ... 1 more ... | Placeholder<...>; }): PgInsertBase<...>', gave the following error.
+    Argument of type '{ telefone: string; telefoneNormalizado: string; origem: string; formularioId: string; formularioEnviado: true; formularioEnviadoEm: Date; formularioUrl: string; }' is not assignable to parameter of type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; telefone: string | SQL<unknown> | Placeholder<string, any>; telefoneNormalizado: string | SQL<...> | Placeholder<...>; ... 41 more ...; observacoes?: string | ... 1 more ... | Placeholder<...>; }'.
+      Property 'tenantId' is missing in type '{ telefone: string; telefoneNormalizado: string; origem: string; formularioId: string; formularioEnviado: true; formularioEnviadoEm: Date; formularioUrl: string; }' but required in type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; telefone: string | SQL<unknown> | Placeholder<string, any>; telefoneNormalizado: string | SQL<...> | Placeholder<...>; ... 41 more ...; observacoes?: string | ... 1 more ... | Placeholder<...>; }'.
+  Overload 2 of 2, '(values: { tenantId: string | SQL<unknown> | Placeholder<string, any>; telefone: string | SQL<unknown> | Placeholder<string, any>; telefoneNormalizado: string | SQL<...> | Placeholder<...>; ... 41 more ...; observacoes?: string | ... 1 more ... | Placeholder<...>; }[]): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'telefone' does not exist in type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; telefone: string | SQL<unknown> | Placeholder<string, any>; telefoneNormalizado: string | SQL<...> | Placeholder<...>; ... 41 more ...; observacoes?: string | ... 1 more ... | Placeholder<...>; }[]'.
+server/lib/alerting.ts(219,26): error TS2339: Property 'limit' does not exist on type '{ commandsToday: number; commandsThisMonth: number; monthlyLimit: number; percentage: number; month: string; }'.
+server/lib/alerting.ts(235,26): error TS2339: Property 'limit' does not exist on type '{ commandsToday: number; commandsThisMonth: number; monthlyLimit: number; percentage: number; month: string; }'.
+server/lib/betterStackLogger.ts(232,31): error TS2554: Expected 1 arguments, but got 0.
+server/lib/betterStackLogger.ts(281,9): error TS2322: Type 'string' is not assignable to type 'Level'.
+server/lib/cacheCleanup.ts(262,64): error TS2339: Property 'id' does not exist on type 'PgTableWithColumns<{ name: "form_tenant_mapping"; schema: undefined; columns: { formId: PgColumn<{ name: "form_id"; tableName: "form_tenant_mapping"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; ... 8 more ...; generated: undefined; }, {}, {}>; ... 5 more ...; updatedAt: PgColumn<...>...'.
+server/lib/cacheCleanup.ts(283,35): error TS2339: Property 'id' does not exist on type 'PgTableWithColumns<{ name: "form_tenant_mapping"; schema: undefined; columns: { formId: PgColumn<{ name: "form_id"; tableName: "form_tenant_mapping"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; ... 8 more ...; generated: undefined; }, {}, {}>; ... 5 more ...; updatedAt: PgColumn<...>...'.
+server/lib/chatCacheManager.ts(3,15): error TS2305: Module '"./credentialsManager"' has no exported member 'EvolutionConfig'.
+server/lib/clientMonitor.ts(143,43): error TS2345: Argument of type '{ id: string; email: string; createdAt: Date; updatedAt: Date; status: string; telefone: string; nome: string; tags: string[]; observacoes: string; ultimoContato: Date; valorTotal: string; }[]' is not assignable to parameter of type 'ClientRecord[]'.
+  Type '{ id: string; email: string; createdAt: Date; updatedAt: Date; status: string; telefone: string; nome: string; tags: string[]; observacoes: string; ultimoContato: Date; valorTotal: string; }' is missing the following properties from type 'ClientRecord': nome_completo, email_principal, tenant_id, primeiro_contato, ultimo_contato
+server/lib/clientMonitor.ts(154,48): error TS2339: Property 'idx' does not exist on type '{ id: string; email: string; createdAt: Date; updatedAt: Date; status: string; telefone: string; nome: string; tags: string[]; observacoes: string; ultimoContato: Date; valorTotal: string; }'.
+server/lib/clientMonitor.ts(159,41): error TS2345: Argument of type '{ id: string; email: string; createdAt: Date; updatedAt: Date; status: string; telefone: string; nome: string; tags: string[]; observacoes: string; ultimoContato: Date; valorTotal: string; }[]' is not assignable to parameter of type 'ClientRecord[]'.
+  Type '{ id: string; email: string; createdAt: Date; updatedAt: Date; status: string; telefone: string; nome: string; tags: string[]; observacoes: string; ultimoContato: Date; valorTotal: string; }' is missing the following properties from type 'ClientRecord': nome_completo, email_principal, tenant_id, primeiro_contato, ultimo_contato
+server/lib/clientMonitor.ts(164,15): error TS2339: Property 'nome_completo' does not exist on type '{ id: string; email: string; createdAt: Date; updatedAt: Date; status: string; telefone: string; nome: string; tags: string[]; observacoes: string; ultimoContato: Date; valorTotal: string; }'.
+server/lib/clientMonitor.ts(165,16): error TS2339: Property 'email_principal' does not exist on type '{ id: string; email: string; createdAt: Date; updatedAt: Date; status: string; telefone: string; nome: string; tags: string[]; observacoes: string; ultimoContato: Date; valorTotal: string; }'.
+server/lib/clientMonitor.ts(172,5): error TS2322: Type '{ id: string; email: string; createdAt: Date; updatedAt: Date; status: string; telefone: string; nome: string; tags: string[]; observacoes: string; ultimoContato: Date; valorTotal: string; }[]' is not assignable to type 'ClientRecord[]'.
+  Type '{ id: string; email: string; createdAt: Date; updatedAt: Date; status: string; telefone: string; nome: string; tags: string[]; observacoes: string; ultimoContato: Date; valorTotal: string; }' is missing the following properties from type 'ClientRecord': nome_completo, email_principal, tenant_id, primeiro_contato, ultimo_contato
+server/lib/clientMonitor.ts(259,29): error TS2556: A spread argument must either have a tuple type or be passed to a rest parameter.
+server/lib/complianceStorage.ts(13,31): error TS2307: Cannot find module '../storage.js' or its corresponding type declarations.
+server/lib/complianceStorage.ts(171,15): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { tenantId: string | SQL<unknown> | Placeholder<string, any>; action: SQL<unknown> | "view" | "check" | "reprocess" | "export" | "delete" | Placeholder<string, any>; ... 5 more ...; timestamp?: SQL<...> | ... 1 more ... | Placeholder<...>; }): PgInsertBase<...>', gave the following error.
+    Argument of type '{ action?: string; ipAddress?: string; }' is not assignable to parameter of type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; action: SQL<unknown> | "view" | "check" | "reprocess" | "export" | "delete" | Placeholder<string, any>; ... 5 more ...; timestamp?: SQL<...> | ... 1 more ... | Placeholder<...>; }'.
+      Property 'tenantId' is missing in type '{ action?: string; ipAddress?: string; }' but required in type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; action: SQL<unknown> | "view" | "check" | "reprocess" | "export" | "delete" | Placeholder<string, any>; ... 5 more ...; timestamp?: SQL<...> | ... 1 more ... | Placeholder<...>; }'.
+  Overload 2 of 2, '(values: { tenantId: string | SQL<unknown> | Placeholder<string, any>; action: SQL<unknown> | "view" | "check" | "reprocess" | "export" | "delete" | Placeholder<string, any>; ... 5 more ...; timestamp?: SQL<...> | ... 1 more ... | Placeholder<...>; }[]): PgInsertBase<...>', gave the following error.
+    Argument of type '{ action?: string; ipAddress?: string; }' is not assignable to parameter of type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; action: SQL<unknown> | "view" | "check" | "reprocess" | "export" | "delete" | Placeholder<string, any>; ... 5 more ...; timestamp?: SQL<...> | ... 1 more ... | Placeholder<...>; }[]'.
+      Type '{ action?: string; ipAddress?: string; }' is missing the following properties from type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; action: SQL<unknown> | "view" | "check" | "reprocess" | "export" | "delete" | Placeholder<string, any>; ... 5 more ...; timestamp?: SQL<...> | ... 1 more ... | Placeholder<...>; }[]': length, pop, push, concat, and 29 more.
+server/lib/datacorpCompliance.ts(2070,9): error TS2353: Object literal may only specify known properties, and 'checkId' does not exist in type '{ action?: string; ipAddress?: string; }'.
+server/lib/datacorpCompliance.ts(2240,7): error TS2353: Object literal may only specify known properties, and 'checkId' does not exist in type '{ action?: string; ipAddress?: string; }'.
+server/lib/datacorpCompliance.ts(2374,7): error TS2353: Object literal may only specify known properties, and 'checkId' does not exist in type '{ action?: string; ipAddress?: string; }'.
+server/lib/email.ts(65,7): error TS2561: Object literal may only specify known properties, but 'reply_to' does not exist in type 'CreateEmailOptions'. Did you mean to write 'replyTo'?
+server/lib/pdfGenerator.ts(872,31): error TS2345: Argument of type 'Date' is not assignable to parameter of type 'string'.
+server/lib/sentry.ts(37,35): error TS2554: Expected 0 arguments, but got 1.
+server/lib/sentry.ts(176,17): error TS2339: Property 'startTransaction' does not exist on type 'typeof import("C:/Users/davie/Downloads/Skill e mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/node_modules/@sentry/node/build/types/index")'.
+server/lib/sentryOptimized.ts(78,18): error TS2551: Property 'Integrations' does not exist on type 'typeof import("C:/Users/davie/Downloads/Skill e mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/node_modules/@sentry/node/build/types/index")'. Did you mean 'fsIntegration'?
+server/lib/sentryOptimized.ts(79,18): error TS2551: Property 'Integrations' does not exist on type 'typeof import("C:/Users/davie/Downloads/Skill e mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/node_modules/@sentry/node/build/types/index")'. Did you mean 'fsIntegration'?
+server/lib/sentryOptimized.ts(129,17): error TS2339: Property 'Handlers' does not exist on type 'typeof import("C:/Users/davie/Downloads/Skill e mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/node_modules/@sentry/node/build/types/index")'.
+server/lib/sentryOptimized.ts(144,17): error TS2339: Property 'Handlers' does not exist on type 'typeof import("C:/Users/davie/Downloads/Skill e mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/node_modules/@sentry/node/build/types/index")'.
+server/lib/sentryOptimized.ts(236,19): error TS2339: Property 'getCurrentHub' does not exist on type 'typeof import("C:/Users/davie/Downloads/Skill e mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/node_modules/@sentry/node/build/types/index")'.
+server/lib/supabaseOptimizer.ts(10,10): error TS2305: Module '"./cacheStrategies"' has no exported member 'smartCache'.
+server/lib/supabaseOptimizer.ts(10,22): error TS2305: Module '"./cacheStrategies"' has no exported member 'CacheKeys'.
+server/lib/supabaseOptimizer.ts(10,33): error TS2305: Module '"./cacheStrategies"' has no exported member 'TTL_STRATEGIES'.
+server/lib/supabaseOptimizer.ts(180,14): error TS2322: Type 'GenericStringError[]' is not assignable to type 'T[]'.
+  Type 'GenericStringError' is not assignable to type 'T'.
+    'T' could be instantiated with an arbitrary type which could be unrelated to 'GenericStringError'.
+server/routes/assinatura.ts(838,73): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(845,66): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(858,42): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(884,66): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(886,61): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(897,44): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(1472,51): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(1476,78): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(1484,31): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(1522,49): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(1539,81): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(1541,76): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(1570,75): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(1655,66): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(1657,61): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(1671,42): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(2004,51): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(2008,77): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(2014,33): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(2015,34): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(2422,69): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/assinatura.ts(2435,44): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/auth.ts(8,11): error TS2430: Interface 'AuthenticatedRequest' incorrectly extends interface 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+  Types of property 'user' are incompatible.
+    Property 'clientId' is missing in type '{ userId: string; email: string; role: string; tenantId: string; }' but required in type '{ userId: string; clientId: string; tenantId: string; email: string; role?: string; comissao?: number; }'.
+server/routes/auth.ts(192,30): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(req: AuthenticatedRequest, res: Response, next: NextFunction) => Promise<express.Response<any, Record<string, any>>>' is not assignable to parameter of type 'RequestHandlerParams<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+      Type '(req: AuthenticatedRequest, res: Response, next: NextFunction) => Promise<express.Response<any, Record<string, any>>>' is not assignable to type 'RequestHandler<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+        Types of parameters 'req' and 'req' are incompatible.
+          Type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>' is not assignable to type 'AuthenticatedRequest'.
+            Types of property 'user' are incompatible.
+              Type '{ userId: string; clientId: string; tenantId: string; email: string; role?: string; comissao?: number; }' is not assignable to type '{ userId: string; email: string; role: string; tenantId: string; }'.
+                Property 'role' is optional in type '{ userId: string; clientId: string; tenantId: string; email: string; role?: string; comissao?: number; }' but required in type '{ userId: string; email: string; role: string; tenantId: string; }'.
+server/routes/auth.ts(235,27): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(req: AuthenticatedRequest, res: Response, next: NextFunction) => Promise<express.Response<any, Record<string, any>>>' is not assignable to parameter of type 'RequestHandlerParams<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+      Type '(req: AuthenticatedRequest, res: Response, next: NextFunction) => Promise<express.Response<any, Record<string, any>>>' is not assignable to type 'RequestHandler<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+        Types of parameters 'req' and 'req' are incompatible.
+          Type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>' is not assignable to type 'AuthenticatedRequest'.
+            Types of property 'user' are incompatible.
+              Type '{ userId: string; clientId: string; tenantId: string; email: string; role?: string; comissao?: number; }' is not assignable to type '{ userId: string; email: string; role: string; tenantId: string; }'.
+                Property 'role' is optional in type '{ userId: string; clientId: string; tenantId: string; email: string; role?: string; comissao?: number; }' but required in type '{ userId: string; email: string; role: string; tenantId: string; }'.
+server/routes/auth.ts(256,26): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(req: AuthenticatedRequest, res: Response, next: NextFunction) => Promise<express.Response<any, Record<string, any>>>' is not assignable to parameter of type 'RequestHandlerParams<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+      Type '(req: AuthenticatedRequest, res: Response, next: NextFunction) => Promise<express.Response<any, Record<string, any>>>' is not assignable to type 'RequestHandler<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+        Types of parameters 'req' and 'req' are incompatible.
+          Type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>' is not assignable to type 'AuthenticatedRequest'.
+            Types of property 'user' are incompatible.
+              Type '{ userId: string; clientId: string; tenantId: string; email: string; role?: string; comissao?: number; }' is not assignable to type '{ userId: string; email: string; role: string; tenantId: string; }'.
+                Property 'role' is optional in type '{ userId: string; clientId: string; tenantId: string; email: string; role?: string; comissao?: number; }' but required in type '{ userId: string; email: string; role: string; tenantId: string; }'.
+server/routes/auth.ts(261,55): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/auth.ts(284,29): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(req: AuthenticatedRequest, res: Response, next: NextFunction) => Promise<express.Response<any, Record<string, any>>>' is not assignable to parameter of type 'RequestHandlerParams<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+      Type '(req: AuthenticatedRequest, res: Response, next: NextFunction) => Promise<express.Response<any, Record<string, any>>>' is not assignable to type 'RequestHandler<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+        Types of parameters 'req' and 'req' are incompatible.
+          Type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>' is not assignable to type 'AuthenticatedRequest'.
+            Types of property 'user' are incompatible.
+              Type '{ userId: string; clientId: string; tenantId: string; email: string; role?: string; comissao?: number; }' is not assignable to type '{ userId: string; email: string; role: string; tenantId: string; }'.
+                Property 'role' is optional in type '{ userId: string; clientId: string; tenantId: string; email: string; role?: string; comissao?: number; }' but required in type '{ userId: string; email: string; role: string; tenantId: string; }'.
+server/routes/auth.ts(288,55): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/billing.ts(401,9): error TS2345: Argument of type '"files"' is not assignable to parameter of type '"attachments" | "transactions" | "items"'.
+server/routes/billing.ts(1229,52): error TS2339: Property 'substring' does not exist on type 'string | string[]'.
+  Property 'substring' does not exist on type 'string[]'.
+server/routes/billing.ts(1250,79): error TS2339: Property 'substring' does not exist on type 'string | string[]'.
+  Property 'substring' does not exist on type 'string[]'.
+server/routes/billing.ts(1300,98): error TS2339: Property 'substring' does not exist on type 'string | string[]'.
+  Property 'substring' does not exist on type 'string[]'.
+server/routes/billing.ts(1303,38): error TS2322: Type 'string | string[]' is not assignable to type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/billing.ts(1841,48): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; itemId?: string | SQL<unknown> | Placeholder<...>; ... 4 more ...; lineItemsCount?: number | ... 1 more ... | Placeholder<...>; }): PgInsertBase<...>', gave the following error.
+    Argument of type '{ id: any; itemId: string; accountId: any; dueDate: any; totalAmount: string; lineItemsCount: any; rawData: any; }[]' is not assignable to parameter of type '{ id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; itemId?: string | SQL<unknown> | Placeholder<string, any>; ... 4 more ...; lineItemsCount?: number | ... 1 more ... | Placeholder<...>; }'.
+      Type '{ id: any; itemId: string; accountId: any; dueDate: any; totalAmount: string; lineItemsCount: any; rawData: any; }[]' is missing the following properties from type '{ id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; itemId?: string | SQL<unknown> | Placeholder<string, any>; ... 4 more ...; lineItemsCount?: number | ... 1 more ... | Placeholder<...>; }': id, tenantId
+  Overload 2 of 2, '(values: { id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; itemId?: string | SQL<unknown> | Placeholder<...>; ... 4 more ...; lineItemsCount?: number | ... 1 more ... | Placeholder<...>; }[]): PgInsertBase<...>', gave the following error.
+    Argument of type '{ id: any; itemId: string; accountId: any; dueDate: any; totalAmount: string; lineItemsCount: any; rawData: any; }[]' is not assignable to parameter of type '{ id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; itemId?: string | SQL<unknown> | Placeholder<string, any>; ... 4 more ...; lineItemsCount?: number | ... 1 more ... | Placeholder<...>; }[]'.
+      Property 'tenantId' is missing in type '{ id: any; itemId: string; accountId: any; dueDate: any; totalAmount: string; lineItemsCount: any; rawData: any; }' but required in type '{ id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; itemId?: string | SQL<unknown> | Placeholder<string, any>; ... 4 more ...; lineItemsCount?: number | ... 1 more ... | Placeholder<...>; }'.
+server/routes/billing.ts(1844,45): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { tenantId: string | SQL<unknown> | Placeholder<string, any>; itemId: string | SQL<unknown> | Placeholder<string, any>; lastSync?: SQL<unknown> | Date | Placeholder<...>; ... 5 more ...; rawStats?: unknown; }): PgInsertBase<...>', gave the following error.
+    Argument of type '{ itemId: string; lastSync: Date; totalAccounts: any; totalTransactions: any; totalInvoices: any; periodStart: any; periodEnd: any; rawStats: any; }' is not assignable to parameter of type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; itemId: string | SQL<unknown> | Placeholder<string, any>; lastSync?: SQL<unknown> | Date | Placeholder<...>; ... 5 more ...; rawStats?: unknown; }'.
+      Property 'tenantId' is missing in type '{ itemId: string; lastSync: Date; totalAccounts: any; totalTransactions: any; totalInvoices: any; periodStart: any; periodEnd: any; rawStats: any; }' but required in type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; itemId: string | SQL<unknown> | Placeholder<string, any>; lastSync?: SQL<unknown> | Date | Placeholder<...>; ... 5 more ...; rawStats?: unknown; }'.
+  Overload 2 of 2, '(values: { tenantId: string | SQL<unknown> | Placeholder<string, any>; itemId: string | SQL<unknown> | Placeholder<string, any>; lastSync?: SQL<unknown> | Date | Placeholder<...>; ... 5 more ...; rawStats?: unknown; }[]): PgInsertBase<...>', gave the following error.
+    Argument of type '{ itemId: string; lastSync: Date; totalAccounts: any; totalTransactions: any; totalInvoices: any; periodStart: any; periodEnd: any; rawStats: any; }' is not assignable to parameter of type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; itemId: string | SQL<unknown> | Placeholder<string, any>; lastSync?: SQL<unknown> | Date | Placeholder<...>; ... 5 more ...; rawStats?: unknown; }[]'.
+      Type '{ itemId: string; lastSync: Date; totalAccounts: any; totalTransactions: any; totalInvoices: any; periodStart: any; periodEnd: any; rawStats: any; }' is missing the following properties from type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; itemId: string | SQL<unknown> | Placeholder<string, any>; lastSync?: SQL<unknown> | Date | Placeholder<...>; ... 5 more ...; rawStats?: unknown; }[]': length, pop, push, concat, and 29 more.
+server/routes/billing.ts(2184,56): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/billing.ts(2187,50): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/billing.ts(2208,49): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/billing.ts(2218,27): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/billing.ts(2296,70): error TS2339: Property 'substring' does not exist on type 'string | string[]'.
+  Property 'substring' does not exist on type 'string[]'.
+server/routes/billing.ts(2303,56): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/billing.ts(2307,50): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/billing.ts(2328,29): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/billing.ts(2332,54): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/billing.ts(2356,88): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/billing.ts(2395,27): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/billing.ts(2471,57): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 10 more ...; description?: string | ... 1 more ... | Placeholder<...>; }): PgInsertBase<...>', gave the following error.
+    Argument of type '{ fileName: string; fileUrl: string; fileSize: number; mimeType: string; type: any; category: any; amount: any; date: any; description: any; status: string; }' is not assignable to parameter of type '{ id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 10 more ...; description?: string | ... 1 more ... | Placeholder<...>; }'.
+      Type '{ fileName: string; fileUrl: string; fileSize: number; mimeType: string; type: any; category: any; amount: any; date: any; description: any; status: string; }' is missing the following properties from type '{ id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 10 more ...; description?: string | ... 1 more ... | Placeholder<...>; }': id, tenantId
+  Overload 2 of 2, '(values: { id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 10 more ...; description?: string | ... 1 more ... | Placeholder<...>; }[]): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'fileName' does not exist in type '{ id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 10 more ...; description?: string | ... 1 more ... | Placeholder<...>; }[]'.
+server/routes/billing.ts(2485,51): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 14 more ...; n8nData?: unknown; }): PgInsertBase<...>', gave the following error.
+    Argument of type '{ fileName: string; fileUrl: string; fileSize: number; mimeType: string; category: any; amount: any; date: any; description: any; storageType: string; n8nProcessed: string; status: string; }' is not assignable to parameter of type '{ id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 14 more ...; n8nData?: unknown; }'.
+      Type '{ fileName: string; fileUrl: string; fileSize: number; mimeType: string; category: any; amount: any; date: any; description: any; storageType: string; n8nProcessed: string; status: string; }' is missing the following properties from type '{ id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 14 more ...; n8nData?: unknown; }': id, tenantId
+  Overload 2 of 2, '(values: { id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 14 more ...; n8nData?: unknown; }[]): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'fileName' does not exist in type '{ id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 14 more ...; n8nData?: unknown; }[]'.
+server/routes/billing.ts(2503,52): error TS2307: Cannot find module '../supabase-client' or its corresponding type declarations.
+server/routes/billing.ts(2665,51): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 14 more ...; n8nData?: unknown; }): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'dueDate' does not exist in type '{ id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 14 more ...; n8nData?: unknown; }'.
+  Overload 2 of 2, '(values: { id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 14 more ...; n8nData?: unknown; }[]): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'fileName' does not exist in type '{ id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 14 more ...; n8nData?: unknown; }[]'.
+server/routes/billing.ts(2681,57): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 10 more ...; description?: string | ... 1 more ... | Placeholder<...>; }): PgInsertBase<...>', gave the following error.
+    Argument of type '{ fileName: string; fileUrl: any; fileSize: number; mimeType: string; type: string; category: any; amount: any; date: any; description: any; status: string; }' is not assignable to parameter of type '{ id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 10 more ...; description?: string | ... 1 more ... | Placeholder<...>; }'.
+      Type '{ fileName: string; fileUrl: any; fileSize: number; mimeType: string; type: string; category: any; amount: any; date: any; description: any; status: string; }' is missing the following properties from type '{ id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 10 more ...; description?: string | ... 1 more ... | Placeholder<...>; }': id, tenantId
+  Overload 2 of 2, '(values: { id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 10 more ...; description?: string | ... 1 more ... | Placeholder<...>; }[]): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'fileName' does not exist in type '{ id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; fileName: string | SQL<unknown> | Placeholder<...>; ... 10 more ...; description?: string | ... 1 more ... | Placeholder<...>; }[]'.
+server/routes/billing.ts(2698,52): error TS2307: Cannot find module '../supabase-client' or its corresponding type declarations.
+server/routes/billing.ts(2795,56): error TS2307: Cannot find module '../supabase-client' or its corresponding type declarations.
+server/routes/biometric.ts(15,8): error TS2307: Cannot find module '@simplewebauthn/server/script/deps' or its corresponding type declarations.
+server/routes/biometric.ts(45,7): error TS2322: Type '{ id: Uint8Array<ArrayBuffer>; type: string; transports: AuthenticatorTransport[]; }[]' is not assignable to type '{ id: string; transports?: AuthenticatorTransportFuture[]; }[]'.
+  Type '{ id: Uint8Array<ArrayBuffer>; type: string; transports: AuthenticatorTransport[]; }' is not assignable to type '{ id: string; transports?: AuthenticatorTransportFuture[]; }'.
+    Types of property 'id' are incompatible.
+      Type 'Uint8Array<ArrayBuffer>' is not assignable to type 'string'.
+server/routes/biometric.ts(57,17): error TS2339: Property 'challenge' does not exist on type 'Session & Partial<SessionData>'.
+server/routes/biometric.ts(58,17): error TS2339: Property 'email' does not exist on type 'Session & Partial<SessionData>'.
+server/routes/biometric.ts(70,43): error TS2339: Property 'challenge' does not exist on type 'Session & Partial<SessionData>'.
+server/routes/biometric.ts(71,31): error TS2339: Property 'email' does not exist on type 'Session & Partial<SessionData>'.
+server/routes/biometric.ts(85,15): error TS2339: Property 'credentialID' does not exist on type '{ fmt: AttestationFormat; aaguid: string; credential: WebAuthnCredential; credentialType: "public-key"; attestationObject: Uint8Array<ArrayBuffer>; ... 5 more ...; authenticatorExtensionResults?: unknown; }'.
+server/routes/biometric.ts(85,29): error TS2339: Property 'credentialPublicKey' does not exist on type '{ fmt: AttestationFormat; aaguid: string; credential: WebAuthnCredential; credentialType: "public-key"; attestationObject: Uint8Array<ArrayBuffer>; ... 5 more ...; authenticatorExtensionResults?: unknown; }'.
+server/routes/biometric.ts(85,50): error TS2339: Property 'counter' does not exist on type '{ fmt: AttestationFormat; aaguid: string; credential: WebAuthnCredential; credentialType: "public-key"; attestationObject: Uint8Array<ArrayBuffer>; ... 5 more ...; authenticatorExtensionResults?: unknown; }'.
+server/routes/biometric.ts(87,45): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { userId: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; credentialId: string | SQL<unknown> | Placeholder<...>; ... 6 more ...; lastUsedAt?: SQL<...> | ... 1 more ... | Placeholder<...>; }): PgInsertBase<...>', gave the following error.
+    Argument of type '{ userId: any; credentialId: any; publicKey: string; counter: any; transports: any; deviceName: string; }' is not assignable to parameter of type '{ userId: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; credentialId: string | SQL<unknown> | Placeholder<...>; ... 6 more ...; lastUsedAt?: SQL<...> | ... 1 more ... | Placeholder<...>; }'.
+      Property 'tenantId' is missing in type '{ userId: any; credentialId: any; publicKey: string; counter: any; transports: any; deviceName: string; }' but required in type '{ userId: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; credentialId: string | SQL<unknown> | Placeholder<...>; ... 6 more ...; lastUsedAt?: SQL<...> | ... 1 more ... | Placeholder<...>; }'.
+  Overload 2 of 2, '(values: { userId: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; credentialId: string | SQL<unknown> | Placeholder<...>; ... 6 more ...; lastUsedAt?: SQL<...> | ... 1 more ... | Placeholder<...>; }[]): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'userId' does not exist in type '{ userId: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; credentialId: string | SQL<unknown> | Placeholder<...>; ... 6 more ...; lastUsedAt?: SQL<...> | ... 1 more ... | Placeholder<...>; }[]'.
+server/routes/biometric.ts(96,26): error TS2339: Property 'challenge' does not exist on type 'Session & Partial<SessionData>'.
+server/routes/biometric.ts(97,26): error TS2339: Property 'email' does not exist on type 'Session & Partial<SessionData>'.
+server/routes/biometric.ts(131,7): error TS2322: Type '{ id: Uint8Array<ArrayBuffer>; type: string; transports: AuthenticatorTransport[]; }[]' is not assignable to type '{ id: string; transports?: AuthenticatorTransportFuture[]; }[]'.
+  Type '{ id: Uint8Array<ArrayBuffer>; type: string; transports: AuthenticatorTransport[]; }' is not assignable to type '{ id: string; transports?: AuthenticatorTransportFuture[]; }'.
+    Types of property 'id' are incompatible.
+      Type 'Uint8Array<ArrayBuffer>' is not assignable to type 'string'.
+server/routes/biometric.ts(140,17): error TS2339: Property 'challenge' does not exist on type 'Session & Partial<SessionData>'.
+server/routes/biometric.ts(141,17): error TS2339: Property 'email' does not exist on type 'Session & Partial<SessionData>'.
+server/routes/biometric.ts(153,43): error TS2339: Property 'challenge' does not exist on type 'Session & Partial<SessionData>'.
+server/routes/biometric.ts(154,31): error TS2339: Property 'email' does not exist on type 'Session & Partial<SessionData>'.
+server/routes/biometric.ts(176,7): error TS2353: Object literal may only specify known properties, and 'authenticator' does not exist in type '{ response: AuthenticationResponseJSON; expectedChallenge: string | ((challenge: string) => boolean | Promise<boolean>); expectedOrigin: string | string[]; ... 4 more ...; advancedFIDOConfig?: { ...; }; }'.
+server/routes/biometric.ts(192,26): error TS2339: Property 'challenge' does not exist on type 'Session & Partial<SessionData>'.
+server/routes/biometric.ts(193,26): error TS2339: Property 'email' does not exist on type 'Session & Partial<SessionData>'.
+server/routes/compliance.ts(159,71): error TS2339: Property 'error' does not exist on type 'ComplianceCheckResult'.
+server/routes/compliance.ts(512,16): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(left: PgColumn<{ name: "id"; tableName: "datacorp_checks"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>, right: string | SQLWrapper): SQL<...>', gave the following error.
+    Argument of type 'string | string[]' is not assignable to parameter of type 'string | SQLWrapper'.
+      Type 'string[]' is not assignable to type 'string | SQLWrapper'.
+  Overload 2 of 3, '(left: Aliased<string | string[]>, right: string | string[] | SQLWrapper): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "datacorp_checks"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'Aliased<string | string[]>'.
+      Type 'PgColumn<{ name: "id"; tableName: "datacorp_checks"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is missing the following properties from type 'Aliased<string | string[]>': sql, fieldAlias
+  Overload 3 of 3, '(left: never, right: unknown): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "datacorp_checks"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'never'.
+server/routes/compliance.ts(541,43): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/compliance.ts(589,18): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(left: PgColumn<{ name: "id"; tableName: "datacorp_checks"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>, right: string | SQLWrapper): SQL<...>', gave the following error.
+    Argument of type 'string | string[]' is not assignable to parameter of type 'string | SQLWrapper'.
+      Type 'string[]' is not assignable to type 'string | SQLWrapper'.
+  Overload 2 of 3, '(left: Aliased<string | string[]>, right: string | string[] | SQLWrapper): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "datacorp_checks"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'Aliased<string | string[]>'.
+      Type 'PgColumn<{ name: "id"; tableName: "datacorp_checks"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is missing the following properties from type 'Aliased<string | string[]>': sql, fieldAlias
+  Overload 3 of 3, '(left: never, right: unknown): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "datacorp_checks"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'never'.
+server/routes/config.ts(2216,15): error TS2339: Property 'getSupabaseClient' does not exist on type 'typeof import("C:/Users/davie/Downloads/Skill e mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/server/lib/multiTenantSupabase")'.
+server/routes/connections.ts(119,29): error TS2554: Expected 1 arguments, but got 0.
+server/routes/credentials.ts(375,38): error TS2339: Property 'bigdatacorpConfig' does not exist on type '{}'.
+server/routes/credentials.ts(378,38): error TS2339: Property 'hms100msConfig' does not exist on type '{}'.
+server/routes/credentials.ts(387,38): error TS2339: Property 'totalExpressConfig' does not exist on type '{}'.
+server/routes/credentials.ts(565,38): error TS2304: Cannot find name 'authenticateToken'.
+server/routes/credentials.ts(598,47): error TS2304: Cannot find name 'authenticateToken'.
+server/routes/credentials.ts(623,39): error TS2304: Cannot find name 'authenticateToken'.
+server/routes/dashboard.ts(744,46): error TS2339: Property 'name' does not exist on type 'Organizer'.
+  Property 'name' does not exist on type 'string'.
+server/routes/dashboard.ts(744,71): error TS2339: Property 'email' does not exist on type 'Organizer'.
+  Property 'email' does not exist on type 'string'.
+server/routes/dashboard.ts(980,13): error TS2353: Object literal may only specify known properties, and 'timeout' does not exist in type 'RequestInit'.
+server/routes/envio.ts(203,51): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/envio.ts(233,50): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/envio.ts(249,56): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/envio.ts(263,38): error TS2339: Property 'toUpperCase' does not exist on type 'string | string[]'.
+  Property 'toUpperCase' does not exist on type 'string[]'.
+server/routes/envio.ts(281,51): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/envio.ts(285,63): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/envio.ts(299,51): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/envio.ts(305,7): error TS2322: Type 'string | string[]' is not assignable to type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/envio.ts(547,58): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/envio.ts(561,51): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/envio.ts(666,66): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/envio.ts(671,49): error TS2339: Property 'startsWith' does not exist on type 'string | string[]'.
+  Property 'startsWith' does not exist on type 'string[]'.
+server/routes/envio.ts(678,34): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/envio.ts(698,40): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/envio.ts(724,68): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/formularios-complete.ts(337,24): error TS2300: Duplicate identifier 'SupabaseClient'.
+server/routes/formularios-complete.ts(458,10): error TS2300: Duplicate identifier 'SupabaseClient'.
+server/routes/formularios-complete.ts(1121,43): error TS2339: Property 'formularioId' does not exist on type '{ id: string; leadId: string; token: string; sessaoId: string; aberto: boolean; primeiraAberturaEm: Date; ultimaAtividadeEm: Date; totalAcessos: number; camposPreenchidos: unknown; progressoPercentual: number; ... 6 more ...; updatedAt: Date; }'.
+server/routes/formularios-complete.ts(1956,20): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(left: PgColumn<{ name: "id"; tableName: "forms"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>, right: string | SQLWrapper): SQL<...>', gave the following error.
+    Argument of type 'string | string[]' is not assignable to parameter of type 'string | SQLWrapper'.
+      Type 'string[]' is not assignable to type 'string | SQLWrapper'.
+  Overload 2 of 3, '(left: Aliased<string | string[]>, right: string | string[] | SQLWrapper): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "forms"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: false; enumValues: undefined; baseColumn: never; identity: undefined; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'Aliased<string | string[]>'.
+      Type 'PgColumn<{ name: "id"; tableName: "forms"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: false; enumValues: undefined; baseColumn: never; identity: undefined; generated: undefined; }, {}, {}>' is missing the following properties from type 'Aliased<string | string[]>': sql, fieldAlias
+  Overload 3 of 3, '(left: never, right: unknown): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "forms"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: false; enumValues: undefined; baseColumn: never; identity: undefined; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'never'.
+server/routes/formularios-complete.ts(2269,16): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(left: PgColumn<{ name: "form_id"; tableName: "form_tenant_mapping"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>, right: string | SQLWrapper): SQL<...>', gave the following error.
+    Argument of type 'string | string[]' is not assignable to parameter of type 'string | SQLWrapper'.
+      Type 'string[]' is not assignable to type 'string | SQLWrapper'.
+  Overload 2 of 3, '(left: Aliased<string | string[]>, right: string | string[] | SQLWrapper): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "form_id"; tableName: "form_tenant_mapping"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'Aliased<string | string[]>'.
+      Type 'PgColumn<{ name: "form_id"; tableName: "form_tenant_mapping"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is missing the following properties from type 'Aliased<string | string[]>': sql, fieldAlias
+  Overload 3 of 3, '(left: never, right: unknown): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "form_id"; tableName: "form_tenant_mapping"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'never'.
+server/routes/formularios-complete.ts(2324,15): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { tenantId: string | SQL<unknown> | Placeholder<string, any>; formId: string | SQL<unknown> | Placeholder<string, any>; createdAt?: SQL<unknown> | Date | Placeholder<...>; updatedAt?: SQL<...> | ... 1 more ... | Placeholder<...>; companySlug?: string | ... 1 more ... | Placeholder<...>; isPublic?: boolean | ... 1 more ... | Placeholder<...>; slug?: string | ... 1 more ... | Placeholder<...>; }): PgInsertBase<...>', gave the following error.
+    Type 'string | string[]' is not assignable to type 'string | SQL<unknown> | Placeholder<string, any>'.
+      Type 'string[]' is not assignable to type 'string | SQL<unknown> | Placeholder<string, any>'.
+  Overload 2 of 2, '(values: { tenantId: string | SQL<unknown> | Placeholder<string, any>; formId: string | SQL<unknown> | Placeholder<string, any>; createdAt?: SQL<unknown> | Date | Placeholder<...>; updatedAt?: SQL<...> | ... 1 more ... | Placeholder<...>; companySlug?: string | ... 1 more ... | Placeholder<...>; isPublic?: boolean | ... 1 more ... | Placeholder<...>; slug?: string | ... 1 more ... | Placeholder<...>; }[]): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'formId' does not exist in type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; formId: string | SQL<unknown> | Placeholder<string, any>; createdAt?: SQL<unknown> | Date | Placeholder<...>; updatedAt?: SQL<...> | ... 1 more ... | Placeholder<...>; companySlug?: string | ... 1 more ... | Placeholder<...>; isPublic?: boolean | ... 1 mo...'.
+server/routes/formularios-complete.ts(2351,29): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/formularios-complete.ts(2362,45): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/formularios-complete.ts(2372,13): error TS2769: No overload matches this call.
+  Overload 2 of 2, '(values: { tenantId: string | SQL<unknown> | Placeholder<string, any>; formId: string | SQL<unknown> | Placeholder<string, any>; createdAt?: SQL<unknown> | Date | Placeholder<...>; updatedAt?: SQL<...> | ... 1 more ... | Placeholder<...>; companySlug?: string | ... 1 more ... | Placeholder<...>; isPublic?: boolean | ... 1 more ... | Placeholder<...>; slug?: string | ... 1 more ... | Placeholder<...>; }[]): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'formId' does not exist in type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; formId: string | SQL<unknown> | Placeholder<string, any>; createdAt?: SQL<unknown> | Date | Placeholder<...>; updatedAt?: SQL<...> | ... 1 more ... | Placeholder<...>; companySlug?: string | ... 1 more ... | Placeholder<...>; isPublic?: boolean | ... 1 mo...'.
+server/routes/formularios-complete.ts(2383,15): error TS2322: Type 'string | string[]' is not assignable to type 'string | SQL<unknown> | PgColumn<ColumnBaseConfig<ColumnDataType, string>, {}, {}>'.
+  Type 'string[]' is not assignable to type 'string | SQL<unknown> | PgColumn<ColumnBaseConfig<ColumnDataType, string>, {}, {}>'.
+server/routes/formularios-complete.ts(2395,27): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/formularios-complete.ts(2399,48): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/formularios-complete.ts(2432,20): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(left: PgColumn<{ name: "form_id"; tableName: "form_tenant_mapping"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>, right: string | SQLWrapper): SQL<...>', gave the following error.
+    Argument of type 'string | string[]' is not assignable to parameter of type 'string | SQLWrapper'.
+      Type 'string[]' is not assignable to type 'string | SQLWrapper'.
+  Overload 2 of 3, '(left: Aliased<string | string[]>, right: string | string[] | SQLWrapper): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "form_id"; tableName: "form_tenant_mapping"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'Aliased<string | string[]>'.
+      Type 'PgColumn<{ name: "form_id"; tableName: "form_tenant_mapping"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is missing the following properties from type 'Aliased<string | string[]>': sql, fieldAlias
+  Overload 3 of 3, '(left: never, right: unknown): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "form_id"; tableName: "form_tenant_mapping"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'never'.
+server/routes/formularios-complete.ts(2442,32): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/formularios-complete.ts(2448,18): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(left: PgColumn<{ name: "form_id"; tableName: "form_tenant_mapping"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>, right: string | SQLWrapper): SQL<...>', gave the following error.
+    Argument of type 'string | string[]' is not assignable to parameter of type 'string | SQLWrapper'.
+      Type 'string[]' is not assignable to type 'string | SQLWrapper'.
+  Overload 2 of 3, '(left: Aliased<string | string[]>, right: string | string[] | SQLWrapper): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "form_id"; tableName: "form_tenant_mapping"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'Aliased<string | string[]>'.
+      Type 'PgColumn<{ name: "form_id"; tableName: "form_tenant_mapping"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is missing the following properties from type 'Aliased<string | string[]>': sql, fieldAlias
+  Overload 3 of 3, '(left: never, right: unknown): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "form_id"; tableName: "form_tenant_mapping"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'never'.
+server/routes/formularios-complete.ts(2557,60): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/formularios-complete.ts(2768,57): error TS2345: Argument of type 'Record<string, never>' is not assignable to parameter of type '{ tenantId: string; name: string; designConfig: unknown; questions: unknown; id?: string; createdAt?: Date; updatedAt?: Date; description?: string; thumbnailUrl?: string; isDefault?: boolean; }'.
+  Type 'Record<string, never>' is missing the following properties from type '{ tenantId: string; name: string; designConfig: unknown; questions: unknown; id?: string; createdAt?: Date; updatedAt?: Date; description?: string; thumbnailUrl?: string; isDefault?: boolean; }': tenantId, name, designConfig, questions
+server/routes/formularios-complete.ts(2802,55): error TS2345: Argument of type 'Record<string, never>' is not assignable to parameter of type '{ tenantId: string; name: string; id?: string; createdAt?: Date; updatedAt?: Date; title?: string; subtitle?: string; successMessage?: string; failureMessage?: string; showScore?: boolean; ... 12 more ...; designConfig?: unknown; }'.
+  Type 'Record<string, never>' is missing the following properties from type '{ tenantId: string; name: string; id?: string; createdAt?: Date; updatedAt?: Date; title?: string; subtitle?: string; successMessage?: string; failureMessage?: string; showScore?: boolean; ... 12 more ...; designConfig?: unknown; }': tenantId, name
+server/routes/formularios-complete.ts(3266,58): error TS2345: Argument of type 'Record<string, never>' is not assignable to parameter of type '{ tenantId: string; apiUrlWhatsapp: string; apiKeyWhatsapp: string; instanceWhatsapp: string; id?: number; createdAtWhatsapp?: Date; updatedAtWhatsapp?: Date; }'.
+  Type 'Record<string, never>' is missing the following properties from type '{ tenantId: string; apiUrlWhatsapp: string; apiKeyWhatsapp: string; instanceWhatsapp: string; id?: number; createdAtWhatsapp?: Date; updatedAtWhatsapp?: Date; }': tenantId, apiUrlWhatsapp, apiKeyWhatsapp, instanceWhatsapp
+server/routes/formularios-complete.ts(4226,41): error TS2345: Argument of type '{ telefone: any; telefoneNormalizado: any; nome: any; whatsappId: any; whatsappInstance: any; formStatus: string; qualificationStatus: string; }' is not assignable to parameter of type '{ tenantId: string; telefone: string; telefoneNormalizado: string; id?: string; email?: string; createdAt?: Date; updatedAt?: Date; userAgent?: string; nome?: string; origem?: string; whatsappId?: string; ... 33 more ...; observacoes?: string; }'.
+  Property 'tenantId' is missing in type '{ telefone: any; telefoneNormalizado: any; nome: any; whatsappId: any; whatsappInstance: any; formStatus: string; qualificationStatus: string; }' but required in type '{ tenantId: string; telefone: string; telefoneNormalizado: string; id?: string; email?: string; createdAt?: Date; updatedAt?: Date; userAgent?: string; nome?: string; origem?: string; whatsappId?: string; ... 33 more ...; observacoes?: string; }'.
+server/routes/formularios-complete.ts(4667,68): error TS2345: Argument of type 'string' is not assignable to parameter of type 'boolean'.
+server/routes/formularios-complete.ts(4802,36): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { tenantId: string | SQL<unknown> | Placeholder<string, any>; telefone: string | SQL<unknown> | Placeholder<string, any>; telefoneNormalizado: string | SQL<...> | Placeholder<...>; ... 41 more ...; observacoes?: string | ... 1 more ... | Placeholder<...>; }): PgInsertBase<...>', gave the following error.
+    Argument of type '{ telefone: any; telefoneNormalizado: string; nome: any; email: any; origem: string; formularioConcluido: true; formularioConcluidoEm: Date; formStatus: string; statusQualificacao: string; qualificationStatus: string; pontuacao: any; whatsappLabelId: any; }' is not assignable to parameter of type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; telefone: string | SQL<unknown> | Placeholder<string, any>; telefoneNormalizado: string | SQL<...> | Placeholder<...>; ... 41 more ...; observacoes?: string | ... 1 more ... | Placeholder<...>; }'.
+      Property 'tenantId' is missing in type '{ telefone: any; telefoneNormalizado: string; nome: any; email: any; origem: string; formularioConcluido: true; formularioConcluidoEm: Date; formStatus: string; statusQualificacao: string; qualificationStatus: string; pontuacao: any; whatsappLabelId: any; }' but required in type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; telefone: string | SQL<unknown> | Placeholder<string, any>; telefoneNormalizado: string | SQL<...> | Placeholder<...>; ... 41 more ...; observacoes?: string | ... 1 more ... | Placeholder<...>; }'.
+  Overload 2 of 2, '(values: { tenantId: string | SQL<unknown> | Placeholder<string, any>; telefone: string | SQL<unknown> | Placeholder<string, any>; telefoneNormalizado: string | SQL<...> | Placeholder<...>; ... 41 more ...; observacoes?: string | ... 1 more ... | Placeholder<...>; }[]): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'telefone' does not exist in type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; telefone: string | SQL<unknown> | Placeholder<string, any>; telefoneNormalizado: string | SQL<...> | Placeholder<...>; ... 41 more ...; observacoes?: string | ... 1 more ... | Placeholder<...>; }[]'.
+server/routes/formularios-complete.ts(5405,9): error TS2353: Object literal may only specify known properties, and 'telefoneNormalizado' does not exist in type 'CreateLeadData'.
+server/routes/formularios-complete.ts(5457,9): error TS2353: Object literal may only specify known properties, and 'telefoneNormalizado' does not exist in type 'CreateLeadData'.
+server/routes/formularios.ts(490,38): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { tenantId: string | SQL<unknown> | Placeholder<string, any>; title: string | SQL<unknown> | Placeholder<string, any>; questions: unknown; id?: string | SQL<unknown> | Placeholder<...>; ... 12 more ...; completionPageId?: string | ... 1 more ... | Placeholder<...>; }): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'tags' does not exist in type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; title: string | SQL<unknown> | Placeholder<string, any>; questions: unknown; id?: string | SQL<unknown> | Placeholder<...>; ... 12 more ...; completionPageId?: string | ... 1 more ... | Placeholder<...>; }'.
+  Overload 2 of 2, '(values: { tenantId: string | SQL<unknown> | Placeholder<string, any>; title: string | SQL<unknown> | Placeholder<string, any>; questions: unknown; id?: string | SQL<unknown> | Placeholder<...>; ... 12 more ...; completionPageId?: string | ... 1 more ... | Placeholder<...>; }[]): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'id' does not exist in type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; title: string | SQL<unknown> | Placeholder<string, any>; questions: unknown; id?: string | SQL<unknown> | Placeholder<...>; ... 12 more ...; completionPageId?: string | ... 1 more ... | Placeholder<...>; }[]'.
+server/routes/formularios.ts(517,19): error TS2353: Object literal may only specify known properties, and 'tags' does not exist in type '{ tenantId?: string | SQL<unknown> | PgColumn<ColumnBaseConfig<ColumnDataType, string>, {}, {}>; title?: string | SQL<unknown> | PgColumn<...>; ... 14 more ...; completionPageId?: string | ... 1 more ... | PgColumn<...>; }'.
+server/routes/labelDesigner.ts(7,20): error TS2307: Cannot find module 'bwip-js' or its corresponding type declarations.
+server/routes/labelDesigner.ts(488,33): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/labelDesigner.ts(569,15): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { tenantId: string | SQL<unknown> | Placeholder<string, any>; name: string | SQL<unknown> | Placeholder<string, any>; widthMm: string | SQL<unknown> | Placeholder<...>; ... 9 more ...; previewUrl?: string | ... 1 more ... | Placeholder<...>; }): PgInsertBase<...>', gave the following error.
+    Argument of type 'Record<string, never>' is not assignable to parameter of type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; name: string | SQL<unknown> | Placeholder<string, any>; widthMm: string | SQL<unknown> | Placeholder<...>; ... 9 more ...; previewUrl?: string | ... 1 more ... | Placeholder<...>; }'.
+      Type 'Record<string, never>' is missing the following properties from type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; name: string | SQL<unknown> | Placeholder<string, any>; widthMm: string | SQL<unknown> | Placeholder<...>; ... 9 more ...; previewUrl?: string | ... 1 more ... | Placeholder<...>; }': tenantId, name, widthMm, heightMm, designData
+  Overload 2 of 2, '(values: { tenantId: string | SQL<unknown> | Placeholder<string, any>; name: string | SQL<unknown> | Placeholder<string, any>; widthMm: string | SQL<unknown> | Placeholder<...>; ... 9 more ...; previewUrl?: string | ... 1 more ... | Placeholder<...>; }[]): PgInsertBase<...>', gave the following error.
+    Argument of type 'Record<string, never>' is not assignable to parameter of type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; name: string | SQL<unknown> | Placeholder<string, any>; widthMm: string | SQL<unknown> | Placeholder<...>; ... 9 more ...; previewUrl?: string | ... 1 more ... | Placeholder<...>; }[]'.
+      Type 'Record<string, never>' is missing the following properties from type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; name: string | SQL<unknown> | Placeholder<string, any>; widthMm: string | SQL<unknown> | Placeholder<...>; ... 9 more ...; previewUrl?: string | ... 1 more ... | Placeholder<...>; }[]': length, pop, push, concat, and 29 more.
+server/routes/labelDesigner.ts(583,24): error TS2339: Property 'errors' does not exist on type 'ZodError<unknown>'.
+server/routes/labelDesigner.ts(598,33): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/labelDesigner.ts(671,24): error TS2339: Property 'errors' does not exist on type 'ZodError<unknown>'.
+server/routes/labelDesigner.ts(686,33): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/labelDesigner.ts(913,12): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { tenantId: string | SQL<unknown> | Placeholder<string, any>; name: string | SQL<unknown> | Placeholder<string, any>; widthMm: string | SQL<unknown> | Placeholder<...>; ... 9 more ...; previewUrl?: string | ... 1 more ... | Placeholder<...>; }): PgInsertBase<...>', gave the following error.
+    Argument of type '{ tenantId: string; isPublic: true; name: string; description: string; category: string; tags: string[]; widthMm: number; heightMm: number; designData: { objects: any[]; background: string; version: string; }; }' is not assignable to parameter of type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; name: string | SQL<unknown> | Placeholder<string, any>; widthMm: string | SQL<unknown> | Placeholder<...>; ... 9 more ...; previewUrl?: string | ... 1 more ... | Placeholder<...>; }'.
+      Types of property 'widthMm' are incompatible.
+        Type 'number' is not assignable to type 'string | SQL<unknown> | Placeholder<string, any>'.
+  Overload 2 of 2, '(values: { tenantId: string | SQL<unknown> | Placeholder<string, any>; name: string | SQL<unknown> | Placeholder<string, any>; widthMm: string | SQL<unknown> | Placeholder<...>; ... 9 more ...; previewUrl?: string | ... 1 more ... | Placeholder<...>; }[]): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'tenantId' does not exist in type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; name: string | SQL<unknown> | Placeholder<string, any>; widthMm: string | SQL<unknown> | Placeholder<...>; ... 9 more ...; previewUrl?: string | ... 1 more ... | Placeholder<...>; }[]'.
+server/routes/labelDesigner.ts(951,29): error TS2345: Argument of type 'number' is not assignable to parameter of type 'string'.
+server/routes/labelDesigner.ts(952,30): error TS2345: Argument of type 'number' is not assignable to parameter of type 'string'.
+server/routes/labelDesigner.ts(1072,24): error TS2339: Property 'errors' does not exist on type 'ZodError<unknown>'.
+server/routes/leadsPipelineRoutes.ts(272,50): error TS2367: This comparison appears to be unintentional because the types 'boolean' and 'string' have no overlap.
+server/routes/leadsPipelineRoutes.ts(273,26): error TS2367: This comparison appears to be unintentional because the types 'boolean' and 'string' have no overlap.
+server/routes/leadsPipelineRoutes.ts(273,56): error TS2367: This comparison appears to be unintentional because the types 'boolean' and 'string' have no overlap.
+server/routes/leadsPipelineRoutes.ts(273,86): error TS2367: This comparison appears to be unintentional because the types 'boolean' and 'number' have no overlap.
+server/routes/leadsPipelineRoutes.ts(274,51): error TS2367: This comparison appears to be unintentional because the types 'boolean' and 'string' have no overlap.
+server/routes/leadsPipelineRoutes.ts(275,26): error TS2367: This comparison appears to be unintentional because the types 'boolean' and 'string' have no overlap.
+server/routes/leadsPipelineRoutes.ts(275,56): error TS2367: This comparison appears to be unintentional because the types 'boolean' and 'string' have no overlap.
+server/routes/leadsPipelineRoutes.ts(275,87): error TS2367: This comparison appears to be unintentional because the types 'boolean' and 'number' have no overlap.
+server/routes/leadsPipelineRoutes.ts(280,50): error TS2367: This comparison appears to be unintentional because the types 'boolean' and 'string' have no overlap.
+server/routes/leadsPipelineRoutes.ts(281,26): error TS2367: This comparison appears to be unintentional because the types 'boolean' and 'string' have no overlap.
+server/routes/leadsPipelineRoutes.ts(281,56): error TS2367: This comparison appears to be unintentional because the types 'boolean' and 'string' have no overlap.
+server/routes/leadsPipelineRoutes.ts(281,86): error TS2367: This comparison appears to be unintentional because the types 'boolean' and 'number' have no overlap.
+server/routes/leadsPipelineRoutes.ts(282,51): error TS2367: This comparison appears to be unintentional because the types 'boolean' and 'string' have no overlap.
+server/routes/leadsPipelineRoutes.ts(283,26): error TS2367: This comparison appears to be unintentional because the types 'boolean' and 'string' have no overlap.
+server/routes/leadsPipelineRoutes.ts(283,56): error TS2367: This comparison appears to be unintentional because the types 'boolean' and 'string' have no overlap.
+server/routes/leadsPipelineRoutes.ts(283,87): error TS2367: This comparison appears to be unintentional because the types 'boolean' and 'number' have no overlap.
+server/routes/leadsPipelineRoutes.ts(705,43): error TS2345: Argument of type 'string' is not assignable to parameter of type '"contato-inicial" | "formulario-aprovado" | "formulario-reprovado" | "cpf-aprovado" | "cpf-reprovado" | "revendedora" | "formulario-nao-preenchido" | "reuniao-pendente" | ... 4 more ... | "consultor"'.
+server/routes/leadsPipelineRoutes.ts(1061,19): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { tenantId: string | SQL<unknown> | Placeholder<string, any>; nome: string | SQL<unknown> | Placeholder<string, any>; id?: string | SQL<unknown> | Placeholder<string, any>; ... 17 more ...; motivoRecusa?: string | ... 1 more ... | Placeholder<...>; }): PgInsertBase<...>', gave the following error.
+    Argument of type 'Record<string, any>' is not assignable to parameter of type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; nome: string | SQL<unknown> | Placeholder<string, any>; id?: string | SQL<unknown> | Placeholder<string, any>; ... 17 more ...; motivoRecusa?: string | ... 1 more ... | Placeholder<...>; }'.
+      Type 'Record<string, any>' is missing the following properties from type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; nome: string | SQL<unknown> | Placeholder<string, any>; id?: string | SQL<unknown> | Placeholder<string, any>; ... 17 more ...; motivoRecusa?: string | ... 1 more ... | Placeholder<...>; }': tenantId, nome
+  Overload 2 of 2, '(values: { tenantId: string | SQL<unknown> | Placeholder<string, any>; nome: string | SQL<unknown> | Placeholder<string, any>; id?: string | SQL<unknown> | Placeholder<string, any>; ... 17 more ...; motivoRecusa?: string | ... 1 more ... | Placeholder<...>; }[]): PgInsertBase<...>', gave the following error.
+    Argument of type 'Record<string, any>' is not assignable to parameter of type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; nome: string | SQL<unknown> | Placeholder<string, any>; id?: string | SQL<unknown> | Placeholder<string, any>; ... 17 more ...; motivoRecusa?: string | ... 1 more ... | Placeholder<...>; }[]'.
+      Type 'Record<string, any>' is missing the following properties from type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; nome: string | SQL<unknown> | Placeholder<string, any>; id?: string | SQL<unknown> | Placeholder<string, any>; ... 17 more ...; motivoRecusa?: string | ... 1 more ... | Placeholder<...>; }[]': length, pop, push, concat, and 29 more.
+server/routes/meetings.ts(1139,21): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/meetings.ts(1148,16): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(left: PgColumn<{ name: "room_id_100ms"; tableName: "reunioes"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: false; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>, right: string | SQLWrapper): SQL<...>', gave the following error.
+    Argument of type 'string | string[]' is not assignable to parameter of type 'string | SQLWrapper'.
+      Type 'string[]' is not assignable to type 'string | SQLWrapper'.
+  Overload 2 of 3, '(left: Aliased<string | string[]>, right: string | string[] | SQLWrapper): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "room_id_100ms"; tableName: "reunioes"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: false; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'Aliased<string | string[]>'.
+      Type 'PgColumn<{ name: "room_id_100ms"; tableName: "reunioes"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: false; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is missing the following properties from type 'Aliased<string | string[]>': sql, fieldAlias
+  Overload 3 of 3, '(left: never, right: unknown): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "room_id_100ms"; tableName: "reunioes"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: false; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'never'.
+server/routes/meetings.ts(1188,43): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/meetings.ts(2237,14): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(left: PgColumn<{ name: "reuniao_id"; tableName: "gravacoes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>, right: string | SQLWrapper): SQL<...>', gave the following error.
+    Argument of type 'string | string[]' is not assignable to parameter of type 'string | SQLWrapper'.
+      Type 'string[]' is not assignable to type 'string | SQLWrapper'.
+  Overload 2 of 3, '(left: Aliased<string | string[]>, right: string | string[] | SQLWrapper): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "reuniao_id"; tableName: "gravacoes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'Aliased<string | string[]>'.
+      Type 'PgColumn<{ name: "reuniao_id"; tableName: "gravacoes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is missing the following properties from type 'Aliased<string | string[]>': sql, fieldAlias
+  Overload 3 of 3, '(left: never, right: unknown): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "reuniao_id"; tableName: "gravacoes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'never'.
+server/routes/meetings.ts(2288,7): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { tenantId: string | SQL<unknown> | Placeholder<string, any>; reuniaoId: string | SQL<unknown> | Placeholder<string, any>; duration?: number | SQL<unknown> | Placeholder<...>; ... 13 more ...; assetId?: string | ... 1 more ... | Placeholder<...>; }): PgInsertBase<...>', gave the following error.
+    Type 'string | string[]' is not assignable to type 'string | SQL<unknown> | Placeholder<string, any>'.
+      Type 'string[]' is not assignable to type 'string | SQL<unknown> | Placeholder<string, any>'.
+  Overload 2 of 2, '(values: { tenantId: string | SQL<unknown> | Placeholder<string, any>; reuniaoId: string | SQL<unknown> | Placeholder<string, any>; duration?: number | SQL<unknown> | Placeholder<...>; ... 13 more ...; assetId?: string | ... 1 more ... | Placeholder<...>; }[]): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'reuniaoId' does not exist in type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; reuniaoId: string | SQL<unknown> | Placeholder<string, any>; duration?: number | SQL<unknown> | Placeholder<...>; ... 13 more ...; assetId?: string | ... 1 more ... | Placeholder<...>; }[]'.
+server/routes/meetings.ts(2319,9): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(left: PgColumn<{ name: "id"; tableName: "gravacoes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>, right: string | SQLWrapper): SQL<...>', gave the following error.
+    Argument of type 'string | string[]' is not assignable to parameter of type 'string | SQLWrapper'.
+      Type 'string[]' is not assignable to type 'string | SQLWrapper'.
+  Overload 2 of 3, '(left: Aliased<string | string[]>, right: string | string[] | SQLWrapper): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "gravacoes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'Aliased<string | string[]>'.
+      Type 'PgColumn<{ name: "id"; tableName: "gravacoes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is missing the following properties from type 'Aliased<string | string[]>': sql, fieldAlias
+  Overload 3 of 3, '(left: never, right: unknown): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "gravacoes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'never'.
+server/routes/meetings.ts(2320,9): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(left: PgColumn<{ name: "reuniao_id"; tableName: "gravacoes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>, right: string | SQLWrapper): SQL<...>', gave the following error.
+    Argument of type 'string | string[]' is not assignable to parameter of type 'string | SQLWrapper'.
+      Type 'string[]' is not assignable to type 'string | SQLWrapper'.
+  Overload 2 of 3, '(left: Aliased<string | string[]>, right: string | string[] | SQLWrapper): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "reuniao_id"; tableName: "gravacoes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'Aliased<string | string[]>'.
+      Type 'PgColumn<{ name: "reuniao_id"; tableName: "gravacoes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is missing the following properties from type 'Aliased<string | string[]>': sql, fieldAlias
+  Overload 3 of 3, '(left: never, right: unknown): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "reuniao_id"; tableName: "gravacoes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'never'.
+server/routes/meetings.ts(2351,14): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(left: PgColumn<{ name: "id"; tableName: "gravacoes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>, right: string | SQLWrapper): SQL<...>', gave the following error.
+    Argument of type 'string | string[]' is not assignable to parameter of type 'string | SQLWrapper'.
+      Type 'string[]' is not assignable to type 'string | SQLWrapper'.
+  Overload 2 of 3, '(left: Aliased<string | string[]>, right: string | string[] | SQLWrapper): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "gravacoes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'Aliased<string | string[]>'.
+      Type 'PgColumn<{ name: "id"; tableName: "gravacoes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is missing the following properties from type 'Aliased<string | string[]>': sql, fieldAlias
+  Overload 3 of 3, '(left: never, right: unknown): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "gravacoes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'never'.
+server/routes/monitoring.ts(53,14): error TS2554: Expected 2-3 arguments, but got 1.
+server/routes/multiTenantAuth.ts(69,15): error TS2339: Property 'catch' does not exist on type 'PromiseLike<PostgrestSingleResponse<null>>'.
+server/routes/multiTenantAuth.ts(91,13): error TS2339: Property 'catch' does not exist on type 'PromiseLike<PostgrestSingleResponse<null>>'.
+server/routes/multiTenantAuth.ts(94,36): error TS2339: Property 'catch' does not exist on type 'PromiseLike<PostgrestSingleResponse<null>>'.
+server/routes/multiTenantAuth.ts(248,17): error TS2339: Property 'catch' does not exist on type 'PromiseLike<PostgrestSingleResponse<null>>'.
+server/routes/multiTenantAuth.ts(275,15): error TS2339: Property 'catch' does not exist on type 'PromiseLike<PostgrestSingleResponse<null>>'.
+server/routes/n8n.ts(117,20): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(left: PgColumn<{ name: "tenant_id"; tableName: "hms_100ms_config"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>, right: string | SQLWrapper): SQL<...>', gave the following error.
+    Argument of type 'string | string[]' is not assignable to parameter of type 'string | SQLWrapper'.
+      Type 'string[]' is not assignable to type 'string | SQLWrapper'.
+  Overload 2 of 3, '(left: Aliased<string | string[]>, right: string | string[] | SQLWrapper): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "tenant_id"; tableName: "hms_100ms_config"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'Aliased<string | string[]>'.
+      Type 'PgColumn<{ name: "tenant_id"; tableName: "hms_100ms_config"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is missing the following properties from type 'Aliased<string | string[]>': sql, fieldAlias
+  Overload 3 of 3, '(left: never, right: unknown): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "tenant_id"; tableName: "hms_100ms_config"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'never'.
+server/routes/n8n.ts(642,20): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(left: PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>, right: string | SQLWrapper): SQL<...>', gave the following error.
+    Argument of type 'string | string[]' is not assignable to parameter of type 'string | SQLWrapper'.
+      Type 'string[]' is not assignable to type 'string | SQLWrapper'.
+  Overload 2 of 3, '(left: Aliased<string | string[]>, right: string | string[] | SQLWrapper): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'Aliased<string | string[]>'.
+      Type 'PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is missing the following properties from type 'Aliased<string | string[]>': sql, fieldAlias
+  Overload 3 of 3, '(left: never, right: unknown): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'never'.
+server/routes/n8n.ts(682,20): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(left: PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>, right: string | SQLWrapper): SQL<...>', gave the following error.
+    Argument of type 'string | string[]' is not assignable to parameter of type 'string | SQLWrapper'.
+      Type 'string[]' is not assignable to type 'string | SQLWrapper'.
+  Overload 2 of 3, '(left: Aliased<string | string[]>, right: string | string[] | SQLWrapper): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'Aliased<string | string[]>'.
+      Type 'PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is missing the following properties from type 'Aliased<string | string[]>': sql, fieldAlias
+  Overload 3 of 3, '(left: never, right: unknown): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'never'.
+server/routes/n8n.ts(745,20): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(left: PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>, right: string | SQLWrapper): SQL<...>', gave the following error.
+    Argument of type 'string | string[]' is not assignable to parameter of type 'string | SQLWrapper'.
+      Type 'string[]' is not assignable to type 'string | SQLWrapper'.
+  Overload 2 of 3, '(left: Aliased<string | string[]>, right: string | string[] | SQLWrapper): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'Aliased<string | string[]>'.
+      Type 'PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is missing the following properties from type 'Aliased<string | string[]>': sql, fieldAlias
+  Overload 3 of 3, '(left: never, right: unknown): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'never'.
+server/routes/n8n.ts(820,20): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(left: PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>, right: string | SQLWrapper): SQL<...>', gave the following error.
+    Argument of type 'string | string[]' is not assignable to parameter of type 'string | SQLWrapper'.
+      Type 'string[]' is not assignable to type 'string | SQLWrapper'.
+  Overload 2 of 3, '(left: Aliased<string | string[]>, right: string | string[] | SQLWrapper): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'Aliased<string | string[]>'.
+      Type 'PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is missing the following properties from type 'Aliased<string | string[]>': sql, fieldAlias
+  Overload 3 of 3, '(left: never, right: unknown): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'never'.
+server/routes/n8n.ts(876,20): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(left: PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>, right: string | SQLWrapper): SQL<...>', gave the following error.
+    Argument of type 'string | string[]' is not assignable to parameter of type 'string | SQLWrapper'.
+      Type 'string[]' is not assignable to type 'string | SQLWrapper'.
+  Overload 2 of 3, '(left: Aliased<string | string[]>, right: string | string[] | SQLWrapper): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'Aliased<string | string[]>'.
+      Type 'PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is missing the following properties from type 'Aliased<string | string[]>': sql, fieldAlias
+  Overload 3 of 3, '(left: never, right: unknown): SQL<unknown>', gave the following error.
+    Argument of type 'PgColumn<{ name: "id"; tableName: "reunioes"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>' is not assignable to parameter of type 'never'.
+server/routes/n8n.ts(932,32): error TS2339: Property 'errors' does not exist on type 'ZodError<unknown>'.
+server/routes/notifications.ts(77,83): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/notifications.ts(155,39): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/printerConfig.ts(9,11): error TS2430: Interface 'AuthenticatedRequest' incorrectly extends interface 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+  Types of property 'user' are incompatible.
+    Type '{ userId: string; tenantId: string; email: string; clientId?: string; }' is not assignable to type '{ userId: string; clientId: string; tenantId: string; email: string; role?: string; comissao?: number; }'.
+      Property 'clientId' is optional in type '{ userId: string; tenantId: string; email: string; clientId?: string; }' but required in type '{ userId: string; clientId: string; tenantId: string; email: string; role?: string; comissao?: number; }'.
+server/routes/printerConfig.ts(118,31): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/printerConfig.ts(204,15): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { tenantId: string | SQL<unknown> | Placeholder<string, any>; printerName: string | SQL<unknown> | Placeholder<string, any>; id?: number | SQL<unknown> | Placeholder<...>; ... 14 more ...; enabledFields?: unknown; }): PgInsertBase<...>', gave the following error.
+    Argument of type 'Record<string, never>' is not assignable to parameter of type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; printerName: string | SQL<unknown> | Placeholder<string, any>; id?: number | SQL<unknown> | Placeholder<...>; ... 14 more ...; enabledFields?: unknown; }'.
+      Type 'Record<string, never>' is missing the following properties from type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; printerName: string | SQL<unknown> | Placeholder<string, any>; id?: number | SQL<unknown> | Placeholder<...>; ... 14 more ...; enabledFields?: unknown; }': tenantId, printerName
+  Overload 2 of 2, '(values: { tenantId: string | SQL<unknown> | Placeholder<string, any>; printerName: string | SQL<unknown> | Placeholder<string, any>; id?: number | SQL<unknown> | Placeholder<...>; ... 14 more ...; enabledFields?: unknown; }[]): PgInsertBase<...>', gave the following error.
+    Argument of type 'Record<string, never>' is not assignable to parameter of type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; printerName: string | SQL<unknown> | Placeholder<string, any>; id?: number | SQL<unknown> | Placeholder<...>; ... 14 more ...; enabledFields?: unknown; }[]'.
+      Type 'Record<string, never>' is missing the following properties from type '{ tenantId: string | SQL<unknown> | Placeholder<string, any>; printerName: string | SQL<unknown> | Placeholder<string, any>; id?: number | SQL<unknown> | Placeholder<...>; ... 14 more ...; enabledFields?: unknown; }[]': length, pop, push, concat, and 29 more.
+server/routes/printerConfig.ts(218,24): error TS2339: Property 'errors' does not exist on type 'ZodError<unknown>'.
+server/routes/printerConfig.ts(232,31): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/printerConfig.ts(309,24): error TS2339: Property 'errors' does not exist on type 'ZodError<unknown>'.
+server/routes/printerConfig.ts(323,31): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/printerConfig.ts(389,31): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/produtos.ts(108,41): error TS2554: Expected 1 arguments, but got 0.
+server/routes/produtos.ts(111,54): error TS2551: Property 'anon_key' does not exist on type 'SupabaseCredentials'. Did you mean 'anonKey'?
+server/routes/produtos.ts(113,74): error TS2551: Property 'anon_key' does not exist on type 'SupabaseCredentials'. Did you mean 'anonKey'?
+server/routes/publicStore.ts(248,9): error TS2304: Cannot find name 'supabaseUrl'.
+server/routes/publicStore.ts(248,24): error TS2304: Cannot find name 'supabaseServiceKey'.
+server/routes/publicStore.ts(249,27): error TS2304: Cannot find name 'supabaseUrl'.
+server/routes/publicStore.ts(249,40): error TS2304: Cannot find name 'supabaseServiceKey'.
+server/routes/publicStore.ts(253,9): error TS2304: Cannot find name 'supabaseUrl'.
+server/routes/publicStore.ts(253,24): error TS2304: Cannot find name 'supabaseKey'.
+server/routes/publicStore.ts(254,27): error TS2304: Cannot find name 'supabaseUrl'.
+server/routes/publicStore.ts(254,40): error TS2304: Cannot find name 'supabaseKey'.
+server/routes/resellerAuth.ts(516,17): error TS2339: Property 'companySlug' does not exist on type 'Session & Partial<SessionData>'.
+server/routes/resellerAuth.ts(634,35): error TS2339: Property 'companySlug' does not exist on type 'Session & Partial<SessionData>'.
+server/routes/resellerAuth.ts(1084,90): error TS2339: Property 'errors' does not exist on type 'ZodError<{ nome: string; telefone?: string; }>'.
+server/routes/resellerAuth.ts(1123,90): error TS2339: Property 'errors' does not exist on type 'ZodError<{ email_vendas: boolean; email_comissoes: boolean; email_promocoes: boolean; push_vendas: boolean; push_estoque: boolean; }>'.
+server/routes/resellerAuth.ts(1194,36): error TS2339: Property 'errors' does not exist on type 'ZodError<{ supabase_url: string; supabase_anon_key?: string; supabase_service_key?: string; }>'.
+server/routes/resellerAuth.ts(1272,13): error TS2339: Property 'getSupabaseOwnerClient' does not exist on type 'typeof import("C:/Users/davie/Downloads/Skill e mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/server/config/supabaseOwner")'.
+server/routes/resellerAuth.ts(1425,45): error TS2345: Argument of type '{ supabase_url: string; supabase_anon_key: string; supabase_service_key?: string; }' is not assignable to parameter of type 'AdminCredentials'.
+  Property 'storage_bucket' is missing in type '{ supabase_url: string; supabase_anon_key: string; supabase_service_key?: string; }' but required in type 'AdminCredentials'.
+server/routes/split.ts(328,41): error TS2339: Property 'errors' does not exist on type 'ZodError<{ company_name?: string; trading_name?: string; email?: string; document?: string; }>'.
+server/routes/split.ts(411,24): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/split.ts(426,41): error TS2339: Property 'errors' does not exist on type 'ZodError<{ mother_name?: string; birthdate?: string; street?: string; number?: string; complement?: string; neighborhood?: string; city?: string; state?: string; zip_code?: string; bank_account?: { holder_name: string; ... 6 more ...; branch_check_digit?: string; }; }>'.
+server/routes/split.ts(437,60): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/split.ts(523,49): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/split.ts(584,41): error TS2339: Property 'errors' does not exist on type 'ZodError<{ reseller_percentage: number; reseller_id?: string; }>'.
+server/routes/split.ts(1228,57): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/store.ts(234,63): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/store.ts(348,65): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/store.ts(394,65): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/store.ts(417,67): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/store.ts(492,64): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/store.ts(514,56): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/store.ts(558,69): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/store.ts(701,64): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/store.ts(791,62): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/store.ts(881,63): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/store.ts(988,65): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/stripePayment.ts(2,20): error TS2307: Cannot find module 'stripe' or its corresponding type declarations.
+server/routes/whatsapp-complete.ts(90,5): error TS2740: Type 'Omit<PgSelectBase<"leads", { id: PgColumn<{ name: "id"; tableName: "leads"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>; ... 43 more ...; updatedAt: PgColumn<...' is missing the following properties from type 'PgSelectBase<"leads", { id: PgColumn<{ name: "id"; tableName: "leads"; dataType: "string"; columnType: "PgUUID"; data: string; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; ... 4 more ...; generated: undefined; }, {}, {}>; ... 43 more ...; updatedAt: PgColumn<...>;...': config, joinsNotNullableMap, tableName, isPartialSelect, and 6 more.
+server/routes/whatsapp-complete.ts(297,68): error TS2345: Argument of type 'Record<string, never>' is not assignable to parameter of type '{ tenantId: string; apiUrlWhatsapp: string; apiKeyWhatsapp: string; instanceWhatsapp: string; id?: number; createdAtWhatsapp?: Date; updatedAtWhatsapp?: Date; }'.
+  Type 'Record<string, never>' is missing the following properties from type '{ tenantId: string; apiUrlWhatsapp: string; apiKeyWhatsapp: string; instanceWhatsapp: string; id?: number; createdAtWhatsapp?: Date; updatedAtWhatsapp?: Date; }': tenantId, apiUrlWhatsapp, apiKeyWhatsapp, instanceWhatsapp
+server/routes/whatsapp-complete.ts(373,46): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/whatsapp-complete.ts(389,48): error TS2345: Argument of type 'Record<string, never>' is not assignable to parameter of type '{ tenantId: string; telefone: string; telefoneNormalizado: string; id?: string; email?: string; createdAt?: Date; updatedAt?: Date; userAgent?: string; nome?: string; origem?: string; whatsappId?: string; ... 33 more ...; observacoes?: string; }'.
+  Type 'Record<string, never>' is missing the following properties from type '{ tenantId: string; telefone: string; telefoneNormalizado: string; id?: string; email?: string; createdAt?: Date; updatedAt?: Date; userAgent?: string; nome?: string; origem?: string; whatsappId?: string; ... 33 more ...; observacoes?: string; }': tenantId, telefone, telefoneNormalizado
+server/routes/whatsapp-complete.ts(401,52): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/whatsapp-complete.ts(412,32): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/whatsapp-complete.ts(437,48): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/whatsapp-complete.ts(453,50): error TS2345: Argument of type 'Record<string, never>' is not assignable to parameter of type '{ nome: string; cor: string; formStatus: string; id?: string; createdAt?: Date; updatedAt?: Date; qualificationStatus?: string; ordem?: number; ativo?: boolean; }'.
+  Type 'Record<string, never>' is missing the following properties from type '{ nome: string; cor: string; formStatus: string; id?: string; createdAt?: Date; updatedAt?: Date; qualificationStatus?: string; ordem?: number; ativo?: boolean; }': nome, cor, formStatus
+server/routes/whatsapp-complete.ts(465,54): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/whatsapp-complete.ts(476,33): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/routes/workspace.ts(547,96): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+server/services/init.ts(2,10): error TS2724: '"@shared/schema"' has no exported member named 'tenants'. Did you mean 'Tenant'?
+server/services/init.ts(2,26): error TS2305: Module '"@shared/schema"' has no exported member 'usuariosTenant'.
+server/services/init.ts(91,23): error TS2339: Property 'username' does not exist on type 'PgTableWithColumns<{ name: "users"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "users"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: true; hasDefault: false; ... 6 more ...; generated: undefined; }, {}, {}>; ... 5 more ...; updatedAt: PgColumn<...>; }...'.
+server/services/init.ts(100,11): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; email: string | SQL<unknown> | Placeholder<...>; name?: string | ... 1 more ... | Placeholder<...>; createdAt?: SQL<...> | ... 1 more ... | Placeholder<...>; updatedAt?: SQL<...> | ... 1 more ... | Placeholder<...>; role?: string | ... 1 more ... | Placeholder<...>; }): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'username' does not exist in type '{ id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; email: string | SQL<unknown> | Placeholder<string, any>; name?: string | ... 1 more ... | Placeholder<...>; createdAt?: SQL<...> | ... 1 more ... | Placeholder<...>; updatedAt?: SQL<...> | ... 1 more ....'.
+  Overload 2 of 2, '(values: { id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; email: string | SQL<unknown> | Placeholder<...>; name?: string | ... 1 more ... | Placeholder<...>; createdAt?: SQL<...> | ... 1 more ... | Placeholder<...>; updatedAt?: SQL<...> | ... 1 more ... | Placeholder<...>; role?: string | ... 1 more ... | Placeholder<...>; }[]): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'username' does not exist in type '{ id: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; email: string | SQL<unknown> | Placeholder<string, any>; name?: string | ... 1 more ... | Placeholder<...>; createdAt?: SQL<...> | ... 1 more ... | Placeholder<...>; updatedAt?: SQL<...> | ... 1 more ....'.
+server/services/IntegrationListeners.ts(100,56): error TS2554: Expected 1 arguments, but got 2.
+server/services/IntegrationListeners.ts(116,58): error TS2554: Expected 1 arguments, but got 2.
+server/services/IntegrationListeners.ts(132,55): error TS2554: Expected 1 arguments, but got 2.
+server/services/IntegrationListeners.ts(241,42): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(value: { userId: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; itemId: string | SQL<unknown> | Placeholder<...>; id?: number | ... 1 more ... | Placeholder<...>; createdAt?: SQL<...> | ... 1 more ... | Placeholder<...>; connectorId?: string | ... 1 more ... | Placeholder<...>; }): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'connectorName' does not exist in type '{ userId: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; itemId: string | SQL<unknown> | Placeholder<...>; id?: number | ... 1 more ... | Placeholder<...>; createdAt?: SQL<...> | ... 1 more ... | Placeholder<...>; connectorId?: string | ... 1 more ... | ...'.
+  Overload 2 of 2, '(values: { userId: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; itemId: string | SQL<unknown> | Placeholder<...>; id?: number | ... 1 more ... | Placeholder<...>; createdAt?: SQL<...> | ... 1 more ... | Placeholder<...>; connectorId?: string | ... 1 more ... | Placeholder<...>; }[]): PgInsertBase<...>', gave the following error.
+    Object literal may only specify known properties, and 'userId' does not exist in type '{ userId: string | SQL<unknown> | Placeholder<string, any>; tenantId: string | SQL<unknown> | Placeholder<string, any>; itemId: string | SQL<unknown> | Placeholder<...>; id?: number | ... 1 more ... | Placeholder<...>; createdAt?: SQL<...> | ... 1 more ... | Placeholder<...>; connectorId?: string | ... 1 more ... | ...'.
+server/services/IntegrationListeners.ts(253,11): error TS2353: Object literal may only specify known properties, and 'connectorName' does not exist in type 'PgUpdateSetSource<PgTableWithColumns<{ name: "pluggy_connections"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "pluggy_connections"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; ... 8 more ...; generated: undefined; }, {}, {}>; ... 4 more ...; createdAt: PgCo...'.
+server/services/NotificationService.ts(410,83): error TS2341: Property 'getUserSettings' is private and only accessible within class 'NotificationService'.
+server/services/UnifiedNotificationService.ts(96,48): error TS2554: Expected 3 arguments, but got 2.

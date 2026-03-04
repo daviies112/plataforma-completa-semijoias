@@ -1,0 +1,1822 @@
+[SUPABASE_LOCAL] ✅ Conectado com sucesso via secrets SUPABASE_LOCAL_URL/KEY
+🐘 Initializing database connection...
+[PUBLIC_CACHE] Loaded 0 persistent form mappings from disk
+ℹ️ Redis não configurado - usando cache em memória
+✅ Formulários database connection configured
+📄 [FormPoller] Estado carregado: 30 submissions processadas
+📄 [CPFAutoCheck] Estado carregado: 6 consultas processadas
+📄 [CPFPoller] Estado carregado: 8 consultas processadas
+📄 Estado da automação carregado do arquivo com sucesso
+[AssinaturaSupabase] Serviço criado - inicialização lazy
+[Assinatura] 7 contratos carregados do arquivo local
+ℹ️  [RESEND] Serviço multi-tenant - será inicializado quando tenant estiver disponível
+[Pagar.me] ✅ Usando credenciais de PRODUÇÃO
+[STARTUP] Loading server modules...
+[STARTUP] All modules loaded, creating Express app...
+[STARTUP] Express app created
+ℹ️  [SENTRY] Serviço multi-tenant - será inicializado quando tenant estiver disponível
+⚠️ Resend não configurado - Emails desativados
+⚠️ Sentry não configurado - Monitoramento desativado
+Credenciais carregadas do arquivo com sucesso
+04:21:40 PM [express] Credentials manager initialized
+04:21:40 PM [express] ✅ [StateReset] Estados de polling inicializados
+04:21:40 PM [express] 🔍 [StateReset] Verificando estados obsoletos...
+🔧 [CONFIG] Setting up configuration routes...
+📋 Registering Formularios Platform Complete Routes...
+[Split Routes] Registering split routes early
+04:21:40 PM [express] 🔐 Multi-tenant authentication enabled
+04:21:40 PM [express] ✅ Rotas de notificações registradas
+[Horarios] Rotas registradas
+04:21:40 PM [express] Environment: production
+04:21:40 PM [express] Serving static files from dist/
+04:21:40 PM [express] [PROD] Initializing static file serving...
+04:21:40 PM [express] [PROD] cwd: C:\Users\davie\Downloads\Skill e mcp\loja\plataformacompleta-store-update-20260214-165922\plataformacompleta
+04:21:40 PM [express] [PROD] __dirname: C:\Users\davie\Downloads\Skill e mcp\loja\plataformacompleta-store-update-20260214-165922\plataformacompleta\dist
+04:21:40 PM [express] [PROD] distPath: C:\Users\davie\Downloads\Skill e mcp\loja\plataformacompleta-store-update-20260214-165922\plataformacompleta\dist
+04:21:40 PM [express] [PROD] Serving uploads from: C:\Users\davie\Downloads\Skill e mcp\loja\plataformacompleta-store-update-20260214-165922\plataformacompleta\public\uploads
+04:21:40 PM [express] serving on port 5000
+✅ Handler registrado para job type: send_email
+✅ Handler registrado para job type: track_event
+✅ Handler registrado para job type: push_notification
+✅ Handler registrado para job type: process_upload
+✅ Handler registrado para job type: sync_form_submission
+🚀 Iniciando processamento da fila: emails
+🚀 Iniciando processamento da fila: analytics
+🚀 Iniciando processamento da fila: notifications
+🚀 Iniciando processamento da fila: data-processing
+✅ Todas as filas de background jobs inicializadas
+04:21:40 PM [express] ✅ Background job queues initialized
+🔍 Buscando tenants do banco de dados...
+🔄 [FormSync] Executando sincronização de formulários do Supabase...
+🔍 [FormPoller] Iniciando polling de submissions...
+⏰ [FormSync] Sincronização automática iniciada - verificação a cada 2 minutos
+🔄 [FormMappingSync] Iniciando sincronização de formulários do Supabase...
+⏰ [FormMappingSync] Job de sincronização iniciado - verificação a cada 5 minutos
+🔄 [CPFSync] Executando sincronização de CPF compliance...
+🔍 [CPFPoller] Iniciando polling de consultas CPF...
+⏰ [CPFSync] Sincronização automática iniciada - verificação a cada 3 minutos
+04:21:40 PM [express] ✅ Form submission automation started
+🚀 Starting limit monitor (interval: 300s)
+
+╔════════════════════════════════════════╗
+║  🔍 LIMIT MONITOR - FREE TIER         ║
+╚════════════════════════════════════════╝
+
+🚀 Starting automatic alerting (interval: 5min)
+04:21:40 PM [express] ✅ Monitoring and alerting started
+🔄 [ContractSync] Iniciando poller de sincronização de contratos...
+04:21:40 PM [express] ✅ Contract sync poller started
+🧹 [CacheCleanup] Scheduler iniciado - limpeza a cada 24h
+04:21:40 PM [express] ✅ Cache cleanup scheduler started (every 24h)
+✅ Database connection established and verified
+04:21:40 PM [express] ✅ Credenciais do Supabase CLIENTE carregadas do banco de dados
+📱 [CPFPoller] Buscando resultados com telefone do Supabase Cliente...
+✅ [SUPABASE] 4 configuração(ões) encontrada(s) no banco de dados
+🏢 [FormPoller] Encontrados 4 tenant(s) configurados
+
+🔄 [FormPoller] Processando tenant: emericks
+📊 Service Status:
+
+  🟢 Redis (Monthly): 0.0% (0/500000)
+  🟢 Supabase Bandwidth: 0.0% (0.00MB/2048.00MB)
+
+────────────────────────────────────────
+
+04:21:40 PM [express] ✅ Credenciais do Supabase CLIENTE carregadas do banco de dados
+✅ 4 tenants encontrados no banco de dados
+🔍 Verificando novos clientes para cliente emericks (tenant: emericks)
+🔍 Iniciando detecção de novos clientes para emericks/emericks
+⏰ Automação iniciada para emericks/emericks - verificação a cada 2 minutos
+✅ Automação iniciada para tenant: emericks
+🔍 Verificando novos clientes para cliente emericks-tenant (tenant: emericks-tenant)
+🔍 Iniciando detecção de novos clientes para emericks-tenant/emericks-tenant
+⏰ Automação iniciada para emericks-tenant/emericks-tenant - verificação a cada 2 minutos
+✅ Automação iniciada para tenant: emericks-tenant
+🔍 Verificando novos clientes para cliente emerick (tenant: emerick)
+🔍 Iniciando detecção de novos clientes para emerick/emerick
+⏰ Automação iniciada para emerick/emerick - verificação a cada 2 minutos
+✅ Automação iniciada para tenant: emerick
+🔍 Verificando novos clientes para cliente davisemi-joias (tenant: davisemi-joias)
+🔍 Iniciando detecção de novos clientes para davisemi-joias/davisemi-joias
+⏰ Automação iniciada para davisemi-joias/davisemi-joias - verificação a cada 2 minutos
+✅ Automação iniciada para tenant: davisemi-joias
+🚀 Automação iniciada para 4 tenants
+⚙️ Configuração: verificação a cada 2 minutos
+✅ [FormMappingSync] Tabela form_tenant_mapping verificada/criada
+04:21:40 PM [express] ✅ Credenciais do Supabase CLIENTE carregadas do banco de dados
+04:21:40 PM [express] ✅ Supabase do CLIENTE conectado
+📊 [FormMappingSync] Encontrados 4 tenant(s) para sincronizar
+✅ [PUBLIC_CACHE] Credenciais encontradas no banco para emerick (ou fallback) | URL: https://semijoias-supabase.y98g1d.easypa
+✅ [PUBLIC_CACHE] Credenciais encontradas no banco para emericks-tenant (ou fallback) | URL: https://semijoias-supabase.y98g1d.easypa
+✅ [PUBLIC_CACHE] Credenciais encontradas no banco para emericks (ou fallback) | URL: https://semijoias-supabase.y98g1d.easypa
+🔍 [FormMappingSync] Sincronizando tenant: emericks
+🔍 [SUPABASE] Buscando credenciais para tenant emericks...
+✅ [SUPABASE] Credenciais processadas com sucesso (tenant: emericks)
+✅ [SUPABASE] Usando credenciais do tenant: emericks
+🔄 [SUPABASE] Criando novo cliente com headers...
+✅ [SUPABASE] Cliente criado com sucesso: https://semijoias-supabase.y98g1d.easypanel.host
+✅ [PUBLIC_CACHE] Credenciais encontradas no banco para davisemi-joias (ou fallback) | URL: https://semijoias-supabase.y98g1d.easypa
+✅ [MULTI-TENANT] 0 registros encontrados para emerick (tenant: emerick)
+🆕 Inicializando cache para emerick/emerick com 0 clientes
+✅ Cache atualizado para emerick-emerick: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'cache_initialized',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para davisemi-joias (tenant: davisemi-joias)
+🆕 Inicializando cache para davisemi-joias/davisemi-joias com 0 clientes
+✅ Cache atualizado para davisemi-joias-davisemi-joias: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'cache_initialized',
+  processamento: { sucessos: 0, erros: 0 }
+}
+📊 [FormPoller] Tenant emericks: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emericks-tenant
+✅ [MULTI-TENANT] 0 registros encontrados para emericks-tenant (tenant: emericks-tenant)
+🆕 Inicializando cache para emericks-tenant/emericks-tenant com 0 clientes
+✅ Cache atualizado para emericks-tenant-emericks-tenant: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'cache_initialized',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para emericks (tenant: emericks)
+🆕 Inicializando cache para emericks/emericks com 0 clientes
+✅ Cache atualizado para emericks-emericks: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'cache_initialized',
+  processamento: { sucessos: 0, erros: 0 }
+}
+📱 [CPFPoller] Buscando resultados CPF e telefones via form_submissions...
+📋 [FormMappingSync] Encontrados 5 formulário(s) no tenant emericks
+📊 [FormPoller] Tenant emericks-tenant: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks-tenant: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emerick
+📋 [FormMappingSync] CompanySlug para tenant emericks: emericks (from hms100msConfig)
+ℹ️ [CPFPoller] Nenhum resultado CPF encontrado
+ℹ️ [CPFPoller] Nenhum resultado pendente no Supabase Cliente
+✅ [CPFPoller] Polling concluído: 0 consultas processadas
+ℹ️ [CPFSync] Nenhuma consulta CPF nova para processar
+🔍 [CPFAutoCheck] Verificando leads aprovados sem consulta CPF...
+📊 [FormPoller] Tenant emerick: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emerick: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: davisemi-joias
+📊 [FormPoller] Tenant davisemi-joias: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant davisemi-joias: Nenhuma submission nova
+
+✅ [FormPoller] Polling concluído: 0 submissions enfileiradas de 4 tenant(s)
+ℹ️ [FormSync] Nenhuma submission nova para processar
+⚠️ [CPFAutoCheck] Nenhum tenant com BigDataCorp E Supabase configurados - pulando verificação
+✅ [FormMappingSync] Tenant emericks sincronizado com sucesso
+🔍 [FormMappingSync] Sincronizando tenant: emericks-tenant
+🔍 [SUPABASE] Buscando credenciais para tenant emericks-tenant...
+✅ [SUPABASE] Credenciais processadas com sucesso (tenant: emericks-tenant)
+✅ [SUPABASE] Usando credenciais do tenant: emericks-tenant
+✅ [SUPABASE] Usando cliente cache (headers)
+📋 [FormMappingSync] Encontrados 5 formulário(s) no tenant emericks-tenant
+📋 [FormMappingSync] CompanySlug para tenant emericks-tenant: emericks-tenant (from hms100msConfig)
+✅ [FormMappingSync] Tenant emericks-tenant sincronizado com sucesso
+🔍 [FormMappingSync] Sincronizando tenant: emerick
+🔍 [SUPABASE] Buscando credenciais para tenant emerick...
+✅ [SUPABASE] Credenciais processadas com sucesso (tenant: emerick)
+✅ [SUPABASE] Usando credenciais do tenant: emerick
+✅ [SUPABASE] Usando cliente cache (headers)
+📋 [FormMappingSync] Encontrados 5 formulário(s) no tenant emerick
+📋 [FormMappingSync] CompanySlug para tenant emerick: emerick (from hms100msConfig)
+✅ [FormMappingSync] Tenant emerick sincronizado com sucesso
+🔍 [FormMappingSync] Sincronizando tenant: davisemi-joias
+🔍 [SUPABASE] Buscando credenciais para tenant davisemi-joias...
+✅ [SUPABASE] Credenciais processadas com sucesso (tenant: davisemi-joias)
+✅ [SUPABASE] Usando credenciais do tenant: davisemi-joias
+✅ [SUPABASE] Usando cliente cache (headers)
+📋 [FormMappingSync] Encontrados 5 formulário(s) no tenant davisemi-joias
+📋 [FormMappingSync] CompanySlug para tenant davisemi-joias: davisemi-joias (from hms100msConfig)
+✅ [FormMappingSync] Tenant davisemi-joias sincronizado com sucesso
+✅ [FormMappingSync] Sincronização concluída: 20 formulário(s) sincronizado(s), 0 erro(s)
+04:21:48 PM [express] GET /api/health 200 in 266ms
+🔄 [FormSync] Executando sincronização de formulários do Supabase...
+🔍 [FormPoller] Iniciando polling de submissions...
+✅ [SUPABASE] 4 configuração(ões) encontrada(s) no banco de dados
+🏢 [FormPoller] Encontrados 4 tenant(s) configurados
+
+🔄 [FormPoller] Processando tenant: emericks
+🔍 Verificando novos clientes para cliente emericks (tenant: emericks)
+🔍 Iniciando detecção de novos clientes para emericks/emericks
+🔍 Verificando novos clientes para cliente emericks-tenant (tenant: emericks-tenant)
+🔍 Iniciando detecção de novos clientes para emericks-tenant/emericks-tenant
+🔍 Verificando novos clientes para cliente emerick (tenant: emerick)
+🔍 Iniciando detecção de novos clientes para emerick/emerick
+🔍 Verificando novos clientes para cliente davisemi-joias (tenant: davisemi-joias)
+🔍 Iniciando detecção de novos clientes para davisemi-joias/davisemi-joias
+✅ [MULTI-TENANT] 0 registros encontrados para emericks-tenant (tenant: emericks-tenant)
+✅ Cache atualizado para emericks-tenant-emericks-tenant: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para davisemi-joias (tenant: davisemi-joias)
+✅ Cache atualizado para davisemi-joias-davisemi-joias: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+📊 [FormPoller] Tenant emericks: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emericks-tenant
+✅ [MULTI-TENANT] 0 registros encontrados para emericks (tenant: emericks)
+✅ Cache atualizado para emericks-emericks: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para emerick (tenant: emerick)
+✅ Cache atualizado para emerick-emerick: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+📊 [FormPoller] Tenant emericks-tenant: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks-tenant: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emerick
+📊 [FormPoller] Tenant emerick: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emerick: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: davisemi-joias
+📊 [FormPoller] Tenant davisemi-joias: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant davisemi-joias: Nenhuma submission nova
+
+✅ [FormPoller] Polling concluído: 0 submissions enfileiradas de 4 tenant(s)
+ℹ️ [FormSync] Nenhuma submission nova para processar
+🔄 [CPFSync] Executando sincronização de CPF compliance...
+🔍 [CPFPoller] Iniciando polling de consultas CPF...
+📱 [CPFPoller] Buscando resultados com telefone do Supabase Cliente...
+📱 [CPFPoller] Buscando resultados CPF e telefones via form_submissions...
+ℹ️ [CPFPoller] Nenhum resultado CPF encontrado
+ℹ️ [CPFPoller] Nenhum resultado pendente no Supabase Cliente
+✅ [CPFPoller] Polling concluído: 0 consultas processadas
+ℹ️ [CPFSync] Nenhuma consulta CPF nova para processar
+🔍 [CPFAutoCheck] Verificando leads aprovados sem consulta CPF...
+⚠️ [CPFAutoCheck] Nenhum tenant com BigDataCorp E Supabase configurados - pulando verificação
+❌ [PROD-STATIC-MISS] Asset NOT found: GET /src/main.tsx
+✅ CF Cache rule matched: static for /assets/main-DLjks0BL.js
+✅ CF Cache rule matched: static for /assets/index-C49Mw3Hv.css
+✅ CF Cache rule matched: static for /assets/App-gy4Xcyqe.js
+✅ CF Cache rule matched: static for /assets/index-C2B7p8NH.js
+✅ CF Cache rule matched: static for /assets/LogoHeader-C9Ok0AVt.js
+✅ CF Cache rule matched: static for /assets/card-C8STs8RP.js
+✅ CF Cache rule matched: static for /assets/checkbox-DJph-yQ7.js
+✅ CF Cache rule matched: static for /assets/App-BKz3iPZj.css
+✅ CF Cache rule matched: static for /assets/check-CMH8aXsB.js
+✅ CF Cache rule matched: static for /assets/supabase-DI_6G2AD.js
+✅ CF Cache rule matched: static for /assets/download-DVJuVsjT.js
+✅ CF Cache rule matched: static for /assets/video-a8lo0MQu.js
+✅ CF Cache rule matched: static for /assets/file-text-ChGhHks_.js
+✅ CF Cache rule matched: static for /assets/shield-check-CzW8M3Fj.js
+✅ CF Cache rule matched: static for /assets/upload-DP_O5_35.js
+✅ CF Cache rule matched: static for /assets/trending-up-CH3bdJGs.js
+✅ CF Cache rule matched: static for /assets/trophy-BEnCH9Hk.js
+✅ CF Cache rule matched: static for /assets/copy-DdQJxXio.js
+✅ CF Cache rule matched: static for /assets/input-DUZNHCpW.js
+✅ CF Cache rule matched: static for /assets/map-pin-SIE4Lyky.js
+✅ CF Cache rule matched: static for /assets/colorScheme-Dg89g7gw.js
+✅ CF Cache rule matched: static for /assets/camera-D_Nf6PMj.js
+✅ CF Cache rule matched: static for /assets/nexus-logo-full-BkkrHIlv.png
+🔄 [FormSync] Executando sincronização de formulários do Supabase...
+🔍 [FormPoller] Iniciando polling de submissions...
+✅ [SUPABASE] 4 configuração(ões) encontrada(s) no banco de dados
+🏢 [FormPoller] Encontrados 4 tenant(s) configurados
+
+🔄 [FormPoller] Processando tenant: emericks
+🔍 Verificando novos clientes para cliente emericks (tenant: emericks)
+🔍 Iniciando detecção de novos clientes para emericks/emericks
+🔍 Verificando novos clientes para cliente emericks-tenant (tenant: emericks-tenant)
+🔍 Iniciando detecção de novos clientes para emericks-tenant/emericks-tenant
+🔍 Verificando novos clientes para cliente emerick (tenant: emerick)
+🔍 Iniciando detecção de novos clientes para emerick/emerick
+🔍 Verificando novos clientes para cliente davisemi-joias (tenant: davisemi-joias)
+🔍 Iniciando detecção de novos clientes para davisemi-joias/davisemi-joias
+✅ CF Cache rule matched: static for /assets/AssinaturaClientPage-D3cfaR1g.js
+✅ [MULTI-TENANT] 0 registros encontrados para emericks (tenant: emericks)
+✅ Cache atualizado para emericks-emericks: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+📊 [FormPoller] Tenant emericks: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emericks-tenant
+✅ [MULTI-TENANT] 0 registros encontrados para emerick (tenant: emerick)
+✅ Cache atualizado para emerick-emerick: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para emericks-tenant (tenant: emericks-tenant)
+✅ Cache atualizado para emericks-tenant-emericks-tenant: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para davisemi-joias (tenant: davisemi-joias)
+✅ Cache atualizado para davisemi-joias-davisemi-joias: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+📊 [FormPoller] Tenant emericks-tenant: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks-tenant: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emerick
+📊 [FormPoller] Tenant emerick: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emerick: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: davisemi-joias
+📊 [FormPoller] Tenant davisemi-joias: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant davisemi-joias: Nenhuma submission nova
+
+✅ [FormPoller] Polling concluído: 0 submissions enfileiradas de 4 tenant(s)
+ℹ️ [FormSync] Nenhuma submission nova para processar
+🔍 [AUTH] Login direto via admin_users para: contato@emericks.com.br
+🔍 [AUTH] Query admin_users - error: none, found: true
+🔍 [AUTH] handleDirectLogin - email: contato@emericks.com.br, has password_hash: true, hash prefix: $2b$12$mwC, tenant_id: emericks
+🔍 [AUTH] bcrypt.compare result: true
+✅ [AutoSlug] Company slug set to "emericks" for tenant emericks (from company_name: "Emericks")
+✅ [AUTH] Login direto bem-sucedido para: contato@emericks.com.br (tenant: emericks)
+04:25:47 PM [express] POST /api/auth/login 200 in 890ms
+🔐 [CONFIG] Autenticado via Sessão para tenant: emericks
+🔍 [SUPABASE] Buscando credenciais para tenant: emericks
+🔍 [SUPABASE-STRICT] Buscando credenciais APENAS para tenant emericks...
+04:25:47 PM [express] ⚠️  VAPID keys geradas para desenvolvimento. Configure as env vars para produção:
+04:25:47 PM [express] VAPID_PUBLIC_KEY=BDGrLqAG7GVtky3eh2A_ldIy5XaX7W39qGWN-A2phA28W0n88jNZy7yMg7WkopfYQn5r3wH4Bs0biJADLNY7JjY
+04:25:47 PM [express] VAPID_PRIVATE_KEY=a0punqwKJVEwaw9_vCP11nTAx2wzQEoBc9vRa0tucYE
+04:25:47 PM [express] ℹ️  Firebase não configurado - usando Web Push API
+04:25:47 PM [express] GET /api/auth/check-session 200 in 51ms
+04:25:47 PM [express] GET /api/notifications/vapid-public-key 200 in 36ms
+✅ [SUPABASE] Credenciais processadas com sucesso (tenant: emericks)
+✅ [SUPABASE-STRICT] Credenciais encontradas para tenant: emericks
+✅ [SUPABASE-STRICT] Credenciais encontradas para tenant: emericks
+04:25:47 PM [express] GET /api/config/supabase/credentials 200 in 58ms
+04:25:47 PM [express] GET /api/notifications/vapid-public-key 304 in 2ms
+04:25:47 PM [express] GET /api/wallet/balance 304 in 36ms
+04:25:47 PM [express] ℹ️ [NotificationService] Tabela notification_settings não existe - retornando defaults
+04:25:47 PM [express] GET /api/notifications/settings 200 in 185ms
+04:25:47 PM [express] GET /api/notifications/history 304 in 195ms
+✅ CF Cache rule matched: api for /api/forms
+📡 [GET /api/forms] Usando Supabase dos headers: https://semijoias-supabase.y98g1d.easypanel.host/rest/v1
+🔍 [GET /api/forms] Buscando formulários no Supabase...
+[GET /api/company-slug] Found in hms_100ms_config: { companyName: 'Emericks', companySlug: 'emericks' }
+[GET /api/company-slug] Returning: { companyName: 'Emericks', companySlug: 'emericks' }
+04:25:51 PM [express] GET /api/company-slug 304 in 29ms
+✅ [FORMS/ativo] Formulário ativo encontrado no PostgreSQL local: 1917cf58-cee8-44bb-b235-9936ecfdd7f1
+✅ [FORMS/ativo] Company slug from tenantSlug: emericks
+✅ [FORMS] Usando Supabase do tenant: emericks
+🔍 [GET /api/forms] Buscando formulários no PostgreSQL local (fallback)...
+04:25:56 PM [express] GET /api/formularios/ativo 200 in 4831ms
+✅ [GET /api/forms] Retornando 0 formulário(s)
+📦 CF Cache-Control: max-age=300, s-maxage=600, stale-while-revalidate=300, public
+04:25:56 PM [express] GET /api/forms 304 in 4956ms
+04:26:00 PM [express] GET /api/auth/session/tenant 200 in 2ms
+[PIPELINE-DEBUG] 2026-03-03T19:26:00.217Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:00 PM [express] GET /api/leads-pipeline/emericks 202 in 141ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:26:02.369Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:02 PM [express] GET /api/leads-pipeline/emericks 202 in 50ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:26:04.428Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:04 PM [express] GET /api/leads-pipeline/emericks 202 in 89ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:26:06.534Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:06 PM [express] GET /api/leads-pipeline/emericks 202 in 119ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:26:08.664Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:08 PM [express] GET /api/leads-pipeline/emericks 202 in 158ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:26:10.832Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:10 PM [express] GET /api/leads-pipeline/emericks 202 in 116ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:26:12.957Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:13 PM [express] GET /api/leads-pipeline/emericks 202 in 61ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:26:15.041Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:15 PM [express] GET /api/leads-pipeline/emericks 202 in 68ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:26:18.052Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:18 PM [express] GET /api/leads-pipeline/emericks 202 in 71ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:26:21.060Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:21 PM [express] GET /api/leads-pipeline/emericks 202 in 53ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:26:24.047Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:24 PM [express] GET /api/leads-pipeline/emericks 202 in 59ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:26:27.042Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:27 PM [express] GET /api/leads-pipeline/emericks 202 in 49ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:26:29.381Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:29 PM [express] GET /api/leads-pipeline/emericks 202 in 47ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:26:32.092Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:32 PM [express] GET /api/leads-pipeline/emericks 202 in 67ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:26:35.047Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:35 PM [express] GET /api/leads-pipeline/emericks 202 in 44ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:26:38.050Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:38 PM [express] GET /api/leads-pipeline/emericks 202 in 38ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+🔄 [FormMappingSync] Iniciando sincronização de formulários do Supabase...
+
+╔════════════════════════════════════════╗
+║  🔍 LIMIT MONITOR - FREE TIER         ║
+╚════════════════════════════════════════╝
+
+
+╔════════════════════════════════════════════════════════════╗
+║  🧹 LIMPEZA DE CACHE LOCAL - INICIANDO                    ║
+╚════════════════════════════════════════════════════════════╝
+📅 Data: 2026-03-03T19:26:40.485Z
+📊 Limites: forms=7d, submissions=7d, leads=7d, reunioes=30d, notifications=14d
+🏢 Encontrados 4 tenant(s) configurados
+
+🔄 [CacheCleanup] Processando tenant: emericks
+✅ [FormMappingSync] Tabela form_tenant_mapping verificada/criada
+📊 Service Status:
+
+  🟢 Redis (Monthly): 0.0% (0/500000)
+  🟢 Supabase Bandwidth: 0.0% (0.00MB/2048.00MB)
+
+────────────────────────────────────────
+
+📤 [CacheCleanup] Sync pré-limpeza: 0 reuniões sincronizadas, 0 erros
+📊 [FormMappingSync] Encontrados 4 tenant(s) para sincronizar
+🔍 [FormMappingSync] Sincronizando tenant: emericks
+🔍 [SUPABASE] Buscando credenciais para tenant emericks...
+✅ [SUPABASE] Credenciais processadas com sucesso (tenant: emericks)
+✅ [SUPABASE] Usando credenciais do tenant: emericks
+✅ [SUPABASE] Usando cliente cache (headers)
+📋 [FormMappingSync] Encontrados 5 formulário(s) no tenant emericks
+📋 [FormMappingSync] CompanySlug para tenant emericks: emericks (from hms100msConfig)
+[PIPELINE-DEBUG] 2026-03-03T19:26:41.053Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+  📋 form_tenant_mapping: 0 deletados, 0 mantidos (erro: Cannot convert undefined or null to object)
+
+🔄 [CacheCleanup] Processando tenant: emericks-tenant
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:41 PM [express] GET /api/leads-pipeline/emericks 202 in 82ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+📤 [CacheCleanup] Sync pré-limpeza: 0 reuniões sincronizadas, 0 erros
+✅ [FormMappingSync] Tenant emericks sincronizado com sucesso
+🔍 [FormMappingSync] Sincronizando tenant: emericks-tenant
+  📋 form_tenant_mapping: 0 deletados, 0 mantidos (erro: Cannot convert undefined or null to object)
+
+🔄 [CacheCleanup] Processando tenant: emerick
+🔍 [SUPABASE] Buscando credenciais para tenant emericks-tenant...
+📤 [CacheCleanup] Sync pré-limpeza: 0 reuniões sincronizadas, 0 erros
+✅ [SUPABASE] Credenciais processadas com sucesso (tenant: emericks-tenant)
+✅ [SUPABASE] Usando credenciais do tenant: emericks-tenant
+✅ [SUPABASE] Usando cliente cache (headers)
+  📋 form_tenant_mapping: 0 deletados, 0 mantidos (erro: Cannot convert undefined or null to object)
+
+🔄 [CacheCleanup] Processando tenant: davisemi-joias
+📋 [FormMappingSync] Encontrados 5 formulário(s) no tenant emericks-tenant
+📤 [CacheCleanup] Sync pré-limpeza: 0 reuniões sincronizadas, 0 erros
+📋 [FormMappingSync] CompanySlug para tenant emericks-tenant: emericks-tenant (from hms100msConfig)
+  📋 form_tenant_mapping: 0 deletados, 0 mantidos (erro: Cannot convert undefined or null to object)
+
+╔════════════════════════════════════════════════════════════╗
+║  🧹 LIMPEZA CONCLUÍDA                                     ║
+╚════════════════════════════════════════════════════════════╝
+📊 Total: 0 registros limpos, 0 mantidos, 4 erros
+✅ [FormMappingSync] Tenant emericks-tenant sincronizado com sucesso
+🔍 [FormMappingSync] Sincronizando tenant: emerick
+🔍 [SUPABASE] Buscando credenciais para tenant emerick...
+✅ [SUPABASE] Credenciais processadas com sucesso (tenant: emerick)
+✅ [SUPABASE] Usando credenciais do tenant: emerick
+✅ [SUPABASE] Usando cliente cache (headers)
+📋 [FormMappingSync] Encontrados 5 formulário(s) no tenant emerick
+📋 [FormMappingSync] CompanySlug para tenant emerick: emerick (from hms100msConfig)
+✅ [FormMappingSync] Tenant emerick sincronizado com sucesso
+🔍 [FormMappingSync] Sincronizando tenant: davisemi-joias
+🔍 [SUPABASE] Buscando credenciais para tenant davisemi-joias...
+✅ [SUPABASE] Credenciais processadas com sucesso (tenant: davisemi-joias)
+✅ [SUPABASE] Usando credenciais do tenant: davisemi-joias
+✅ [SUPABASE] Usando cliente cache (headers)
+📋 [FormMappingSync] Encontrados 5 formulário(s) no tenant davisemi-joias
+📋 [FormMappingSync] CompanySlug para tenant davisemi-joias: davisemi-joias (from hms100msConfig)
+✅ [FormMappingSync] Tenant davisemi-joias sincronizado com sucesso
+✅ [FormMappingSync] Sincronização concluída: 20 formulário(s) sincronizado(s), 0 erro(s)
+[PIPELINE-DEBUG] 2026-03-03T19:26:44.052Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:44 PM [express] GET /api/leads-pipeline/emericks 202 in 41ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:26:47.045Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:47 PM [express] GET /api/leads-pipeline/emericks 202 in 84ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:26:50.055Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:50 PM [express] GET /api/leads-pipeline/emericks 202 in 38ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:26:53.053Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:26:53 PM [express] GET /api/leads-pipeline/emericks 202 in 93ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:27:06.126Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:27:08 PM [express] GET /api/leads-pipeline/emericks 202 in 2017ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[PIPELINE-DEBUG] 2026-03-03T19:27:10.162Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:27:10 PM [express] GET /api/leads-pipeline/emericks 202 in 43ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:27:12.215Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:27:13 PM [express] GET /api/leads-pipeline/emericks 202 in 1104ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:27:16.054Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:27:16 PM [express] GET /api/leads-pipeline/emericks 202 in 199ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:27:19.064Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:27:19 PM [express] GET /api/leads-pipeline/emericks 202 in 100ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:27:22.052Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:27:22 PM [express] GET /api/leads-pipeline/emericks 202 in 108ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:27:25.047Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:27:25 PM [express] GET /api/leads-pipeline/emericks 202 in 102ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:27:28.046Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:27:28 PM [express] GET /api/leads-pipeline/emericks 202 in 68ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:27:31.051Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:27:31 PM [express] GET /api/leads-pipeline/emericks 202 in 37ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:27:34.049Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:27:34 PM [express] GET /api/leads-pipeline/emericks 202 in 80ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:27:37.050Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:27:37 PM [express] GET /api/leads-pipeline/emericks 202 in 119ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:27:40.054Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:27:40 PM [express] GET /api/leads-pipeline/emericks 202 in 120ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+🔄 [CPFSync] Executando sincronização de CPF compliance...
+🔍 [CPFPoller] Iniciando polling de consultas CPF...
+📱 [CPFPoller] Buscando resultados com telefone do Supabase Cliente...
+🔄 [FormSync] Executando sincronização de formulários do Supabase...
+🔍 [FormPoller] Iniciando polling de submissions...
+📱 [CPFPoller] Buscando resultados CPF e telefones via form_submissions...
+ℹ️ [CPFPoller] Nenhum resultado CPF encontrado
+ℹ️ [CPFPoller] Nenhum resultado pendente no Supabase Cliente
+✅ [CPFPoller] Polling concluído: 0 consultas processadas
+ℹ️ [CPFSync] Nenhuma consulta CPF nova para processar
+🔍 [CPFAutoCheck] Verificando leads aprovados sem consulta CPF...
+✅ [SUPABASE] 4 configuração(ões) encontrada(s) no banco de dados
+🏢 [FormPoller] Encontrados 4 tenant(s) configurados
+
+🔄 [FormPoller] Processando tenant: emericks
+📊 [FormPoller] Tenant emericks: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emericks-tenant
+📊 [FormPoller] Tenant emericks-tenant: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks-tenant: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emerick
+🔍 Verificando novos clientes para cliente emericks (tenant: emericks)
+🔍 Iniciando detecção de novos clientes para emericks/emericks
+📊 [FormPoller] Tenant emerick: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emerick: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: davisemi-joias
+✅ [MULTI-TENANT] 0 registros encontrados para emericks (tenant: emericks)
+✅ Cache atualizado para emericks-emericks: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+🔍 Verificando novos clientes para cliente emericks-tenant (tenant: emericks-tenant)
+🔍 Iniciando detecção de novos clientes para emericks-tenant/emericks-tenant
+⚠️ [CPFAutoCheck] Nenhum tenant com BigDataCorp E Supabase configurados - pulando verificação
+🔍 Verificando novos clientes para cliente emerick (tenant: emerick)
+🔍 Iniciando detecção de novos clientes para emerick/emerick
+📊 [FormPoller] Tenant davisemi-joias: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant davisemi-joias: Nenhuma submission nova
+
+✅ [FormPoller] Polling concluído: 0 submissions enfileiradas de 4 tenant(s)
+ℹ️ [FormSync] Nenhuma submission nova para processar
+✅ [MULTI-TENANT] 0 registros encontrados para emericks-tenant (tenant: emericks-tenant)
+✅ Cache atualizado para emericks-tenant-emericks-tenant: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+🔍 Verificando novos clientes para cliente davisemi-joias (tenant: davisemi-joias)
+🔍 Iniciando detecção de novos clientes para davisemi-joias/davisemi-joias
+✅ [MULTI-TENANT] 0 registros encontrados para emerick (tenant: emerick)
+✅ Cache atualizado para emerick-emerick: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para davisemi-joias (tenant: davisemi-joias)
+✅ Cache atualizado para davisemi-joias-davisemi-joias: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+[PIPELINE-DEBUG] 2026-03-03T19:27:43.049Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:27:43 PM [express] GET /api/leads-pipeline/emericks 202 in 54ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:27:46.043Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:27:46 PM [express] GET /api/leads-pipeline/emericks 202 in 146ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:27:49.046Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:27:49 PM [express] GET /api/leads-pipeline/emericks 202 in 89ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:27:52.048Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:27:52 PM [express] GET /api/leads-pipeline/emericks 202 in 123ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:27:55.045Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:27:55 PM [express] GET /api/leads-pipeline/emericks 202 in 59ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:27:58.044Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:27:58 PM [express] GET /api/leads-pipeline/emericks 202 in 51ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:28:01.044Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:28:01 PM [express] GET /api/leads-pipeline/emericks 202 in 56ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:28:04.038Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:28:04 PM [express] GET /api/leads-pipeline/emericks 202 in 63ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+[PIPELINE-DEBUG] 2026-03-03T19:28:07.045Z GET /api/leads-pipeline/emericks - Request received
+[LeadsPipeline] No cache - starting data fetch...
+🔄 [LeadsPipeline] Buscando ALL 5 tabelas para tenant: emericks
+✅ dados_cliente: 0 rows
+✅ form_compliance_tracking: 0 rows
+✅ form_submissions: 0 rows
+✅ cpf_compliance_results: 0 rows
+✅ reunioes: 0 rows
+✅ [LeadsPipeline] Total merged: 0 leads únicos de 5 tabelas (tenant: emericks)
+📊 Distribuição: {}
+[LeadsCache] Initial load: 0 leads cached via fetchLeadsFromSupabase
+[LeadsPipeline] Fresh data loaded (0 leads)
+[LeadsPipeline] Returning 202 - data still loading
+[PIPELINE-DEBUG] res.end called
+[PIPELINE-DEBUG] writeHead called with status 202
+[PIPELINE-DEBUG] Response finished successfully
+04:28:07 PM [express] GET /api/leads-pipeline/emericks 202 in 123ms
+[PIPELINE-DEBUG] Response closed (client disconnected?)
+🔄 [FormSync] Executando sincronização de formulários do Supabase...
+🔍 [FormPoller] Iniciando polling de submissions...
+✅ [SUPABASE] 4 configuração(ões) encontrada(s) no banco de dados
+🏢 [FormPoller] Encontrados 4 tenant(s) configurados
+
+🔄 [FormPoller] Processando tenant: emericks
+🔍 Verificando novos clientes para cliente emericks (tenant: emericks)
+🔍 Iniciando detecção de novos clientes para emericks/emericks
+🔍 Verificando novos clientes para cliente emericks-tenant (tenant: emericks-tenant)
+🔍 Iniciando detecção de novos clientes para emericks-tenant/emericks-tenant
+🔍 Verificando novos clientes para cliente emerick (tenant: emerick)
+🔍 Iniciando detecção de novos clientes para emerick/emerick
+🔍 Verificando novos clientes para cliente davisemi-joias (tenant: davisemi-joias)
+🔍 Iniciando detecção de novos clientes para davisemi-joias/davisemi-joias
+✅ [MULTI-TENANT] 0 registros encontrados para emericks-tenant (tenant: emericks-tenant)
+✅ Cache atualizado para emericks-tenant-emericks-tenant: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+📊 [FormPoller] Tenant emericks: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emericks-tenant
+✅ [MULTI-TENANT] 0 registros encontrados para emericks (tenant: emericks)
+✅ Cache atualizado para emericks-emericks: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para emerick (tenant: emerick)
+✅ Cache atualizado para emerick-emerick: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para davisemi-joias (tenant: davisemi-joias)
+✅ Cache atualizado para davisemi-joias-davisemi-joias: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+📊 [FormPoller] Tenant emericks-tenant: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks-tenant: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emerick
+📊 [FormPoller] Tenant emerick: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emerick: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: davisemi-joias
+📊 [FormPoller] Tenant davisemi-joias: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant davisemi-joias: Nenhuma submission nova
+
+✅ [FormPoller] Polling concluído: 0 submissions enfileiradas de 4 tenant(s)
+ℹ️ [FormSync] Nenhuma submission nova para processar
+🔄 [CPFSync] Executando sincronização de CPF compliance...
+🔍 [CPFPoller] Iniciando polling de consultas CPF...
+📱 [CPFPoller] Buscando resultados com telefone do Supabase Cliente...
+📱 [CPFPoller] Buscando resultados CPF e telefones via form_submissions...
+ℹ️ [CPFPoller] Nenhum resultado CPF encontrado
+ℹ️ [CPFPoller] Nenhum resultado pendente no Supabase Cliente
+✅ [CPFPoller] Polling concluído: 0 consultas processadas
+ℹ️ [CPFSync] Nenhuma consulta CPF nova para processar
+🔍 [CPFAutoCheck] Verificando leads aprovados sem consulta CPF...
+⚠️ [CPFAutoCheck] Nenhum tenant com BigDataCorp E Supabase configurados - pulando verificação
+🔄 [FormMappingSync] Iniciando sincronização de formulários do Supabase...
+
+╔════════════════════════════════════════╗
+║  🔍 LIMIT MONITOR - FREE TIER         ║
+╚════════════════════════════════════════╝
+
+🔄 [FormSync] Executando sincronização de formulários do Supabase...
+🔍 [FormPoller] Iniciando polling de submissions...
+✅ [FormMappingSync] Tabela form_tenant_mapping verificada/criada
+✅ [SUPABASE] 4 configuração(ões) encontrada(s) no banco de dados
+🏢 [FormPoller] Encontrados 4 tenant(s) configurados
+
+🔄 [FormPoller] Processando tenant: emericks
+🔍 Verificando novos clientes para cliente emericks (tenant: emericks)
+🔍 Iniciando detecção de novos clientes para emericks/emericks
+📊 [FormMappingSync] Encontrados 4 tenant(s) para sincronizar
+📊 Service Status:
+
+  🟢 Redis (Monthly): 0.0% (0/500000)
+  🟢 Supabase Bandwidth: 0.0% (0.00MB/2048.00MB)
+
+────────────────────────────────────────
+
+🔍 Verificando novos clientes para cliente emericks-tenant (tenant: emericks-tenant)
+🔍 Iniciando detecção de novos clientes para emericks-tenant/emericks-tenant
+🔍 [FormMappingSync] Sincronizando tenant: emericks
+🔍 Verificando novos clientes para cliente emerick (tenant: emerick)
+🔍 Iniciando detecção de novos clientes para emerick/emerick
+🔍 [SUPABASE] Buscando credenciais para tenant emericks...
+🔍 Verificando novos clientes para cliente davisemi-joias (tenant: davisemi-joias)
+🔍 Iniciando detecção de novos clientes para davisemi-joias/davisemi-joias
+✅ [SUPABASE] Credenciais processadas com sucesso (tenant: emericks)
+✅ [SUPABASE] Usando credenciais do tenant: emericks
+✅ [SUPABASE] Usando cliente cache (headers)
+✅ [MULTI-TENANT] 0 registros encontrados para emericks (tenant: emericks)
+✅ Cache atualizado para emericks-emericks: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para emerick (tenant: emerick)
+✅ Cache atualizado para emerick-emerick: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+📊 [FormPoller] Tenant emericks: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emericks-tenant
+📋 [FormMappingSync] Encontrados 5 formulário(s) no tenant emericks
+📋 [FormMappingSync] CompanySlug para tenant emericks: emericks (from hms100msConfig)
+✅ [MULTI-TENANT] 0 registros encontrados para davisemi-joias (tenant: davisemi-joias)
+✅ Cache atualizado para davisemi-joias-davisemi-joias: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para emericks-tenant (tenant: emericks-tenant)
+✅ Cache atualizado para emericks-tenant-emericks-tenant: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+📊 [FormPoller] Tenant emericks-tenant: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks-tenant: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emerick
+📊 [FormPoller] Tenant emerick: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emerick: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: davisemi-joias
+📊 [FormPoller] Tenant davisemi-joias: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant davisemi-joias: Nenhuma submission nova
+
+✅ [FormPoller] Polling concluído: 0 submissions enfileiradas de 4 tenant(s)
+ℹ️ [FormSync] Nenhuma submission nova para processar
+✅ [FormMappingSync] Tenant emericks sincronizado com sucesso
+🔍 [FormMappingSync] Sincronizando tenant: emericks-tenant
+🔍 [SUPABASE] Buscando credenciais para tenant emericks-tenant...
+✅ [SUPABASE] Credenciais processadas com sucesso (tenant: emericks-tenant)
+✅ [SUPABASE] Usando credenciais do tenant: emericks-tenant
+✅ [SUPABASE] Usando cliente cache (headers)
+📋 [FormMappingSync] Encontrados 5 formulário(s) no tenant emericks-tenant
+📋 [FormMappingSync] CompanySlug para tenant emericks-tenant: emericks-tenant (from hms100msConfig)
+✅ [FormMappingSync] Tenant emericks-tenant sincronizado com sucesso
+🔍 [FormMappingSync] Sincronizando tenant: emerick
+🔍 [SUPABASE] Buscando credenciais para tenant emerick...
+✅ [SUPABASE] Credenciais processadas com sucesso (tenant: emerick)
+✅ [SUPABASE] Usando credenciais do tenant: emerick
+✅ [SUPABASE] Usando cliente cache (headers)
+📋 [FormMappingSync] Encontrados 5 formulário(s) no tenant emerick
+📋 [FormMappingSync] CompanySlug para tenant emerick: emerick (from hms100msConfig)
+✅ [FormMappingSync] Tenant emerick sincronizado com sucesso
+🔍 [FormMappingSync] Sincronizando tenant: davisemi-joias
+🔍 [SUPABASE] Buscando credenciais para tenant davisemi-joias...
+✅ [SUPABASE] Credenciais processadas com sucesso (tenant: davisemi-joias)
+✅ [SUPABASE] Usando credenciais do tenant: davisemi-joias
+✅ [SUPABASE] Usando cliente cache (headers)
+📋 [FormMappingSync] Encontrados 5 formulário(s) no tenant davisemi-joias
+📋 [FormMappingSync] CompanySlug para tenant davisemi-joias: davisemi-joias (from hms100msConfig)
+✅ [FormMappingSync] Tenant davisemi-joias sincronizado com sucesso
+✅ [FormMappingSync] Sincronização concluída: 20 formulário(s) sincronizado(s), 0 erro(s)
+🔄 [CPFSync] Executando sincronização de CPF compliance...
+🔍 [CPFPoller] Iniciando polling de consultas CPF...
+📱 [CPFPoller] Buscando resultados com telefone do Supabase Cliente...
+🔄 [FormSync] Executando sincronização de formulários do Supabase...
+🔍 [FormPoller] Iniciando polling de submissions...
+✅ [SUPABASE] 4 configuração(ões) encontrada(s) no banco de dados
+🏢 [FormPoller] Encontrados 4 tenant(s) configurados
+
+🔄 [FormPoller] Processando tenant: emericks
+🔍 Verificando novos clientes para cliente emericks (tenant: emericks)
+🔍 Iniciando detecção de novos clientes para emericks/emericks
+🔍 Verificando novos clientes para cliente emericks-tenant (tenant: emericks-tenant)
+🔍 Iniciando detecção de novos clientes para emericks-tenant/emericks-tenant
+🔍 Verificando novos clientes para cliente emerick (tenant: emerick)
+🔍 Iniciando detecção de novos clientes para emerick/emerick
+🔍 Verificando novos clientes para cliente davisemi-joias (tenant: davisemi-joias)
+🔍 Iniciando detecção de novos clientes para davisemi-joias/davisemi-joias
+📊 [FormPoller] Tenant emericks: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emericks-tenant
+📱 [CPFPoller] Buscando resultados CPF e telefones via form_submissions...
+✅ [MULTI-TENANT] 0 registros encontrados para davisemi-joias (tenant: davisemi-joias)
+✅ Cache atualizado para davisemi-joias-davisemi-joias: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+ℹ️ [CPFPoller] Nenhum resultado CPF encontrado
+ℹ️ [CPFPoller] Nenhum resultado pendente no Supabase Cliente
+✅ [CPFPoller] Polling concluído: 0 consultas processadas
+ℹ️ [CPFSync] Nenhuma consulta CPF nova para processar
+🔍 [CPFAutoCheck] Verificando leads aprovados sem consulta CPF...
+✅ [MULTI-TENANT] 0 registros encontrados para emericks (tenant: emericks)
+✅ Cache atualizado para emericks-emericks: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para emericks-tenant (tenant: emericks-tenant)
+✅ Cache atualizado para emericks-tenant-emericks-tenant: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para emerick (tenant: emerick)
+✅ Cache atualizado para emerick-emerick: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+⚠️ [CPFAutoCheck] Nenhum tenant com BigDataCorp E Supabase configurados - pulando verificação
+📊 [FormPoller] Tenant emericks-tenant: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks-tenant: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emerick
+📊 [FormPoller] Tenant emerick: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emerick: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: davisemi-joias
+📊 [FormPoller] Tenant davisemi-joias: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant davisemi-joias: Nenhuma submission nova
+
+✅ [FormPoller] Polling concluído: 0 submissions enfileiradas de 4 tenant(s)
+ℹ️ [FormSync] Nenhuma submission nova para processar
+🔄 [FormSync] Executando sincronização de formulários do Supabase...
+🔍 [FormPoller] Iniciando polling de submissions...
+✅ [SUPABASE] 4 configuração(ões) encontrada(s) no banco de dados
+🏢 [FormPoller] Encontrados 4 tenant(s) configurados
+
+🔄 [FormPoller] Processando tenant: emericks
+🔍 Verificando novos clientes para cliente emericks (tenant: emericks)
+🔍 Iniciando detecção de novos clientes para emericks/emericks
+🔍 Verificando novos clientes para cliente emericks-tenant (tenant: emericks-tenant)
+🔍 Iniciando detecção de novos clientes para emericks-tenant/emericks-tenant
+🔍 Verificando novos clientes para cliente emerick (tenant: emerick)
+🔍 Iniciando detecção de novos clientes para emerick/emerick
+🔍 Verificando novos clientes para cliente davisemi-joias (tenant: davisemi-joias)
+🔍 Iniciando detecção de novos clientes para davisemi-joias/davisemi-joias
+✅ [MULTI-TENANT] 0 registros encontrados para emerick (tenant: emerick)
+✅ Cache atualizado para emerick-emerick: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para emericks-tenant (tenant: emericks-tenant)
+✅ Cache atualizado para emericks-tenant-emericks-tenant: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para davisemi-joias (tenant: davisemi-joias)
+✅ Cache atualizado para davisemi-joias-davisemi-joias: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+📊 [FormPoller] Tenant emericks: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emericks-tenant
+✅ [MULTI-TENANT] 0 registros encontrados para emericks (tenant: emericks)
+✅ Cache atualizado para emericks-emericks: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+📊 [FormPoller] Tenant emericks-tenant: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks-tenant: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emerick
+📊 [FormPoller] Tenant emerick: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emerick: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: davisemi-joias
+📊 [FormPoller] Tenant davisemi-joias: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant davisemi-joias: Nenhuma submission nova
+
+✅ [FormPoller] Polling concluído: 0 submissions enfileiradas de 4 tenant(s)
+ℹ️ [FormSync] Nenhuma submission nova para processar
+🔄 [FormMappingSync] Iniciando sincronização de formulários do Supabase...
+🔄 [CPFSync] Executando sincronização de CPF compliance...
+🔍 [CPFPoller] Iniciando polling de consultas CPF...
+📱 [CPFPoller] Buscando resultados com telefone do Supabase Cliente...
+
+╔════════════════════════════════════════╗
+║  🔍 LIMIT MONITOR - FREE TIER         ║
+╚════════════════════════════════════════╝
+
+✅ [FormMappingSync] Tabela form_tenant_mapping verificada/criada
+📊 Service Status:
+
+  🟢 Redis (Monthly): 0.0% (0/500000)
+  🟢 Supabase Bandwidth: 0.0% (0.00MB/2048.00MB)
+
+────────────────────────────────────────
+
+📊 [FormMappingSync] Encontrados 4 tenant(s) para sincronizar
+🔍 [FormMappingSync] Sincronizando tenant: emericks
+🔍 [SUPABASE] Buscando credenciais para tenant emericks...
+✅ [SUPABASE] Credenciais processadas com sucesso (tenant: emericks)
+✅ [SUPABASE] Usando credenciais do tenant: emericks
+✅ [SUPABASE] Usando cliente cache (headers)
+📱 [CPFPoller] Buscando resultados CPF e telefones via form_submissions...
+📋 [FormMappingSync] Encontrados 5 formulário(s) no tenant emericks
+📋 [FormMappingSync] CompanySlug para tenant emericks: emericks (from hms100msConfig)
+ℹ️ [CPFPoller] Nenhum resultado CPF encontrado
+ℹ️ [CPFPoller] Nenhum resultado pendente no Supabase Cliente
+✅ [CPFPoller] Polling concluído: 0 consultas processadas
+ℹ️ [CPFSync] Nenhuma consulta CPF nova para processar
+🔍 [CPFAutoCheck] Verificando leads aprovados sem consulta CPF...
+⚠️ [CPFAutoCheck] Nenhum tenant com BigDataCorp E Supabase configurados - pulando verificação
+✅ [FormMappingSync] Tenant emericks sincronizado com sucesso
+🔍 [FormMappingSync] Sincronizando tenant: emericks-tenant
+🔍 [SUPABASE] Buscando credenciais para tenant emericks-tenant...
+✅ [SUPABASE] Credenciais processadas com sucesso (tenant: emericks-tenant)
+✅ [SUPABASE] Usando credenciais do tenant: emericks-tenant
+✅ [SUPABASE] Usando cliente cache (headers)
+📋 [FormMappingSync] Encontrados 5 formulário(s) no tenant emericks-tenant
+📋 [FormMappingSync] CompanySlug para tenant emericks-tenant: emericks-tenant (from hms100msConfig)
+✅ [FormMappingSync] Tenant emericks-tenant sincronizado com sucesso
+🔍 [FormMappingSync] Sincronizando tenant: emerick
+🔍 [SUPABASE] Buscando credenciais para tenant emerick...
+✅ [SUPABASE] Credenciais processadas com sucesso (tenant: emerick)
+✅ [SUPABASE] Usando credenciais do tenant: emerick
+✅ [SUPABASE] Usando cliente cache (headers)
+📋 [FormMappingSync] Encontrados 5 formulário(s) no tenant emerick
+📋 [FormMappingSync] CompanySlug para tenant emerick: emerick (from hms100msConfig)
+✅ [FormMappingSync] Tenant emerick sincronizado com sucesso
+🔍 [FormMappingSync] Sincronizando tenant: davisemi-joias
+🔍 [SUPABASE] Buscando credenciais para tenant davisemi-joias...
+✅ [SUPABASE] Credenciais processadas com sucesso (tenant: davisemi-joias)
+✅ [SUPABASE] Usando credenciais do tenant: davisemi-joias
+✅ [SUPABASE] Usando cliente cache (headers)
+📋 [FormMappingSync] Encontrados 5 formulário(s) no tenant davisemi-joias
+📋 [FormMappingSync] CompanySlug para tenant davisemi-joias: davisemi-joias (from hms100msConfig)
+✅ [FormMappingSync] Tenant davisemi-joias sincronizado com sucesso
+✅ [FormMappingSync] Sincronização concluída: 20 formulário(s) sincronizado(s), 0 erro(s)
+🔄 [FormSync] Executando sincronização de formulários do Supabase...
+🔍 [FormPoller] Iniciando polling de submissions...
+✅ [SUPABASE] 4 configuração(ões) encontrada(s) no banco de dados
+🏢 [FormPoller] Encontrados 4 tenant(s) configurados
+
+🔄 [FormPoller] Processando tenant: emericks
+🔍 Verificando novos clientes para cliente emericks (tenant: emericks)
+🔍 Iniciando detecção de novos clientes para emericks/emericks
+🔍 Verificando novos clientes para cliente emericks-tenant (tenant: emericks-tenant)
+🔍 Iniciando detecção de novos clientes para emericks-tenant/emericks-tenant
+🔍 Verificando novos clientes para cliente emerick (tenant: emerick)
+🔍 Iniciando detecção de novos clientes para emerick/emerick
+🔍 Verificando novos clientes para cliente davisemi-joias (tenant: davisemi-joias)
+🔍 Iniciando detecção de novos clientes para davisemi-joias/davisemi-joias
+✅ [MULTI-TENANT] 0 registros encontrados para davisemi-joias (tenant: davisemi-joias)
+✅ Cache atualizado para davisemi-joias-davisemi-joias: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para emericks-tenant (tenant: emericks-tenant)
+✅ Cache atualizado para emericks-tenant-emericks-tenant: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para emericks (tenant: emericks)
+✅ Cache atualizado para emericks-emericks: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para emerick (tenant: emerick)
+✅ Cache atualizado para emerick-emerick: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+📊 [FormPoller] Tenant emericks: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emericks-tenant
+📊 [FormPoller] Tenant emericks-tenant: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks-tenant: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emerick
+📊 [FormPoller] Tenant emerick: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emerick: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: davisemi-joias
+📊 [FormPoller] Tenant davisemi-joias: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant davisemi-joias: Nenhuma submission nova
+
+✅ [FormPoller] Polling concluído: 0 submissions enfileiradas de 4 tenant(s)
+ℹ️ [FormSync] Nenhuma submission nova para processar
+🔄 [CPFSync] Executando sincronização de CPF compliance...
+🔍 [CPFPoller] Iniciando polling de consultas CPF...
+📱 [CPFPoller] Buscando resultados com telefone do Supabase Cliente...
+🔄 [FormSync] Executando sincronização de formulários do Supabase...
+🔍 [FormPoller] Iniciando polling de submissions...
+🔍 Verificando novos clientes para cliente emericks (tenant: emericks)
+🔍 Iniciando detecção de novos clientes para emericks/emericks
+🔍 Verificando novos clientes para cliente emericks-tenant (tenant: emericks-tenant)
+🔍 Iniciando detecção de novos clientes para emericks-tenant/emericks-tenant
+🔍 Verificando novos clientes para cliente emerick (tenant: emerick)
+🔍 Iniciando detecção de novos clientes para emerick/emerick
+🔍 Verificando novos clientes para cliente davisemi-joias (tenant: davisemi-joias)
+🔍 Iniciando detecção de novos clientes para davisemi-joias/davisemi-joias
+✅ [SUPABASE] 4 configuração(ões) encontrada(s) no banco de dados
+🏢 [FormPoller] Encontrados 4 tenant(s) configurados
+
+🔄 [FormPoller] Processando tenant: emericks
+📱 [CPFPoller] Buscando resultados CPF e telefones via form_submissions...
+✅ [MULTI-TENANT] 0 registros encontrados para emericks-tenant (tenant: emericks-tenant)
+✅ Cache atualizado para emericks-tenant-emericks-tenant: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para emericks (tenant: emericks)
+✅ Cache atualizado para emericks-emericks: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+✅ [MULTI-TENANT] 0 registros encontrados para emerick (tenant: emerick)
+✅ Cache atualizado para emerick-emerick: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+📊 [FormPoller] Tenant emericks: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emericks-tenant
+✅ [MULTI-TENANT] 0 registros encontrados para davisemi-joias (tenant: davisemi-joias)
+✅ Cache atualizado para davisemi-joias-davisemi-joias: 0 clientes
+✅ Nenhum novo cliente detectado. Total: 0 clientes
+🔍 Verificação de novos clientes concluída: {
+  novos: 0,
+  fonte: 'comparison_complete',
+  processamento: { sucessos: 0, erros: 0 }
+}
+📊 [FormPoller] Tenant emericks-tenant: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emericks-tenant: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: emerick
+ℹ️ [CPFPoller] Nenhum resultado CPF encontrado
+ℹ️ [CPFPoller] Nenhum resultado pendente no Supabase Cliente
+✅ [CPFPoller] Polling concluído: 0 consultas processadas
+ℹ️ [CPFSync] Nenhuma consulta CPF nova para processar
+🔍 [CPFAutoCheck] Verificando leads aprovados sem consulta CPF...
+📊 [FormPoller] Tenant emerick: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant emerick: Nenhuma submission nova
+
+🔄 [FormPoller] Processando tenant: davisemi-joias
+📊 [FormPoller] Tenant davisemi-joias: 0 submissions não sincronizadas ou atualizadas
+ℹ️ [FormPoller] Tenant davisemi-joias: Nenhuma submission nova
+
+✅ [FormPoller] Polling concluído: 0 submissions enfileiradas de 4 tenant(s)
+ℹ️ [FormSync] Nenhuma submission nova para processar
+⚠️ [CPFAutoCheck] Nenhum tenant com BigDataCorp E Supabase configurados - pulando verificação

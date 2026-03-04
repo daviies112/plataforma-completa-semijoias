@@ -1,0 +1,28 @@
+[dotenv@17.3.1] injecting env (13) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+🐘 Initializing database connection...
+Testing db.select for tenant: emericks-tenant
+❌ Database connection verification failed: Error: The server does not support SSL connections
+    at C:\Users\davie\Downloads\Skill e mcp\loja\plataformacompleta-store-update-20260214-165922\plataformacompleta\node_modules\pg-pool\index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+❌ Error in getOrCreateWallet logic: DrizzleQueryError: Failed query: select "id", "tenant_id", "balance", "currency", "is_frozen", "auto_recharge", "auto_recharge_trigger", "auto_recharge_amount", "saved_card_token", "created_at", "updated_at" from "wallets" where "wallets"."tenant_id" = $1 limit $2
+params: emericks-tenant,1
+    at NodePgPreparedQuery.queryWithCache (C:\Users\davie\Downloads\Skill e mcp\loja\plataformacompleta-store-update-20260214-165922\plataformacompleta\node_modules\src\pg-core\session.ts:73:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async <anonymous> (C:\Users\davie\Downloads\Skill e mcp\loja\plataformacompleta-store-update-20260214-165922\plataformacompleta\node_modules\src\node-postgres\session.ts:154:19)
+    at async main (C:\Users\davie\Downloads\Skill e mcp\loja\plataformacompleta-store-update-20260214-165922\plataformacompleta\test_wallet.ts:14:22) {
+  query: 'select "id", "tenant_id", "balance", "currency", "is_frozen", "auto_recharge", "auto_recharge_trigger", "auto_recharge_amount", "saved_card_token", "created_at", "updated_at" from "wallets" where "wallets"."tenant_id" = $1 limit $2',
+  params: [ 'emericks-tenant', 1 ],
+  cause: Error: The server does not support SSL connections
+      at C:\Users\davie\Downloads\Skill e mcp\loja\plataformacompleta-store-update-20260214-165922\plataformacompleta\node_modules\pg-pool\index.js:45:11
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async <anonymous> (C:\Users\davie\Downloads\Skill e mcp\loja\plataformacompleta-store-update-20260214-165922\plataformacompleta\node_modules\src\node-postgres\session.ts:161:13)
+      at async NodePgPreparedQuery.queryWithCache (C:\Users\davie\Downloads\Skill e mcp\loja\plataformacompleta-store-update-20260214-165922\plataformacompleta\node_modules\src\pg-core\session.ts:71:12)
+      at async <anonymous> (C:\Users\davie\Downloads\Skill e mcp\loja\plataformacompleta-store-update-20260214-165922\plataformacompleta\node_modules\src\node-postgres\session.ts:154:19)
+      at async main (C:\Users\davie\Downloads\Skill e mcp\loja\plataformacompleta-store-update-20260214-165922\plataformacompleta\test_wallet.ts:14:22)
+}
+Error: Failed query: select "id", "tenant_id", "balance", "currency", "is_frozen", "auto_recharge", "auto_recharge_trigger", "auto_recharge_amount", "saved_card_token", "created_at", "updated_at" from "wallets" where "wallets"."tenant_id" = $1 limit $2
+params: emericks-tenant,1
+    at NodePgPreparedQuery.queryWithCache (C:\Users\davie\Downloads\Skill e mcp\loja\plataformacompleta-store-update-20260214-165922\plataformacompleta\node_modules\src\pg-core\session.ts:73:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async <anonymous> (C:\Users\davie\Downloads\Skill e mcp\loja\plataformacompleta-store-update-20260214-165922\plataformacompleta\node_modules\src\node-postgres\session.ts:154:19)
+    at async main (C:\Users\davie\Downloads\Skill e mcp\loja\plataformacompleta-store-update-20260214-165922\plataformacompleta\test_wallet.ts:14:22)

@@ -1,0 +1,61 @@
+⚠️  Node.js 18 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 20 or later. For more information, visit: https://github.com/orgs/supabase/discussions/37217
+[SUPABASE_OWNER] ✅ Conectado com sucesso via secrets SUPABASE_OWNER_URL/KEY
+🐘 Initializing database connection...
+[PUBLIC_CACHE] Loaded 0 persistent form mappings from disk
+ℹ️ Redis não configurado - usando cache em memória
+✅ Formulários database connection configured
+📄 [FormPoller] Estado carregado: 24 submissions processadas
+📄 [CPFAutoCheck] Estado carregado: 6 consultas processadas
+📄 [CPFPoller] Estado carregado: 7 consultas processadas
+📄 Estado da automação carregado do arquivo com sucesso
+[AssinaturaSupabase] Serviço criado - inicialização lazy
+[Assinatura] 5 contratos carregados do arquivo local
+ℹ️  [RESEND] Serviço multi-tenant - será inicializado quando tenant estiver disponível
+[Pagar.me] ✅ Usando credenciais de PRODUÇÃO
+[STARTUP] Loading server modules...
+[STARTUP] All modules loaded, creating Express app...
+[STARTUP] Express app created
+ℹ️  [SENTRY] Serviço multi-tenant - será inicializado quando tenant estiver disponível
+⚠️ Resend não configurado - Emails desativados
+⚠️ Sentry não configurado - Monitoramento desativado
+Credenciais carregadas do arquivo com sucesso
+11:10:31 AM [express] Credentials manager initialized
+11:10:31 AM [express] ✅ [StateReset] Estados de polling inicializados
+11:10:31 AM [express] 🔍 [StateReset] Verificando estados obsoletos...
+🔧 [CONFIG] Setting up configuration routes...
+11:10:31 AM [express] 🔐 Multi-tenant authentication enabled
+📋 Registering Formularios Platform Complete Routes...
+[Split Routes] Registering split routes early
+11:10:31 AM [express] 🔐 Multi-tenant authentication enabled
+11:10:31 AM [express] ✅ Rotas de notificações registradas
+[Horarios] Rotas registradas
+11:10:31 AM [express] serving on port 5000
+11:10:31 AM [express] Environment: development
+11:10:31 AM [express] Setting up Vite development server...
+[VITE] Creating Vite server...
+[VITE] Environment: Local
+[VITE] REPLIT_DEV_DOMAIN: not set
+
+node:internal/event_target:1062
+  process.nextTick(() => { throw err; });
+                           ^
+Error: Cannot find module '/var/www/plataformacompleta/dist/lib/worker.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at MessagePort.<anonymous> (node:internal/main/worker_thread:184:26)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:786:20)
+    at exports.emitMessage (node:internal/per_context/messageport:23:28)
+Emitted 'error' event on Worker instance at:
+    at [kOnErrorMessage] (node:internal/worker:314:10)
+    at [kOnMessage] (node:internal/worker:325:37)
+    at MessagePort.<anonymous> (node:internal/worker:225:57)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:786:20)
+    at exports.emitMessage (node:internal/per_context/messageport:23:28)
+    at [kOnExit] (node:internal/worker:292:5)
+    at Worker.<computed>.onexit (node:internal/worker:222:20) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.8

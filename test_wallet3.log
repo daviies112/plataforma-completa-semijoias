@@ -1,0 +1,19 @@
+[dotenv@17.3.1] injecting env (13) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+🐘 Initializing database connection...
+Testing db.select for tenant: emericks-tenant
+✅ Database connection established and verified
+Existing wallet search: [
+  {
+    id: '3708c432-c8bd-45f4-8279-99ce5ff2946b',
+    tenantId: 'emericks-tenant',
+    balance: '0.00',
+    currency: 'BRL',
+    isFrozen: false,
+    autoRecharge: false,
+    autoRechargeTrigger: null,
+    autoRechargeAmount: null,
+    savedCardToken: null,
+    createdAt: 2026-02-13T09:38:16.402Z,
+    updatedAt: 2026-02-13T09:38:16.402Z
+  }
+]

@@ -1,0 +1,162 @@
+{
+  "isRunning": true,
+  "startedAt": "2026-03-04T14:27:37.256Z",
+  "lastExecutions": {
+    "system-system": {
+      "clientId": "system",
+      "tenantId": "system",
+      "lastRun": "2026-02-28T13:24:56.812Z",
+      "lastSuccess": "2026-02-27T21:34:44.569Z",
+      "lastError": null,
+      "consecutiveErrors": 0,
+      "totalExecutions": 10692,
+      "totalNewClientsDetected": 0,
+      "totalEventsCreated": 0,
+      "status": "stopped"
+    },
+    "dev-daviemericko_gmail_com-dev-daviemericko_gmail_com": {
+      "clientId": "dev-daviemericko_gmail_com",
+      "tenantId": "dev-daviemericko_gmail_com",
+      "lastRun": "2026-02-12T15:33:05.991Z",
+      "lastSuccess": "2026-02-12T15:33:05.991Z",
+      "lastError": null,
+      "consecutiveErrors": 0,
+      "totalExecutions": 1570,
+      "totalNewClientsDetected": 0,
+      "totalEventsCreated": 0,
+      "status": "stopped"
+    },
+    "dev-teste_empresa_com-dev-teste_empresa_com": {
+      "clientId": "dev-teste_empresa_com",
+      "tenantId": "dev-teste_empresa_com",
+      "lastRun": "2026-02-07T12:23:19.913Z",
+      "lastSuccess": "2026-02-07T12:23:19.913Z",
+      "lastError": null,
+      "consecutiveErrors": 0,
+      "totalExecutions": 114,
+      "totalNewClientsDetected": 0,
+      "totalEventsCreated": 0,
+      "status": "stopped"
+    },
+    "emerick-sj-001-emerick-sj-001": {
+      "clientId": "emerick-sj-001",
+      "tenantId": "emerick-sj-001",
+      "lastRun": "2026-02-07T12:23:19.917Z",
+      "lastSuccess": "2026-02-07T12:23:19.917Z",
+      "lastError": null,
+      "consecutiveErrors": 0,
+      "totalExecutions": 20,
+      "totalNewClientsDetected": 0,
+      "totalEventsCreated": 0,
+      "status": "stopped"
+    },
+    "babilo-tenant-001-babilo-tenant-001": {
+      "clientId": "babilo-tenant-001",
+      "tenantId": "babilo-tenant-001",
+      "lastRun": "2026-02-07T19:09:07.234Z",
+      "lastSuccess": "2026-02-07T19:09:07.234Z",
+      "lastError": null,
+      "consecutiveErrors": 0,
+      "totalExecutions": 156,
+      "totalNewClientsDetected": 0,
+      "totalEventsCreated": 0,
+      "status": "stopped"
+    },
+    "dev-davipiano_gmail_com-dev-davipiano_gmail_com": {
+      "clientId": "dev-davipiano_gmail_com",
+      "tenantId": "dev-davipiano_gmail_com",
+      "lastRun": "2026-02-08T12:31:00.316Z",
+      "lastSuccess": null,
+      "lastError": null,
+      "consecutiveErrors": 0,
+      "totalExecutions": 100,
+      "totalNewClientsDetected": 0,
+      "totalEventsCreated": 0,
+      "status": "stopped"
+    },
+    "b25cf69e-def4-4cea-afbf-0b93eabb77b2-b25cf69e-def4-4cea-afbf-0b93eabb77b2": {
+      "clientId": "b25cf69e-def4-4cea-afbf-0b93eabb77b2",
+      "tenantId": "b25cf69e-def4-4cea-afbf-0b93eabb77b2",
+      "lastRun": "2026-02-12T15:33:05.988Z",
+      "lastSuccess": "2026-02-12T15:33:05.988Z",
+      "lastError": null,
+      "consecutiveErrors": 0,
+      "totalExecutions": 88,
+      "totalNewClientsDetected": 0,
+      "totalEventsCreated": 0,
+      "status": "stopped"
+    },
+    "emericks-tenant-emericks-tenant": {
+      "clientId": "emericks-tenant",
+      "tenantId": "emericks-tenant",
+      "lastRun": "2026-03-04T17:26:36.579Z",
+      "lastSuccess": "2026-03-04T17:26:36.579Z",
+      "lastError": null,
+      "consecutiveErrors": 0,
+      "totalExecutions": 9231,
+      "totalNewClientsDetected": 0,
+      "totalEventsCreated": 0,
+      "status": "running"
+    },
+    "emerick-emerick": {
+      "clientId": "emerick",
+      "tenantId": "emerick",
+      "lastRun": "2026-03-04T17:26:36.582Z",
+      "lastSuccess": "2026-03-04T17:26:36.582Z",
+      "lastError": null,
+      "consecutiveErrors": 0,
+      "totalExecutions": 686,
+      "totalNewClientsDetected": 0,
+      "totalEventsCreated": 0,
+      "status": "running"
+    },
+    "emericks-emericks": {
+      "clientId": "emericks",
+      "tenantId": "emericks",
+      "lastRun": "2026-03-04T17:26:36.575Z",
+      "lastSuccess": "2026-03-04T17:26:36.575Z",
+      "lastError": null,
+      "consecutiveErrors": 0,
+      "totalExecutions": 384,
+      "totalNewClientsDetected": 0,
+      "totalEventsCreated": 0,
+      "status": "running"
+    },
+    "davisemi-joias-davisemi-joias": {
+      "clientId": "davisemi-joias",
+      "tenantId": "davisemi-joias",
+      "lastRun": "2026-03-04T17:26:36.740Z",
+      "lastSuccess": "2026-03-04T17:26:36.740Z",
+      "lastError": null,
+      "consecutiveErrors": 0,
+      "totalExecutions": 384,
+      "totalNewClientsDetected": 0,
+      "totalEventsCreated": 0,
+      "status": "running"
+    },
+    "davisemijoias-davisemijoias": {
+      "clientId": "davisemijoias",
+      "tenantId": "davisemijoias",
+      "lastRun": "2026-03-04T17:26:36.461Z",
+      "lastSuccess": "2026-03-04T17:26:36.461Z",
+      "lastError": null,
+      "consecutiveErrors": 0,
+      "totalExecutions": 277,
+      "totalNewClientsDetected": 0,
+      "totalEventsCreated": 0,
+      "status": "running"
+    }
+  },
+  "globalStats": {
+    "totalExecutions": 23702,
+    "totalNewClientsDetected": 0,
+    "totalEventsCreated": 0,
+    "totalErrors": 0,
+    "uptime": 10739
+  },
+  "settings": {
+    "detectionIntervalMinutes": 2,
+    "processingEnabled": true,
+    "maxRetries": 3
+  }
+}

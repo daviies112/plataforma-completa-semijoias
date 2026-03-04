@@ -1,0 +1,3517 @@
+{
+  "total": 157,
+  "isolatedCount": 90,
+  "nonIsolatedCount": 67,
+  "isolated": [
+    {
+      "table": "app_promotion_configs",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "contract_id",
+        "app_store_url",
+        "google_play_url",
+        "created_at",
+        "updated_at",
+        "tenant_id"
+      ]
+    },
+    {
+      "table": "company_settings",
+      "isIsolated": true,
+      "identifiers": [
+        "company_slug"
+      ],
+      "allColumns": [
+        "id",
+        "company_name",
+        "company_slug",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "cpf_compliance_results",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "cpf",
+        "nome",
+        "status",
+        "dados",
+        "risco",
+        "processos",
+        "aprovado",
+        "data_consulta",
+        "check_id",
+        "created_at",
+        "telefone",
+        "processado_whatsapp",
+        "agendou_reuniao",
+        "data_agendamento",
+        "follow_up_count",
+        "ultimo_follow_up",
+        "follow_up_encerrado",
+        "processado_whatsapp_n8n",
+        "observacao",
+        "submission_id",
+        "tenant_id"
+      ]
+    },
+    {
+      "table": "customers",
+      "isIsolated": true,
+      "identifiers": [
+        "company_id"
+      ],
+      "allColumns": [
+        "id",
+        "company_id",
+        "full_name",
+        "email",
+        "phone",
+        "cpf",
+        "addresses",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "admin_users",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "email",
+        "password_hash",
+        "name",
+        "role",
+        "company_name",
+        "company_email",
+        "plan_type",
+        "tenant_id",
+        "is_active",
+        "last_login",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "app_settings",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id",
+        "company_slug"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "company_name",
+        "company_slug",
+        "supabase_url",
+        "supabase_anon_key",
+        "active_form_id",
+        "active_form_url",
+        "redis_commands_today",
+        "redis_commands_date",
+        "redis_commands_month",
+        "redis_commands_month_start",
+        "whatsapp_instance",
+        "whatsapp_api_url",
+        "whatsapp_api_key",
+        "evolution_api_url",
+        "evolution_api_key",
+        "evolution_instance",
+        "n8n_webhook_url",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "better_stack_config",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "source_token",
+        "ingesting_host",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "bigdatacorp_config",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "token_id",
+        "chave_token",
+        "supabase_master_url",
+        "supabase_master_service_role_key",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "cloudflare_config",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "zone_id",
+        "api_token",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "equipe_empresa",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "empresa_nome",
+        "funcionario_nome",
+        "funcionario_email",
+        "funcionario_cargo",
+        "funcionario_telefone",
+        "funcionario_setor",
+        "empresa_telefone",
+        "created_at",
+        "updated_at",
+        "tenant_id"
+      ]
+    },
+    {
+      "table": "completion_pages",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "name",
+        "title",
+        "subtitle",
+        "success_message",
+        "failure_message",
+        "show_score",
+        "show_tier_badge",
+        "logo",
+        "logo_align",
+        "success_icon_color",
+        "failure_icon_color",
+        "success_icon_image",
+        "failure_icon_image",
+        "success_icon_type",
+        "failure_icon_type",
+        "cta_text",
+        "cta_url",
+        "custom_content",
+        "design_config",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "compliance_audit_log",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id",
+        "user_id"
+      ],
+      "allColumns": [
+        "id",
+        "check_id",
+        "tenant_id",
+        "action",
+        "user_id",
+        "ip_address",
+        "user_agent",
+        "timestamp"
+      ]
+    },
+    {
+      "table": "compliance_users",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "email",
+        "tenant_id",
+        "name",
+        "created_at"
+      ]
+    },
+    {
+      "table": "device_tokens",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id",
+        "user_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "user_id",
+        "token",
+        "subscription_data",
+        "device_type",
+        "device_name",
+        "device_model",
+        "user_agent",
+        "device_info",
+        "last_active",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "evolution_api_config",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "api_url",
+        "api_key",
+        "instance",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "form_submissions",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "form_id",
+        "answers",
+        "total_score",
+        "passed",
+        "participant_id",
+        "contact_name",
+        "contact_email",
+        "contact_phone",
+        "contact_cpf",
+        "instagram_handle",
+        "birth_date",
+        "address_cep",
+        "address_street",
+        "address_number",
+        "address_complement",
+        "address_neighborhood",
+        "address_city",
+        "address_state",
+        "processado_whatsapp",
+        "agendou_reuniao",
+        "data_agendamento",
+        "follow_up_count",
+        "ultimo_follow_up",
+        "follow_up_encerrado",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "form_submissions_compliance_tracking",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "submission_id",
+        "check_id",
+        "tenant_id",
+        "status",
+        "processed_at",
+        "last_attempt_at",
+        "error_message",
+        "created_at"
+      ]
+    },
+    {
+      "table": "form_templates",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "name",
+        "description",
+        "thumbnail_url",
+        "design_config",
+        "questions",
+        "is_default",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "form_tenant_mapping",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id",
+        "company_slug"
+      ],
+      "allColumns": [
+        "form_id",
+        "tenant_id",
+        "slug",
+        "company_slug",
+        "is_public",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "datacorp_checks",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "cpf_hash",
+        "cpf_encrypted",
+        "person_name",
+        "person_cpf",
+        "tenant_id",
+        "lead_id",
+        "submission_id",
+        "origin_check_id",
+        "status",
+        "risk_score",
+        "payload",
+        "consulted_at",
+        "expires_at",
+        "source",
+        "api_cost",
+        "created_by",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "forms",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "title",
+        "slug",
+        "description",
+        "welcome_title",
+        "welcome_message",
+        "welcome_config",
+        "questions",
+        "elements",
+        "passing_score",
+        "score_tiers",
+        "design_config",
+        "completion_page_id",
+        "tenant_id",
+        "is_public",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "google_calendar_config",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id",
+        "client_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "client_id",
+        "client_secret",
+        "refresh_token",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "google_calendar_webhooks",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id",
+        "user_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "user_id",
+        "channel_id",
+        "resource_id",
+        "expiration",
+        "created_at"
+      ]
+    },
+    {
+      "table": "google_tokens",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id",
+        "user_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "user_id",
+        "access_token",
+        "refresh_token",
+        "expires_at",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "hms_100ms_config",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id",
+        "company_slug"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "app_access_key",
+        "app_secret",
+        "template_id",
+        "room_id",
+        "management_token",
+        "subdomain",
+        "company_slug",
+        "is_owner",
+        "created_at",
+        "updated_at",
+        "api_base_url",
+        "n8n_api_key",
+        "n8n_api_key_created_at",
+        "room_design_config"
+      ]
+    },
+    {
+      "table": "meeting_confirmation_pages",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "name",
+        "title",
+        "subtitle",
+        "confirmation_message",
+        "show_date_time",
+        "show_location",
+        "show_add_to_calendar",
+        "logo",
+        "logo_align",
+        "icon_color",
+        "icon_image",
+        "icon_type",
+        "cta_text",
+        "cta_url",
+        "custom_content",
+        "design_config",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "leads",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "telefone",
+        "telefone_normalizado",
+        "nome",
+        "email",
+        "cpf",
+        "cpf_normalizado",
+        "form_status",
+        "cpf_check_id",
+        "cpf_status",
+        "cpf_checked_at",
+        "pipeline_status",
+        "submission_id",
+        "whatsapp_label_id",
+        "created_at",
+        "updated_at",
+        "origem",
+        "whatsapp_id",
+        "whatsapp_instance",
+        "primeira_mensagem_em",
+        "ultima_mensagem_em",
+        "total_mensagens",
+        "formulario_url",
+        "formulario_enviado",
+        "formulario_enviado_em",
+        "formulario_aberto",
+        "formulario_aberto_em",
+        "formulario_visualizacoes",
+        "formulario_iniciado",
+        "formulario_iniciado_em",
+        "formulario_concluido",
+        "formulario_concluido_em",
+        "pontuacao",
+        "status_qualificacao",
+        "qualification_status",
+        "motivo_reprovacao",
+        "formulario_id",
+        "meeting_id",
+        "meeting_status",
+        "meeting_scheduled_at",
+        "ip_address",
+        "user_agent",
+        "tags",
+        "observacoes"
+      ]
+    },
+    {
+      "table": "files",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id",
+        "user_id"
+      ],
+      "allColumns": [
+        "id",
+        "user_id",
+        "document_type",
+        "establishment",
+        "tax_id",
+        "document_number",
+        "issue_date",
+        "due_date",
+        "payment_date",
+        "amount",
+        "amount_paid",
+        "discount",
+        "interest",
+        "currency",
+        "category",
+        "description",
+        "items",
+        "payment_method",
+        "barcode",
+        "pix_key",
+        "nfe_key",
+        "address",
+        "notes",
+        "confidence",
+        "extraction_status",
+        "error_message",
+        "file_name",
+        "file_url",
+        "created_at",
+        "processed_at",
+        "updated_at",
+        "ai_raw_response",
+        "tenant_id"
+      ]
+    },
+    {
+      "table": "meeting_templates",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "name",
+        "description",
+        "thumbnail_url",
+        "duration",
+        "design_config",
+        "booking_fields",
+        "availability_config",
+        "is_default",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "formulario_cliente",
+      "isIsolated": true,
+      "identifiers": [
+        "user_id"
+      ],
+      "allColumns": [
+        "id",
+        "user_id",
+        "nome_completo",
+        "email_principal",
+        "telefone_contato",
+        "cargo_funcao",
+        "nome_empresa",
+        "setor_atuacao",
+        "tamanho_equipe",
+        "receita_anual",
+        "principais_concorrentes",
+        "objetivos_principais",
+        "metas_numericas",
+        "prazo_implementacao",
+        "orcamento_disponivel",
+        "ferramentas_atuais",
+        "principais_desafios",
+        "processo_atual_vendas",
+        "volume_leads_mensais",
+        "taxa_conversao_atual",
+        "integracoes_necessarias",
+        "requisitos_tecnicos",
+        "equipe_responsavel",
+        "nivel_autonomia",
+        "expectativas_resultados",
+        "indicadores_sucesso",
+        "tempo_esperado_roi",
+        "necessidade_treinamento",
+        "disponibilidade_treinamento",
+        "preferencia_suporte",
+        "etapa_implementacao",
+        "prioridade_implementacao",
+        "observacoes_adicionais",
+        "status",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "meeting_usuarios",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "nome",
+        "email",
+        "telefone",
+        "role",
+        "avatar_url",
+        "created_at"
+      ]
+    },
+    {
+      "table": "n8n_chat_histories",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "session_id",
+        "message",
+        "tenant_id"
+      ]
+    },
+    {
+      "table": "meeting_types",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "title",
+        "slug",
+        "description",
+        "duration",
+        "buffer_before",
+        "buffer_after",
+        "availability_config",
+        "location_type",
+        "location_config",
+        "welcome_title",
+        "welcome_message",
+        "welcome_config",
+        "booking_fields",
+        "design_config",
+        "confirmation_page_id",
+        "is_public",
+        "is_active",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "n8n_chat_histories_gerente",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "session_id",
+        "message",
+        "tenant_id"
+      ]
+    },
+    {
+      "table": "n8n_config",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "webhook_url",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "notification_history",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id",
+        "user_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "user_id",
+        "type",
+        "title",
+        "body",
+        "data",
+        "devices_sent",
+        "success",
+        "read",
+        "read_at",
+        "sent_at",
+        "device_tokens"
+      ]
+    },
+    {
+      "table": "notification_settings",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id",
+        "user_id"
+      ],
+      "allColumns": [
+        "id",
+        "user_id",
+        "tenant_id",
+        "email",
+        "phone",
+        "email_enabled",
+        "whatsapp_enabled",
+        "enabled",
+        "sound",
+        "vibration",
+        "badge",
+        "show_preview",
+        "quiet_hours_enabled",
+        "quiet_hours_start",
+        "quiet_hours_end",
+        "supabase_enabled",
+        "calendar_enabled",
+        "pluggy_enabled",
+        "system_enabled",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "redis_config",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "redis_url",
+        "redis_token",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "reseller_supabase_configs",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "supabase_url",
+        "supabase_anon_key",
+        "supabase_bucket",
+        "created_at",
+        "updated_at",
+        "reseller_email",
+        "supabase_service_key"
+      ]
+    },
+    {
+      "table": "resend_config",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "api_key",
+        "from_email",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "sentry_config",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "dsn",
+        "auth_token",
+        "organization",
+        "project",
+        "environment",
+        "traces_sample_rate",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "store_banners",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "title",
+        "subtitle",
+        "description",
+        "image_url",
+        "mobile_image_url",
+        "cta_text",
+        "cta_url",
+        "text_color",
+        "overlay_opacity",
+        "text_align",
+        "display_order",
+        "is_active",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "store_benefits",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "icon",
+        "title",
+        "description",
+        "display_order",
+        "is_active",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "store_reseller_profiles",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "reseller_id",
+        "name",
+        "bio",
+        "avatar_url",
+        "cover_image_url",
+        "email",
+        "phone",
+        "whatsapp",
+        "instagram",
+        "custom_colors",
+        "custom_slug",
+        "is_active",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "store_collections",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "name",
+        "slug",
+        "description",
+        "image_url",
+        "product_ids",
+        "is_featured",
+        "is_visible",
+        "display_order",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "store_mosaics",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "title",
+        "image_url",
+        "link_url",
+        "layout_type",
+        "display_order",
+        "is_active",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "gamification_config",
+      "isIsolated": true,
+      "identifiers": [
+        "company_id"
+      ],
+      "allColumns": [
+        "id",
+        "company_id",
+        "gamification_enabled",
+        "rewards_enabled",
+        "leagues_enabled",
+        "challenges_enabled",
+        "badges_enabled",
+        "xp_per_sale",
+        "xp_new_customer_bonus",
+        "streak_bonus_7_days",
+        "streak_bonus_30_days",
+        "level_rewards",
+        "ranking_rewards",
+        "badge_rewards",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "store_themes",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "logo_url",
+        "logo_size",
+        "logo_position",
+        "favicon_url",
+        "primary_color",
+        "secondary_color",
+        "accent_color",
+        "background_color",
+        "text_color",
+        "heading_color",
+        "font_heading",
+        "font_body",
+        "font_size_base",
+        "font_size_heading",
+        "layout_template",
+        "product_grid_columns",
+        "product_grid_columns_mobile",
+        "spacing_unit",
+        "border_radius",
+        "enable_animations",
+        "animation_speed",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "supabase_config",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "supabase_url",
+        "supabase_anon_key",
+        "supabase_bucket",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "supabase_master_config",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "supabase_master_url",
+        "supabase_master_service_role_key",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "store_videos",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "title",
+        "description",
+        "video_url",
+        "video_type",
+        "thumbnail_url",
+        "section_type",
+        "display_order",
+        "is_active",
+        "autoplay",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "gamification_levels",
+      "isIsolated": true,
+      "identifiers": [
+        "company_id"
+      ],
+      "allColumns": [
+        "id",
+        "company_id",
+        "level",
+        "name",
+        "xp_required",
+        "badge_icon",
+        "color",
+        "reward_enabled",
+        "reward_type",
+        "reward_value",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "total_express_config",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "user",
+        "password",
+        "reid",
+        "service",
+        "test_mode",
+        "profit_margin",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "whatsapp_qr_codes",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id",
+        "client_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "client_id",
+        "qr_code_data",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "workspace_public_mapping",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id",
+        "client_id"
+      ],
+      "allColumns": [
+        "id",
+        "item_id",
+        "item_type",
+        "tenant_id",
+        "client_id",
+        "is_active",
+        "settings",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "global_appearance_settings",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "identifier",
+        "logo_url",
+        "logo_size",
+        "logo_position",
+        "company_name",
+        "footer_text",
+        "primary_color",
+        "text_color",
+        "font_family",
+        "font_size",
+        "maleta_card_color",
+        "maleta_button_color",
+        "maleta_text_color",
+        "verification_primary_color",
+        "verification_text_color",
+        "verification_font_family",
+        "verification_font_size",
+        "verification_logo_url",
+        "verification_logo_size",
+        "verification_logo_position",
+        "verification_footer_text",
+        "verification_welcome_text",
+        "verification_instructions",
+        "verification_security_text",
+        "verification_background_color",
+        "verification_header_background_color",
+        "verification_header_company_name",
+        "progress_card_color",
+        "progress_button_color",
+        "progress_text_color",
+        "progress_title",
+        "progress_subtitle",
+        "progress_step1_title",
+        "progress_step1_description",
+        "progress_step2_title",
+        "progress_step2_description",
+        "progress_step3_title",
+        "progress_step3_description",
+        "progress_button_text",
+        "progress_font_family",
+        "parabens_title",
+        "parabens_subtitle",
+        "parabens_description",
+        "parabens_card_color",
+        "parabens_background_color",
+        "parabens_button_color",
+        "parabens_text_color",
+        "parabens_font_family",
+        "parabens_form_title",
+        "parabens_button_text",
+        "app_store_url",
+        "google_play_url",
+        "contract_title",
+        "clauses",
+        "created_at",
+        "updated_at",
+        "tenant_id"
+      ]
+    },
+    {
+      "table": "horarios_disponiveis",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "dia_semana",
+        "horario",
+        "periodo",
+        "tipo_reuniao",
+        "ativo",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "store_campaigns",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "name",
+        "description",
+        "image_url",
+        "badge_text",
+        "start_date",
+        "end_date",
+        "discount_percentage",
+        "target_product_ids",
+        "is_active",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "store_categories",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "name",
+        "slug",
+        "description",
+        "image_url",
+        "icon",
+        "parent_id",
+        "display_order",
+        "is_active",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "store_pages",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "title",
+        "slug",
+        "content",
+        "meta_title",
+        "meta_description",
+        "is_active",
+        "show_in_menu",
+        "display_order",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "store_products",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "reseller_id",
+        "name",
+        "slug",
+        "description",
+        "short_description",
+        "price",
+        "compare_at_price",
+        "cost_price",
+        "category_id",
+        "sku",
+        "stock_quantity",
+        "track_inventory",
+        "allow_backorder",
+        "weight",
+        "length",
+        "width",
+        "height",
+        "meta_title",
+        "meta_description",
+        "is_active",
+        "is_featured",
+        "display_order",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "store_sections",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "section_type",
+        "title",
+        "subtitle",
+        "description",
+        "display_order",
+        "is_visible",
+        "content",
+        "background_color",
+        "text_color",
+        "padding_top",
+        "padding_bottom",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "store_settings",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "logo_url",
+        "logo_size",
+        "logo_position",
+        "store_name",
+        "store_description",
+        "store_tagline",
+        "color_primary",
+        "color_primary_light",
+        "color_primary_dim",
+        "color_background",
+        "color_surface",
+        "color_text_primary",
+        "color_text_secondary",
+        "color_text_tertiary",
+        "font_heading",
+        "font_body",
+        "font_size_base",
+        "layout_type",
+        "layout_columns",
+        "show_banner",
+        "show_categories",
+        "show_featured_products",
+        "header_background",
+        "header_text_color",
+        "show_search_bar",
+        "show_cart",
+        "footer_background",
+        "footer_text_color",
+        "footer_text",
+        "show_social_links",
+        "instagram_url",
+        "facebook_url",
+        "whatsapp_number",
+        "meta_title",
+        "meta_description",
+        "meta_keywords",
+        "currency",
+        "enable_checkout",
+        "enable_wishlist",
+        "created_at",
+        "updated_at",
+        "hero_banner_autoplay",
+        "hero_banner_interval",
+        "show_benefits_bar",
+        "benefits_bar_background",
+        "show_video_section",
+        "show_mosaic_section",
+        "mosaic_layout_columns",
+        "show_active_campaign"
+      ]
+    },
+    {
+      "table": "dados_cliente",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "lead_id",
+        "nome",
+        "telefone",
+        "telefone_normalizado",
+        "email",
+        "cpf",
+        "reuniao_status",
+        "reuniao_data",
+        "reuniao_hora",
+        "reuniao_local",
+        "reuniao_tipo",
+        "reuniao_link",
+        "consultor_nome",
+        "consultor_email",
+        "observacoes",
+        "resultado_reuniao",
+        "motivo_recusa",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "reunioes",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "usuario_id",
+        "nome",
+        "email",
+        "telefone",
+        "titulo",
+        "descricao",
+        "data_inicio",
+        "data_fim",
+        "duracao",
+        "room_id_100ms",
+        "room_code_100ms",
+        "link_reuniao",
+        "link_publico",
+        "status",
+        "participantes",
+        "gravacao_url",
+        "metadata",
+        "compareceu",
+        "participant_id",
+        "form_submission_id",
+        "tipo_reuniao",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "gravacoes",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "reuniao_id",
+        "tenant_id",
+        "room_id_100ms",
+        "session_id_100ms",
+        "recording_id_100ms",
+        "asset_id",
+        "status",
+        "started_at",
+        "stopped_at",
+        "duration",
+        "file_url",
+        "file_size",
+        "thumbnail_url",
+        "metadata",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "meeting_bookings",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "meeting_type_id",
+        "reuniao_id",
+        "scheduled_date",
+        "scheduled_time",
+        "scheduled_date_time",
+        "duration",
+        "timezone",
+        "status",
+        "answers",
+        "contact_name",
+        "contact_email",
+        "contact_phone",
+        "location_url",
+        "location_details",
+        "google_event_id",
+        "calendar_link",
+        "reminder_sent_at",
+        "notes",
+        "cancellation_reason",
+        "metadata",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "meeting_tenant_mapping",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id",
+        "company_slug"
+      ],
+      "allColumns": [
+        "meeting_type_id",
+        "tenant_id",
+        "slug",
+        "company_slug",
+        "is_public",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "transcricoes",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "reuniao_id",
+        "tenant_id",
+        "room_id_100ms",
+        "status",
+        "started_at",
+        "stopped_at",
+        "transcricao_completa",
+        "resumo",
+        "topicos",
+        "acoes",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "orders",
+      "isIsolated": true,
+      "identifiers": [
+        "company_id"
+      ],
+      "allColumns": [
+        "id",
+        "company_id",
+        "reseller_id",
+        "customer_id",
+        "order_number",
+        "status",
+        "payment_status",
+        "payment_method",
+        "payment_gateway_id",
+        "subtotal",
+        "discount",
+        "shipping_cost",
+        "total_amount",
+        "commission_data",
+        "shipping_address",
+        "tracking_code",
+        "paid_at",
+        "ip_address",
+        "user_agent",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "sales_with_split",
+      "isIsolated": true,
+      "identifiers": [
+        "company_id"
+      ],
+      "allColumns": [
+        "id",
+        "product_id",
+        "reseller_id",
+        "company_id",
+        "payment_method",
+        "status",
+        "total_amount",
+        "reseller_amount",
+        "company_amount",
+        "commission_percentage",
+        "paid",
+        "paid_at",
+        "gateway_type",
+        "gateway_charge_id",
+        "customer_name",
+        "customer_email",
+        "customer_phone",
+        "pix_qrcode",
+        "pix_qrcode_text",
+        "pix_expires_at",
+        "created_at",
+        "updated_at",
+        "pagarme_order_id",
+        "pagarme_charge_id",
+        "quantity",
+        "customer_document"
+      ]
+    },
+    {
+      "table": "contracts",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id",
+        "user_id"
+      ],
+      "allColumns": [
+        "id",
+        "user_id",
+        "contract_html",
+        "contract_pdf_url",
+        "status",
+        "created_at",
+        "signed_at",
+        "protocol_number",
+        "client_name",
+        "client_cpf",
+        "client_email",
+        "client_phone",
+        "access_token",
+        "logo_url",
+        "primary_color",
+        "secondary_color",
+        "font_family",
+        "font_size",
+        "company_name",
+        "footer_text",
+        "logo_size",
+        "logo_position",
+        "whatsapp_enviado",
+        "signature_url",
+        "whatsapp_enviado_at",
+        "follow_up_count",
+        "selfie_photo",
+        "document_photo",
+        "document_back_photo",
+        "address_street",
+        "address_number",
+        "address_complement",
+        "address_city",
+        "address_state",
+        "address_zipcode",
+        "signed_contract_html",
+        "text_color",
+        "verification_primary_color",
+        "verification_text_color",
+        "verification_welcome_text",
+        "verification_instructions",
+        "verification_footer_text",
+        "verification_security_text",
+        "verification_header_company_name",
+        "verification_header_background_color",
+        "progress_title",
+        "progress_subtitle",
+        "progress_step1_title",
+        "progress_step1_description",
+        "progress_step2_title",
+        "progress_step2_description",
+        "progress_step3_title",
+        "progress_step3_description",
+        "progress_card_color",
+        "progress_button_color",
+        "progress_text_color",
+        "progress_font_family",
+        "progress_button_text",
+        "parabens_title",
+        "parabens_subtitle",
+        "parabens_description",
+        "parabens_button_text",
+        "parabens_button_color",
+        "parabens_card_color",
+        "parabens_background_color",
+        "app_store_url",
+        "google_play_url",
+        "updated_at",
+        "residence_proof_validated",
+        "residence_proof_confidence",
+        "residence_proof_extracted_address",
+        "residence_proof_date",
+        "residence_proof_manual_review",
+        "residence_proof_photo",
+        "virou_revendedora",
+        "data_virou_revendedora",
+        "tenant_id"
+      ]
+    },
+    {
+      "table": "audit_trail",
+      "isIsolated": true,
+      "identifiers": [
+        "user_id"
+      ],
+      "allColumns": [
+        "id",
+        "contract_id",
+        "action",
+        "user_id",
+        "metadata",
+        "timestamp"
+      ]
+    },
+    {
+      "table": "chat_messages",
+      "isIsolated": true,
+      "identifiers": [
+        "company_id"
+      ],
+      "allColumns": [
+        "id",
+        "thread_id",
+        "company_id",
+        "reseller_id",
+        "message",
+        "type",
+        "category",
+        "status",
+        "evolution_message_id",
+        "attachments",
+        "metadata",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "companies",
+      "isIsolated": true,
+      "identifiers": [
+        "user_id"
+      ],
+      "allColumns": [
+        "id",
+        "user_id",
+        "company_name",
+        "trading_name",
+        "cnpj",
+        "logo_url",
+        "primary_color",
+        "secondary_color",
+        "accent_color",
+        "color_palette",
+        "branding_updated_at",
+        "subdomain",
+        "payment_gateway",
+        "gateway_credentials",
+        "commission_settings",
+        "minimum_withdrawal",
+        "withdrawal_fee_percentage",
+        "withdrawal_fee_fixed",
+        "is_active",
+        "created_at",
+        "updated_at",
+        "background_color",
+        "sidebar_background",
+        "sidebar_text",
+        "button_color",
+        "button_text_color",
+        "text_color",
+        "heading_color",
+        "selected_item_color",
+        "logo_size",
+        "logo_position"
+      ]
+    },
+    {
+      "table": "chat_threads",
+      "isIsolated": true,
+      "identifiers": [
+        "company_id"
+      ],
+      "allColumns": [
+        "id",
+        "company_id",
+        "reseller_id",
+        "reseller_phone",
+        "reseller_name",
+        "category",
+        "status",
+        "sla_deadline",
+        "unread_count",
+        "first_message_at",
+        "last_message_at",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "commission_config",
+      "isIsolated": true,
+      "identifiers": [
+        "company_id"
+      ],
+      "allColumns": [
+        "id",
+        "company_id",
+        "use_dynamic_tiers",
+        "sales_tiers",
+        "updated_at",
+        "created_at",
+        "reseller_id"
+      ]
+    },
+    {
+      "table": "evolution_connections",
+      "isIsolated": true,
+      "identifiers": [
+        "company_id"
+      ],
+      "allColumns": [
+        "id",
+        "company_id",
+        "instance_name",
+        "api_url",
+        "api_key",
+        "phone_number",
+        "status",
+        "qr_code_url",
+        "connected_at",
+        "disconnected_at",
+        "last_sync",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "message_categories",
+      "isIsolated": true,
+      "identifiers": [
+        "company_id"
+      ],
+      "allColumns": [
+        "id",
+        "company_id",
+        "name",
+        "display_name",
+        "sla_minutes",
+        "color",
+        "icon",
+        "is_active",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "gamification_badges",
+      "isIsolated": true,
+      "identifiers": [
+        "company_id"
+      ],
+      "allColumns": [
+        "id",
+        "company_id",
+        "name",
+        "description",
+        "icon",
+        "category",
+        "criteria_type",
+        "criteria_value",
+        "rarity",
+        "xp_bonus",
+        "reward_enabled",
+        "reward_type",
+        "reward_value",
+        "is_active",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "gamification_challenges",
+      "isIsolated": true,
+      "identifiers": [
+        "company_id"
+      ],
+      "allColumns": [
+        "id",
+        "company_id",
+        "name",
+        "description",
+        "icon",
+        "type",
+        "frequency",
+        "criteria_type",
+        "criteria_value",
+        "xp_reward",
+        "reward_enabled",
+        "reward_type",
+        "reward_value",
+        "start_date",
+        "end_date",
+        "is_active",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "gamification_rewards",
+      "isIsolated": true,
+      "identifiers": [
+        "company_id"
+      ],
+      "allColumns": [
+        "id",
+        "company_id",
+        "name",
+        "description",
+        "type",
+        "value",
+        "image_url",
+        "has_stock",
+        "stock_quantity",
+        "is_active",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "gamification_leagues",
+      "isIsolated": true,
+      "identifiers": [
+        "company_id"
+      ],
+      "allColumns": [
+        "id",
+        "company_id",
+        "name",
+        "tier",
+        "icon",
+        "color",
+        "max_members",
+        "promotion_slots",
+        "demotion_slots",
+        "start_date",
+        "end_date",
+        "is_active",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "wallets",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "balance",
+        "currency",
+        "is_frozen",
+        "auto_recharge",
+        "auto_recharge_trigger",
+        "auto_recharge_amount",
+        "saved_card_token",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "workspace_pages",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id",
+        "client_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "client_id",
+        "title",
+        "content",
+        "icon",
+        "parent_id",
+        "type",
+        "properties",
+        "created_at",
+        "updated_at",
+        "cover",
+        "blocks",
+        "databases",
+        "font_style",
+        "small_text",
+        "full_width",
+        "locked",
+        "favorited",
+        "is_public",
+        "public_slug"
+      ]
+    },
+    {
+      "table": "workspace_boards",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id",
+        "client_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "client_id",
+        "title",
+        "color",
+        "lists",
+        "cards",
+        "labels",
+        "members",
+        "settings",
+        "created_at",
+        "updated_at",
+        "icon",
+        "cover",
+        "favorited",
+        "is_public",
+        "public_slug"
+      ]
+    },
+    {
+      "table": "workspace_databases",
+      "isIsolated": true,
+      "identifiers": [
+        "tenant_id",
+        "client_id"
+      ],
+      "allColumns": [
+        "id",
+        "tenant_id",
+        "client_id",
+        "page_id",
+        "title",
+        "icon",
+        "view_type",
+        "columns",
+        "rows",
+        "views",
+        "created_at",
+        "updated_at",
+        "cover",
+        "description",
+        "current_view_id",
+        "locked",
+        "favorited",
+        "chart_type",
+        "chart_x_axis",
+        "chart_y_axis",
+        "is_public",
+        "public_slug"
+      ]
+    },
+    {
+      "table": "imagens_9fotos",
+      "isIsolated": true,
+      "identifiers": [
+        "user_id"
+      ],
+      "allColumns": [
+        "id",
+        "user_id",
+        "foto_original_url",
+        "foto_1_url",
+        "foto_1_descricao",
+        "foto_2_url",
+        "foto_2_descricao",
+        "foto_3_url",
+        "foto_3_descricao",
+        "foto_4_url",
+        "foto_4_descricao",
+        "foto_5_url",
+        "foto_5_descricao",
+        "foto_6_url",
+        "foto_6_descricao",
+        "foto_7_url",
+        "foto_7_descricao",
+        "foto_8_url",
+        "foto_8_descricao",
+        "foto_9_url",
+        "foto_9_descricao",
+        "is_gratis",
+        "valor_pago",
+        "payment_id",
+        "descricao_produto",
+        "categoria",
+        "status",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "imagens_gratis",
+      "isIsolated": true,
+      "identifiers": [
+        "user_id"
+      ],
+      "allColumns": [
+        "id",
+        "user_id",
+        "foto_original_url",
+        "foto_melhorada_url",
+        "descricao_produto",
+        "ajustes_aplicados",
+        "status",
+        "created_at",
+        "updated_at",
+        "template_id",
+        "ajustes_customizados",
+        "template_nome",
+        "processamento_info",
+        "erro_mensagem"
+      ]
+    },
+    {
+      "table": "usuario_preferencias",
+      "isIsolated": true,
+      "identifiers": [
+        "user_id"
+      ],
+      "allColumns": [
+        "id",
+        "user_id",
+        "template_id",
+        "ajustes_customizados",
+        "updated_at"
+      ]
+    }
+  ],
+  "nonIsolated": [
+    {
+      "table": "appearance_configs",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "contract_id",
+        "logo_url",
+        "logo_size",
+        "logo_position",
+        "primary_color",
+        "text_color",
+        "font_family",
+        "font_size",
+        "company_name",
+        "footer_text",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "boletos",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "linha_digitavel",
+        "codigo_barras",
+        "valor_documento",
+        "data_vencimento",
+        "data_documento",
+        "banco",
+        "codigo_banco",
+        "agencia",
+        "conta",
+        "nosso_numero",
+        "numero_documento",
+        "carteira",
+        "cedente_nome",
+        "cedente_cnpj",
+        "cedente_endereco",
+        "sacado_nome",
+        "sacado_cpf_cnpj",
+        "sacado_endereco",
+        "instrucoes",
+        "boleto_url",
+        "url_boleto_completo",
+        "url_linha_digitavel",
+        "codigo_pix",
+        "qrcode_pix_base64",
+        "email_from",
+        "email_subject",
+        "email_date",
+        "email_id",
+        "status",
+        "has_error",
+        "error_message",
+        "raw_ai_response",
+        "raw_data",
+        "html_original",
+        "processed_at",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "chats",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "created_at",
+        "phone",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "clientes_completos",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "telefone",
+        "nome_completo",
+        "email",
+        "status_atendimento",
+        "setor",
+        "tipo_reuniao",
+        "active",
+        "data_cadastro",
+        "total_mensagens",
+        "ultima_mensagem_human",
+        "ultima_mensagem_ai",
+        "ultima_conversa",
+        "total_transcricoes",
+        "ultima_transcricao_completa",
+        "ultimo_resumo",
+        "ultima_transcricao_data",
+        "total_notificacoes",
+        "ultima_notificacao_tipo",
+        "ultima_notificacao_data",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "commission_splits",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "order_id",
+        "reseller_id",
+        "level",
+        "percentage",
+        "amount",
+        "status",
+        "released_at",
+        "paid_at",
+        "created_at"
+      ]
+    },
+    {
+      "table": "config_frete",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "admin_id",
+        "remetente_nome",
+        "remetente_cpf_cnpj",
+        "remetente_telefone",
+        "remetente_email",
+        "remetente_cep",
+        "remetente_logradouro",
+        "remetente_numero",
+        "remetente_complemento",
+        "remetente_bairro",
+        "remetente_cidade",
+        "remetente_uf",
+        "frete_gratis_acima",
+        "prazo_adicional_dias",
+        "markup_padrao",
+        "correios_usuario",
+        "correios_senha",
+        "correios_contrato",
+        "correios_cartao",
+        "jadlog_token",
+        "loggi_api_key",
+        "azul_cargo_token",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "config_split",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "admin_id",
+        "stripe_secret_key",
+        "stripe_publishable_key",
+        "gateway_preferido",
+        "created_at"
+      ]
+    },
+    {
+      "table": "contract_configs",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "contract_id",
+        "title",
+        "clauses",
+        "logo_url",
+        "logo_size",
+        "logo_position",
+        "primary_color",
+        "text_color",
+        "font_family",
+        "font_size",
+        "company_name",
+        "footer_text",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "admin_supabase_credentials",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "admin_id",
+        "project_name",
+        "supabase_url",
+        "supabase_anon_key",
+        "supabase_service_role_key",
+        "created_at"
+      ]
+    },
+    {
+      "table": "debug_logs",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "mensagem",
+        "erro_detalhe",
+        "data_hora"
+      ]
+    },
+    {
+      "table": "cache_config",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "progressive_ttl",
+        "thresholds",
+        "default_ttl",
+        "batch_invalidation",
+        "cache_warming",
+        "compression",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "followup_status",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "created_at",
+        "updated_at",
+        "telefone",
+        "nome",
+        "instance",
+        "nivel_atual",
+        "status",
+        "ultimo_followup_at",
+        "proximo_followup_at",
+        "historico"
+      ]
+    },
+    {
+      "table": "meeting_tenants",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "nome",
+        "slug",
+        "email",
+        "telefone",
+        "logo_url",
+        "configuracoes",
+        "room_design_config",
+        "token_100ms",
+        "app_access_key",
+        "app_secret",
+        "template_id_100ms",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "monitoring_config",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "redis_usage",
+        "supabase_usage",
+        "thresholds",
+        "alerts",
+        "auto_actions",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "formulario_envios",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "telefone",
+        "nome",
+        "url_formulario",
+        "data_envio",
+        "preenchido",
+        "data_preenchimento",
+        "follow_up_count",
+        "ultimo_follow_up",
+        "follow_up_encerrado",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "optimizer_config",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "field_set",
+        "page_size",
+        "pagination_type",
+        "query_caching",
+        "aggregation",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "formularios",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "nome",
+        "url",
+        "ativo",
+        "criado_em",
+        "atualizado_em"
+      ]
+    },
+    {
+      "table": "store_product_images",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "product_id",
+        "image_url",
+        "thumbnail_url",
+        "alt_text",
+        "display_order",
+        "is_primary",
+        "created_at"
+      ]
+    },
+    {
+      "table": "suppliers",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "nome",
+        "cnpj",
+        "contato",
+        "telefone",
+        "email",
+        "endereco",
+        "observacoes",
+        "ativo"
+      ]
+    },
+    {
+      "table": "whatsapp_labels",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "nome",
+        "cor",
+        "form_status",
+        "qualification_status",
+        "ordem",
+        "ativo",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "tenants_registry",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "slug",
+        "company_name",
+        "is_active",
+        "created_at"
+      ]
+    },
+    {
+      "table": "products",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "codigo",
+        "nome",
+        "descricao",
+        "categoria",
+        "category_id",
+        "preco_compra",
+        "preco_venda",
+        "estoque",
+        "estoque_minimo",
+        "fornecedor_id",
+        "revendedor_id",
+        "ativo",
+        "imagem_url",
+        "observacoes",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "historico_reunioes",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "id_reuniao",
+        "titulo",
+        "transcricao",
+        "resumo_enviado",
+        "data_processamento"
+      ]
+    },
+    {
+      "table": "integration_queue",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "entity_type",
+        "payload",
+        "status",
+        "created_at"
+      ]
+    },
+    {
+      "table": "meeting_tenant_config",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "nome",
+        "slug",
+        "email",
+        "telefone",
+        "logo_url",
+        "configuracoes",
+        "room_design_config",
+        "token_100ms",
+        "app_access_key",
+        "app_secret",
+        "template_id_100ms",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "store_product_variants",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "product_id",
+        "name",
+        "sku",
+        "price",
+        "compare_at_price",
+        "attributes",
+        "stock_quantity",
+        "is_active",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "formulario_sessoes",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "lead_id",
+        "token",
+        "sessao_id",
+        "aberto",
+        "primeira_abertura_em",
+        "ultima_atividade_em",
+        "total_acessos",
+        "campos_preenchidos",
+        "progresso_percentual",
+        "pagina_atual",
+        "ip_addresses",
+        "user_agents",
+        "expires_at",
+        "concluido",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "lead_historico",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "lead_id",
+        "tipo_evento",
+        "descricao",
+        "dados",
+        "ip_address",
+        "created_at"
+      ]
+    },
+    {
+      "table": "categories",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "nome",
+        "descricao",
+        "cor",
+        "icone",
+        "ordem",
+        "etiqueta_customizada",
+        "produtos_vinculados"
+      ]
+    },
+    {
+      "table": "notificacoes_enviadas",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "reuniao_id",
+        "evento_id",
+        "tipo",
+        "enviado_em"
+      ]
+    },
+    {
+      "table": "order_items",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "order_id",
+        "product_id",
+        "product_name",
+        "product_sku",
+        "product_image",
+        "quantity",
+        "unit_price",
+        "total",
+        "created_at"
+      ]
+    },
+    {
+      "table": "platform_settings",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "pagarme_company_recipient_id",
+        "pagarme_api_key_test",
+        "pagarme_api_key_live",
+        "use_live_mode",
+        "updated_at",
+        "created_at"
+      ]
+    },
+    {
+      "table": "progress_tracker_configs",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "contract_id",
+        "card_color",
+        "button_color",
+        "text_color",
+        "title",
+        "subtitle",
+        "step1_title",
+        "step1_description",
+        "step2_title",
+        "step2_description",
+        "step3_title",
+        "step3_description",
+        "button_text",
+        "font_family",
+        "font_size",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "reseller_alerts",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "reseller_id",
+        "alert_type",
+        "severity",
+        "message",
+        "current_month_sales",
+        "average_monthly_sales",
+        "drop_percentage",
+        "baseline_months",
+        "analysis_month",
+        "analysis_year",
+        "reseller_name",
+        "reseller_phone",
+        "reseller_email",
+        "is_active",
+        "notified_at",
+        "resolved_at",
+        "metadata",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "reseller_profiles",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "reseller_id",
+        "profile_photo_url",
+        "phone",
+        "instagram_handle",
+        "bio",
+        "created_at",
+        "updated_at",
+        "show_career_level"
+      ]
+    },
+    {
+      "table": "reseller_stores",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "reseller_id",
+        "product_ids",
+        "created_at",
+        "updated_at",
+        "is_published",
+        "store_name",
+        "store_slug"
+      ]
+    },
+    {
+      "table": "reseller_welcome_configs",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "contract_id",
+        "title",
+        "subtitle",
+        "description",
+        "card_color",
+        "background_color",
+        "button_color",
+        "text_color",
+        "font_family",
+        "form_title",
+        "button_text",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "reunioes_equipe",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "id_reuniao",
+        "empresa_nome",
+        "titulo",
+        "data_inicio",
+        "data_fim",
+        "tipo_reuniao",
+        "setor_alvo",
+        "funcionario_alvo",
+        "status",
+        "created_at"
+      ]
+    },
+    {
+      "table": "revendedoras_ativas",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "nome",
+        "cpf_cnpj",
+        "email",
+        "contato",
+        "url_loja",
+        "data_criacao"
+      ]
+    },
+    {
+      "table": "service_prices",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "service_code",
+        "service_name",
+        "price",
+        "cost_price",
+        "is_active",
+        "description",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "setores",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "empresa_nome",
+        "setor_nome",
+        "setor_descricao",
+        "created_at"
+      ]
+    },
+    {
+      "table": "settings",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "company_name",
+        "store_name",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "verification_configs",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "contract_id",
+        "primary_color",
+        "text_color",
+        "font_family",
+        "font_size",
+        "logo_url",
+        "logo_size",
+        "logo_position",
+        "footer_text",
+        "welcome_text",
+        "instructions",
+        "security_text",
+        "background_image",
+        "background_color",
+        "icon_url",
+        "header_background_color",
+        "header_logo_url",
+        "header_company_name",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "resellers",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "nome",
+        "cnpj",
+        "contato",
+        "telefone",
+        "email",
+        "endereco",
+        "comissao",
+        "observacoes",
+        "ativo",
+        "league_id",
+        "league_points",
+        "xp",
+        "level",
+        "current_streak",
+        "longest_streak",
+        "last_activity_date",
+        "total_sales_amount",
+        "total_orders",
+        "total_customers",
+        "avatar_url"
+      ]
+    },
+    {
+      "table": "users",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "cpf",
+        "nome_completo",
+        "email",
+        "telefone",
+        "cep",
+        "rua",
+        "numero",
+        "cidade",
+        "estado",
+        "endereco_completo",
+        "govbr_verified",
+        "govbr_nivel_conta",
+        "created_at"
+      ]
+    },
+    {
+      "table": "chat_attachments",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "message_id",
+        "file_name",
+        "file_type",
+        "file_size",
+        "file_url",
+        "thumbnail_url",
+        "created_at"
+      ]
+    },
+    {
+      "table": "transportadoras",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "admin_id",
+        "nome",
+        "codigo",
+        "tipo",
+        "logo_url",
+        "api_url",
+        "api_token",
+        "ativo",
+        "prazo_adicional_dias",
+        "markup_percentual",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "cotacoes_frete",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "admin_id",
+        "cep_origem",
+        "cep_destino",
+        "peso_kg",
+        "altura_cm",
+        "largura_cm",
+        "comprimento_cm",
+        "valor_declarado",
+        "transportadora_id",
+        "transportadora_nome",
+        "servico",
+        "valor_frete",
+        "prazo_dias",
+        "selecionado",
+        "created_at"
+      ]
+    },
+    {
+      "table": "envios",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "admin_id",
+        "cotacao_id",
+        "codigo_rastreio",
+        "status",
+        "remetente_nome",
+        "remetente_cpf_cnpj",
+        "remetente_telefone",
+        "remetente_email",
+        "remetente_cep",
+        "remetente_logradouro",
+        "remetente_numero",
+        "remetente_complemento",
+        "remetente_bairro",
+        "remetente_cidade",
+        "remetente_uf",
+        "destinatario_nome",
+        "destinatario_cpf_cnpj",
+        "destinatario_telefone",
+        "destinatario_email",
+        "destinatario_cep",
+        "destinatario_logradouro",
+        "destinatario_numero",
+        "destinatario_complemento",
+        "destinatario_bairro",
+        "destinatario_cidade",
+        "destinatario_uf",
+        "peso_kg",
+        "altura_cm",
+        "largura_cm",
+        "comprimento_cm",
+        "valor_declarado",
+        "descricao_conteudo",
+        "transportadora_id",
+        "transportadora_nome",
+        "servico",
+        "valor_frete",
+        "prazo_estimado_dias",
+        "data_previsao_entrega",
+        "data_postagem",
+        "data_entrega",
+        "created_at",
+        "updated_at",
+        "contract_id"
+      ]
+    },
+    {
+      "table": "etiquetas_envio",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "envio_id",
+        "tipo",
+        "url",
+        "conteudo_base64",
+        "gerada_em"
+      ]
+    },
+    {
+      "table": "tabela_frete",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "admin_id",
+        "nome",
+        "tipo",
+        "ativo",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "faixa_frete",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "tabela_id",
+        "cep_inicio",
+        "cep_fim",
+        "uf",
+        "regiao",
+        "peso_min",
+        "peso_max",
+        "valor_fixo",
+        "valor_por_kg",
+        "prazo_dias",
+        "created_at"
+      ]
+    },
+    {
+      "table": "gamification_activities",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "reseller_id",
+        "type",
+        "title",
+        "description",
+        "icon",
+        "metadata",
+        "created_at"
+      ]
+    },
+    {
+      "table": "print_queue",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "product_id",
+        "quantity",
+        "parcelas",
+        "created_at"
+      ]
+    },
+    {
+      "table": "product_requests",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "reseller_id",
+        "product_id",
+        "quantity",
+        "status",
+        "notes",
+        "admin_notes",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "rastreamento_eventos",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "envio_id",
+        "codigo_rastreio",
+        "data_hora",
+        "status",
+        "descricao",
+        "local",
+        "cidade",
+        "uf",
+        "origem_api",
+        "created_at"
+      ]
+    },
+    {
+      "table": "reseller_badges",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "reseller_id",
+        "badge_id",
+        "earned_at"
+      ]
+    },
+    {
+      "table": "reseller_challenges",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "reseller_id",
+        "challenge_id",
+        "progress",
+        "is_completed",
+        "completed_at",
+        "period_start",
+        "period_end",
+        "started_at"
+      ]
+    },
+    {
+      "table": "reseller_rewards",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "reseller_id",
+        "reward_id",
+        "status",
+        "source",
+        "source_id",
+        "earned_at",
+        "redeemed_at",
+        "delivered_at"
+      ]
+    },
+    {
+      "table": "formulario_personalizado",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "nome",
+        "email",
+        "telefone",
+        "empresa",
+        "tamanho_empresa",
+        "receita",
+        "volume_leads",
+        "pontos_dor",
+        "timeline",
+        "interesse_especifico",
+        "orcamento_disponivel",
+        "decisor",
+        "processo_decisao",
+        "solucao_atual",
+        "principais_desafios",
+        "score",
+        "roi_data",
+        "origem",
+        "campanha",
+        "status",
+        "lgpd_consent",
+        "lgpd_consent_date",
+        "created_at"
+      ]
+    },
+    {
+      "table": "reuniao_prospecto",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "lead_id",
+        "formulario_personalizado_id",
+        "tipo_reuniao",
+        "data_agendada",
+        "duracao",
+        "plataforma",
+        "link_reuniao",
+        "nome_prospecto",
+        "email_prospecto",
+        "telefone_prospecto",
+        "cargo_prospecto",
+        "empresa_prospecto",
+        "objetivo_reuniao",
+        "pontos_discussao",
+        "materiais_compartilhados",
+        "notas_preparacao",
+        "lembrete_enviado",
+        "confirmado",
+        "status",
+        "notas_reuniao",
+        "proximos_passos",
+        "probabilidade_conversao",
+        "data_realizacao",
+        "duracao_real",
+        "participantes",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "signature_logs",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "contract_id",
+        "ip_address",
+        "user_agent",
+        "timestamp",
+        "govbr_token_hash",
+        "govbr_auth_time",
+        "signature_valid",
+        "created_at"
+      ]
+    },
+    {
+      "table": "revendedoras",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "admin_id",
+        "nome",
+        "email",
+        "senha_hash",
+        "cpf",
+        "telefone",
+        "subdominio_slug",
+        "status",
+        "comissao_padrao",
+        "stripe_account_id",
+        "foto_url",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "vendas_revendedora",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "revendedora_id",
+        "admin_id",
+        "produto_id",
+        "produto_nome",
+        "valor_total",
+        "valor_comissao",
+        "valor_empresa",
+        "status_pagamento",
+        "stripe_payment_id",
+        "cliente_nome",
+        "cliente_telefone",
+        "created_at"
+      ]
+    },
+    {
+      "table": "wallet_transactions",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "wallet_id",
+        "type",
+        "amount",
+        "balance_before",
+        "balance_after",
+        "description",
+        "reference_id",
+        "reference_type",
+        "status",
+        "metadata",
+        "created_at"
+      ]
+    },
+    {
+      "table": "bank_accounts",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "reseller_id",
+        "bank_name",
+        "bank_code",
+        "agency",
+        "account_number",
+        "account_type",
+        "holder_name",
+        "holder_document",
+        "pix_key",
+        "pix_key_type",
+        "is_primary",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "withdrawals",
+      "isIsolated": false,
+      "identifiers": [],
+      "allColumns": [
+        "id",
+        "reseller_id",
+        "bank_account_id",
+        "amount",
+        "status",
+        "requested_at",
+        "processed_at",
+        "completed_at",
+        "transfer_type",
+        "transfer_receipt",
+        "notes",
+        "created_at",
+        "updated_at"
+      ]
+    }
+  ]
+}

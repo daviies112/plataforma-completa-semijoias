@@ -1,0 +1,109 @@
+{
+  "id": "0a3514bb-75cc-47cf-81cd-7994724b126d",
+  "title": "Gabriel",
+  "slug": "gabriel",
+  "description": "Teste de save via API",
+  "welcomeConfig": {
+    "title": "TESTE FINAL FORMUL",
+    "description": "Responda as perguntas abaixo para verificar se você está qualificado para uma reunião com nosso time."
+  },
+  "questions": [
+    {
+      "id": "welcome-heading",
+      "text": "Questionário de Qualificação",
+      "type": "heading",
+      "level": 1,
+      "elementTypeVersion": 1
+    },
+    {
+      "id": "welcome-text",
+      "type": "text",
+      "content": "Responda as perguntas abaixo para verificar se você está qualificado para uma reunião com nosso time.",
+      "elementTypeVersion": 1
+    },
+    {
+      "id": "pagebreak-welcome",
+      "type": "pageBreak",
+      "elementTypeVersion": 1
+    },
+    {
+      "id": "1772286063108",
+      "text": "teste",
+      "type": "question",
+      "points": 10,
+      "options": [
+        {
+          "id": "1772286082318",
+          "text": "t",
+          "points": 10
+        },
+        {
+          "id": "1772286085373",
+          "text": "te",
+          "points": 10
+        }
+      ],
+      "required": true,
+      "questionType": "multiple-choice",
+      "elementTypeVersion": 1
+    },
+    {
+      "id": "pagebreak-after-1772286063108",
+      "type": "pageBreak",
+      "elementTypeVersion": 1
+    },
+    {
+      "id": "1772286088617",
+      "text": "test1",
+      "type": "question",
+      "points": 10,
+      "options": [],
+      "required": true,
+      "questionType": "text",
+      "elementTypeVersion": 1
+    }
+  ],
+  "elements": null,
+  "passingScore": 20,
+  "scoreTiers": null,
+  "designConfig": {
+    "logo": "http://nexusemijoias.nexusintelligence.tech/uploads/logos/logo-1772286053269-790763586.png",
+    "colors": {
+      "text": "hsl(236, 72%, 42%)",
+      "button": "hsl(240, 100%, 50%)",
+      "primary": "hsl(0, 84%, 49%)",
+      "secondary": "hsl(39, 72%, 45%)",
+      "textColor": "hsl(236, 72%, 42%)",
+      "background": "hsl(210, 33%, 10%)",
+      "buttonText": "hsl(134, 100%, 44%)",
+      "titleColor": "hsl(0, 84%, 49%)",
+      "borderColor": "hsl(48, 51%, 45%)",
+      "buttonColor": "hsl(240, 100%, 50%)",
+      "inputTextColor": "hsl(222, 47%, 11%)",
+      "pageBackground": "hsl(210, 33%, 10%)",
+      "buttonTextColor": "hsl(134, 100%, 44%)",
+      "inputBackground": "hsl(210, 40%, 96%)",
+      "progressBarColor": "hsl(48, 83%, 88%)",
+      "containerBackground": "hsl(39, 72%, 45%)"
+    },
+    "spacing": "comfortable",
+    "logoSize": 64,
+    "typography": {
+      "textSize": "base",
+      "titleSize": "2xl",
+      "fontFamily": "Inter"
+    },
+    "extractedColors": [
+      "hsl(210, 33%, 12%)",
+      "hsl(30, 43%, 55%)",
+      "hsl(37, 53%, 71%)",
+      "hsl(48, 83%, 88%)",
+      "hsl(40, 14%, 41%)"
+    ]
+  },
+  "completionPageId": null,
+  "createdAt": "2026-02-28T13:51:08.218Z",
+  "updatedAt": "2026-03-01T14:09:00.951Z",
+  "tenantId": "emericks-tenant",
+  "isPublic": true
+}
