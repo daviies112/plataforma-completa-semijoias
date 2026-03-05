@@ -11,7 +11,5 @@ dist-ssr
 ! .env.example
 build_error.log
 vps_*.js
-*.png
-*.webp
 temp
 tmp
