@@ -60,11 +60,11 @@ function ScoreGauge({ score }: { score: number }) {
   };
 
   const getScoreDescription = (val: number) => {
-    if (val <= 300) return "Múltiplos fatores negativos identificados";
-    if (val <= 500) return "Fatores de risco significativos";
-    if (val <= 700) return "Alguns fatores de atenção";
-    if (val <= 850) return "Bom histórico identificado";
-    return "Excelente histórico - Alta confiabilidade";
+    if (val <= 300) return "Múltiplos processos ou dívida ativa — perfil de alto risco";
+    if (val <= 500) return "Acima da média de processos — atenção recomendada";
+    if (val <= 700) return "Na média brasileira (2-3 processos na vida)";
+    if (val <= 850) return "Poucos processos — histórico favorável";
+    return "Ficha limpa — alta confiabilidade";
   };
 
   const color = getScoreColor(score);
@@ -222,13 +222,13 @@ export function ProcessDetailsModal({ check, open, onOpenChange }: ProcessDetail
        * | 0-300     | Risco Muito Alto  | Reprovar          |
        * 
        * PENALIDADES POR PROCESSOS COMO RÉU:
-       * 1 processo:  -120 (score ~880)
-       * 2 processos: -220 (score ~780)
-       * 3 processos: -350 (score ~650)
-       * 4 processos: -450 (score ~550)
-       * 5 processos: -550 (score ~450) ← RISCO ALTO
-       * 6 processos: -620 (score ~380)
-       * 7+ processos: -700 + (n-7)*40
+       * 1 processo:  -150 (score ~850 - Bom)
+       * 2 processos: -300 (score ~700 - Limite Atenção/Bom)
+       * 3 processos: -400 (score ~600 - Atenção — média brasileira)
+       * 4 processos: -500 (score ~500 - Limiar Risco Alto)
+       * 5 processos: -620 (score ~380 - RISCO ALTO)
+       * 6 processos: -720 (score ~280 - RISCO MUITO ALTO)
+       * 7+ processos: -720 + ((n-6)*80)
        * 
        * OUTRAS PENALIDADES:
        * - Por processo como autor: -15 cada
@@ -260,21 +260,21 @@ export function ProcessDetailsModal({ check, open, onOpenChange }: ProcessDetail
       const isCpfRegular = cpfStatus === 'REGULAR' || cpfStatus === '';
       
       // DEFENDANT lawsuits - main risk indicator (person was sued/accused)
-      // Based on Brazilian average (0.15/year), having multiple as defendant is serious
+      // Based on Brazilian average (2-3/lifetime), 4+ is risk territory
       if (defendantCount === 1) {
-        score -= 120; // 1 lawsuit = 880 (could be unlucky)
+        score -= 150; // → ~850 (Bom)
       } else if (defendantCount === 2) {
-        score -= 220; // 2 lawsuits = 780 (attention)
+        score -= 300; // → ~700 (limite Atenção/Bom)
       } else if (defendantCount === 3) {
-        score -= 350; // 3 lawsuits = 650 (pattern emerging)
+        score -= 400; // → ~600 (Atenção — média brasileira alta)
       } else if (defendantCount === 4) {
-        score -= 450; // 4 lawsuits = 550 (concerning)
+        score -= 500; // → ~500 (limiar Risco Alto)
       } else if (defendantCount === 5) {
-        score -= 550; // 5 lawsuits = 450 (HIGH RISK - below 500)
+        score -= 620; // → ~380 (Risco Alto)
       } else if (defendantCount === 6) {
-        score -= 620; // 6 lawsuits = 380 (HIGH RISK)
+        score -= 720; // → ~280 (Risco Muito Alto)
       } else if (defendantCount >= 7) {
-        score -= 700 + ((defendantCount - 7) * 40); // 7+ = VERY HIGH RISK
+        score -= 720 + ((defendantCount - 6) * 80); // ≥ 7 → cada vez mais fundo
       }
       
       // Author lawsuits - less concerning (person defending rights)
@@ -284,10 +284,13 @@ export function ProcessDetailsModal({ check, open, onOpenChange }: ProcessDetail
       score -= otherCount * 25;
       
       // Active collections - VERY serious (current debt issues)
-      if (collectionsPayload?.HasActiveCollections) {
-        score -= 200;
-      } else if (Number(collectionsPayload?.TotalOccurrences || 0) > 0) {
-        score -= 60; // Past collections, now resolved
+      const hasActiveDebt = collectionsPayload?.HasActiveCollections || (collectionsPayload as any)?.IsCurrentlyOnCollection;
+      const pastDebtCount = Number(collectionsPayload?.TotalOccurrences || (collectionsPayload as any)?.CollectionOccurrences || 0);
+
+      if (hasActiveDebt) {
+        score -= 350; // Dívida ativa → garante zona vermelha independente do resto
+      } else if (pastDebtCount > 0) {
+        score -= 50;  // Histórico resolvido — peso menor
       }
       
       // CPF status - irregular is critical red flag
@@ -300,9 +303,9 @@ export function ProcessDetailsModal({ check, open, onOpenChange }: ProcessDetail
       const last90 = Number(processData?.Last90DaysLawsuits || 0);
       const last365 = Number(processData?.Last365DaysLawsuits || 0);
       
-      score -= last30 * 40;
-      score -= Math.max(0, last90 - last30) * 25;
-      score -= Math.max(0, last365 - last90) * 10;
+      score -= last30 * 50;
+      score -= Math.max(0, last90 - last30) * 30;
+      score -= Math.max(0, last365 - last90) * 15;
       
       // Small bonus for no recent activity (past issues, currently clean)
       if (last365 === 0 && totalLawsuitsCount > 0) {
@@ -594,7 +597,7 @@ export function ProcessDetailsModal({ check, open, onOpenChange }: ProcessDetail
                   </div>
                   <div>
                     <p className="text-zinc-400">Status do CPF</p>
-                    <Badge variant={basicDataPayload.TaxIdStatus === 'Regular' ? 'default' : 'destructive'} className={basicDataPayload.TaxIdStatus === 'Regular' ? 'bg-green-600' : ''}>
+                    <Badge variant={basicDataPayload.TaxIdStatus?.toUpperCase() === 'REGULAR' ? 'default' : 'destructive'} className={basicDataPayload.TaxIdStatus?.toUpperCase() === 'REGULAR' ? 'bg-green-600' : ''}>
                       {basicDataPayload.TaxIdStatus || 'N/A'}
                     </Badge>
                   </div>

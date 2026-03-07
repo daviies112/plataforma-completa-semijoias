@@ -1,100 +1,43 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import { FormStatusBadge } from "./FormStatusBadge";
-import { Loader2 } from "lucide-react";
+import { useLeadStatus } from "../contexts/LeadStatusContext";
 
 interface LeadStatusLabelProps {
-  phoneNumber: string;
-  refreshInterval?: number;
+  phoneNumber: string; // JID do WhatsApp (xxx@s.whatsapp.net) ou número puro
+  size?: 'sm' | 'md' | 'lg';
+  className?: string;
 }
 
-interface LeadStatus {
-  exists: boolean;
-  formStatus?: string;
-  qualificationStatus?: string;
-  pontuacao?: number;
-  nome?: string;
-}
-
-export function LeadStatusLabel({ 
-  phoneNumber, 
-  refreshInterval = 10000 
+/**
+ * LeadStatusLabel — exibe a etiqueta de status de um lead pelo telefone.
+ *
+ * Delega completamente a busca ao LeadStatusContext, que já recebe os dados
+ * em batch pelo WhatsAppPlatformPage. Não faz chamadas individuais à API.
+ * O pipelineStatus (quando disponível) tem prioridade sobre formStatus.
+ */
+export function LeadStatusLabel({
+  phoneNumber,
+  size = 'sm',
+  className = '',
 }: LeadStatusLabelProps) {
-  const [leadStatus, setLeadStatus] = useState<LeadStatus | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const { loadStatuses } = useLeadStatus();
 
-  const fetchLeadStatus = async () => {
-    if (!phoneNumber) return;
+  const normalizedPhone = phoneNumber.replace(/@.*$/, '').replace(/\D/g, '');
 
-    try {
-      const normalizedPhone = phoneNumber.replace(/@.*$/, '');
-      const response = await fetch(`/api/leads/status/${normalizedPhone}`);
-      
-      if (!response.ok) {
-        throw new Error('Erro ao buscar status do lead');
-      }
-
-      const data = await response.json();
-      
-      if (data.success && data.data) {
-        setLeadStatus({
-          exists: data.data.existe || false,
-          formStatus: data.data.formStatus || data.data.status?.formStatus || 'not_sent',
-          qualificationStatus: data.data.qualificationStatus || data.data.status?.qualificationStatus || undefined,
-          pontuacao: data.data.pontuacao ?? data.data.status?.pontuacao,
-          nome: data.data.nome || data.data.status?.nome,
-        });
-        setError(null);
-      } else {
-        setLeadStatus({
-          exists: false,
-          formStatus: 'not_sent',
-          qualificationStatus: undefined,
-        });
-      }
-      
-      setIsLoading(false);
-    } catch (err) {
-      console.error('Erro ao buscar status do lead:', err);
-      setError('Erro ao carregar status');
-      setIsLoading(false);
-      setLeadStatus({
-        exists: false,
-        formStatus: 'not_sent',
-        qualificationStatus: undefined,
-      });
-    }
-  };
-
+  // Carrega dados apenas uma vez por número (sem polling)
+  const loadedRef = useRef(false);
   useEffect(() => {
-    fetchLeadStatus();
-    
-    const interval = setInterval(() => {
-      fetchLeadStatus();
-    }, refreshInterval);
+    if (!normalizedPhone || loadedRef.current) return;
+    loadedRef.current = true;
+    loadStatuses([normalizedPhone]);
+  }, [normalizedPhone, loadStatuses]);
 
-    return () => clearInterval(interval);
-  }, [phoneNumber, refreshInterval]);
-
-  if (isLoading && !leadStatus) {
-    return (
-      <div className="flex items-center gap-1 text-xs text-muted-foreground">
-        <Loader2 className="w-3 h-3 animate-spin" />
-        <span>Carregando...</span>
-      </div>
-    );
-  }
-
-  if (error && !leadStatus) {
-    return null;
-  }
-
+  // FormStatusBadge lê pipelineStatus e formStatus direto do context
   return (
     <FormStatusBadge
-      formStatus={leadStatus?.formStatus || 'not_sent'}
-      qualificationStatus={leadStatus?.qualificationStatus}
-      pontuacao={leadStatus?.pontuacao}
-      size="sm"
+      telefone={normalizedPhone}
+      size={size}
+      className={className}
     />
   );
 }

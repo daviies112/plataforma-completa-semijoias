@@ -1776,14 +1776,40 @@ export function registerFormulariosCompleteRoutes(app: Express) {
         });
       }
 
-      // Get tenant info from formTenantMapping
-      const mappingResult = await db
-        .select()
-        .from(formTenantMapping)
-        .where(eq(formTenantMapping.formId, formId))
-        .limit(1);
+      let tenantId: string | null = null;
 
-      const tenantId = mappingResult.length > 0 ? mappingResult[0].tenantId : null;
+      // 🔐 PRIORIDADE 1: Buscar o tenantId a partir do companySlug (contexto da URL acessada)
+      // Se a revendedora A acessa o formulário, as respostas devem ir para a revendedora A
+      if (companySlug) {
+        try {
+          const { hms100msConfig } = await import('../../shared/db-schema');
+          const slugMapping = await db
+            .select({ tenantId: hms100msConfig.tenantId })
+            .from(hms100msConfig)
+            .where(eq(hms100msConfig.companySlug, companySlug))
+            .limit(1);
+            
+          if (slugMapping.length > 0) {
+            tenantId = slugMapping[0].tenantId;
+            console.log(`✅ [FORMS SUBMIT] Resolvido tenantId (${tenantId}) via companySlug (${companySlug})`);
+          }
+        } catch (e) {
+          console.warn(`⚠️ [FORMS SUBMIT] Erro ao buscar tenantId via companySlug:`, e);
+        }
+      }
+
+      // 🔐 PRIORIDADE 2: Fallback para formTenantMapping
+      if (!tenantId) {
+        // Get tenant info from formTenantMapping
+        const mappingResult = await db
+          .select()
+          .from(formTenantMapping)
+          .where(eq(formTenantMapping.formId, formId))
+          .limit(1);
+
+        tenantId = mappingResult.length > 0 ? mappingResult[0].tenantId : null;
+        console.log(`⚠️ [FORMS SUBMIT] Fallback: usando tenantId do criador do formulário (${tenantId})`);
+      }
 
       // Try to save to Supabase first (primary storage for multi-tenant)
       let supabaseSuccess = false;
@@ -2097,28 +2123,52 @@ export function registerFormulariosCompleteRoutes(app: Express) {
           const reconstructedData = reconstructFormDataFromSupabase(parsedData);
 
 
-          // 🌟 LÓGICA DE PRIMEIRO FORMULÁRIO ATIVO (SUPABASE)
+          // 🌟 LÓGICA DE PRIMEIRO FORMULÁRIO ATIVO (SUPABASE E POSTGRES LOCAL)
           if (existingSlugs.length === 0) {
-            console.log('🌟 [POST] Primeiro formulário criado (Supabase) - definindo como Ativo por padrão');
+            console.log('🌟 [POST] Primeiro formulário criado - definindo como Ativo por padrão');
             try {
-              const supabaseSettings = await getOrCreateAppSettingsInSupabase(supabase, tenantId);
               const formUrl = generateDynamicFormUrl(companySlug, uniqueSlug);
 
-              const { error: activeError } = await supabase
-                .from('app_settings')
-                .update({
-                  active_form_id: data.id,
-                  active_form_url: formUrl,
-                  company_slug: companySlug,
-                  updated_at: new Date().toISOString()
-                })
-                .eq('id', supabaseSettings.id);
+              // 1) Update no Supabase
+              try {
+                // Remove the second arg since getOrCreateAppSettingsInSupabase expects 1 argument
+                const supabaseSettings = await getOrCreateAppSettingsInSupabase(supabase);
+                const { error: activeError } = await supabase
+                  .from('app_settings')
+                  .update({
+                    active_form_id: data.id,
+                    active_form_url: formUrl,
+                    company_slug: companySlug,
+                    updated_at: new Date().toISOString()
+                  })
+                  .eq('id', supabaseSettings.id);
 
-              if (!activeError) {
-                console.log('✅ [POST] Formulário definido como ativo automaticamente!');
+                if (!activeError) {
+                  console.log('✅ [POST] Formulário definido como ativo automaticamente no Supabase!');
+                }
+              } catch (supaErr) {
+                console.warn('⚠️ [POST] Erro ao atualizar active_form no Supabase:', supaErr);
               }
+
+              // 2) Update no PostgreSQL Local (MUITO IMPORTANTE para refletir na interface)
+              try {
+                const settings = await getOrCreateLocalAppSettings(tenantId);
+                await db.update(appSettings)
+                  .set({
+                    activeFormId: data.id,
+                    activeFormUrl: formUrl,
+                    companySlug: companySlug,
+                    updatedAt: new Date()
+                  })
+                  .where(eq(appSettings.id, settings.id));
+
+                console.log('✅ [POST] Formulário definido como ativo automaticamente no PostgreSQL Local!');
+              } catch (localErr) {
+                console.warn('⚠️ [POST] Erro ao atualizar active_form no Local:', localErr);
+              }
+
             } catch (activeErr) {
-              console.warn('⚠️ [POST] Erro ao definir primeiro formulário como ativo:', activeErr);
+              console.warn('⚠️ [POST] Erro geral ao definir primeiro formulário como ativo:', activeErr);
             }
           }
 
@@ -4205,6 +4255,7 @@ export function registerFormulariosCompleteRoutes(app: Express) {
           whatsappId: lead.whatsappId,
           formStatus: lead.formStatus,
           qualificationStatus: lead.qualificationStatus,
+          pipelineStatus: lead.pipelineStatus, // ✅ ADICIONADO
           pontuacao: lead.pontuacao,
           formularioEnviado: lead.formularioEnviado,
           formularioAberto: lead.formularioAberto,
@@ -4270,6 +4321,7 @@ export function registerFormulariosCompleteRoutes(app: Express) {
           telefone: telefoneNormalizado,
           formStatus: lead.formStatus,
           qualificationStatus: lead.qualificationStatus,
+          pipelineStatus: lead.pipelineStatus, // ✅ ADICIONADO
           pontuacao: lead.pontuacao,
           formularioEnviado: lead.formularioEnviado,
           formularioAberto: lead.formularioAberto,
@@ -4362,6 +4414,7 @@ export function registerFormulariosCompleteRoutes(app: Express) {
               telefone: telefoneNormalizado,
               formStatus: lead.formStatus,
               qualificationStatus: lead.qualificationStatus,
+              pipelineStatus: lead.pipelineStatus, // ✅ ADICIONADO
               pontuacao: lead.pontuacao,
               formularioEnviado: lead.formularioEnviado,
               formularioAberto: lead.formularioAberto,

@@ -160,8 +160,8 @@ export const LabelDesigner: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-background luxury-gradient p-4 md:p-8 animate-fadeIn">
+      <div className="max-w-7xl mx-auto space-y-6">
         <div className="mb-6">
           <div className="flex items-center gap-4">
             {productData && (
@@ -176,8 +176,8 @@ export const LabelDesigner: React.FC = () => {
               </Button>
             )}
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">Designer de Etiquetas</h1>
-              <p className="text-gray-600 mt-2">
+              <h1 className="text-3xl font-bold tracking-tight">Designer de Etiquetas</h1>
+              <p className="text-muted-foreground text-sm font-medium mt-1">
                 {productData 
                   ? `Editando etiqueta para: ${productData.description || 'Produto'}` 
                   : 'Crie etiquetas personalizadas com editor visual completo'}
@@ -189,11 +189,11 @@ export const LabelDesigner: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {/* Left Sidebar - Canvas Settings & Toolbar */}
           <div className="lg:col-span-1 space-y-4">
-            <Card className="p-4">
-              <h3 className="font-semibold text-sm mb-4">Configurações do Canvas</h3>
+            <Card className="luxury-card border-none p-4">
+              <h3 className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/70 mb-4">Configurações do Canvas</h3>
               <div className="space-y-3">
                 <div>
-                  <Label htmlFor="width" className="text-xs">Largura (mm)</Label>
+                  <Label htmlFor="width" className="text-[10px] font-black uppercase tracking-widest">Largura (mm)</Label>
                   <Input
                     id="width"
                     type="number"
@@ -201,11 +201,11 @@ export const LabelDesigner: React.FC = () => {
                     max="500"
                     value={widthMm}
                     onChange={(e) => setWidthMm(parseInt(e.target.value) || 60)}
-                    className="mt-1"
+                    className="mt-1 bg-background/60 border-border/40 focus-visible:ring-primary/20"
                   />
                 </div>
                 <div>
-                  <Label htmlFor="height" className="text-xs">Altura (mm)</Label>
+                  <Label htmlFor="height" className="text-[10px] font-black uppercase tracking-widest">Altura (mm)</Label>
                   <Input
                     id="height"
                     type="number"
@@ -213,10 +213,10 @@ export const LabelDesigner: React.FC = () => {
                     max="500"
                     value={heightMm}
                     onChange={(e) => setHeightMm(parseInt(e.target.value) || 40)}
-                    className="mt-1"
+                    className="mt-1 bg-background/60 border-border/40 focus-visible:ring-primary/20"
                   />
                 </div>
-                <Button onClick={handleSizeChange} className="w-full" size="sm">
+                <Button onClick={handleSizeChange} className="w-full shadow-lg hover:shadow-primary/20" size="sm">
                   Aplicar Tamanho
                 </Button>
               </div>
@@ -238,12 +238,12 @@ export const LabelDesigner: React.FC = () => {
 
           {/* Center - Canvas */}
           <div className="lg:col-span-2">
-            <Card className="p-6">
+            <Card className="luxury-card border-none p-6">
               <div className="mb-4">
-                <h3 className="font-semibold text-sm text-gray-700">
+                <h3 className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/70">
                   Canvas de Edição ({widthMm}mm × {heightMm}mm)
                 </h3>
-                <p className="text-xs text-gray-500 mt-1">
+                <p className="text-xs text-muted-foreground mt-1">
                   Arraste, redimensione e personalize os elementos
                 </p>
               </div>
@@ -295,8 +295,8 @@ export const LabelDesigner: React.FC = () => {
         </div>
 
         {/* Info Footer */}
-        <Card className="mt-6 p-4">
-          <div className="text-xs text-gray-600 space-y-1">
+        <Card className="luxury-glass border-border/20 mt-6 p-4">
+          <div className="text-xs text-muted-foreground space-y-1">
             <p><strong>Dicas de uso:</strong></p>
             <ul className="list-disc list-inside space-y-1 ml-2">
               <li>Clique e arraste elementos para movê-los</li>

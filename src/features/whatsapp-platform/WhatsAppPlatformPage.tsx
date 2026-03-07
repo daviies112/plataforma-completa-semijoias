@@ -45,6 +45,7 @@ interface Conversation {
   tags?: string[]; // IDs das tags personalizadas
   formStatus?: string; // Status do formulário
   qualificationStatus?: string; // Status de qualificação
+  pipelineStatus?: string; // Status do Kanban
   pontuacao?: number; // Pontuação do lead
   cpfCompliance?: CPFComplianceData; // Status de compliance do CPF
 }
@@ -70,7 +71,7 @@ const Index = () => {
   const [useRealData, setUseRealData] = useState(false);
   const [connectionState, setConnectionState] = useState<{ connected: boolean; state: string } | null>(null);
   const [contactsMap, setContactsMap] = useState<Record<string, { name?: string; pushName?: string; notify?: string; verifiedName?: string }>>({});
-  const [leadsMap, setLeadsMap] = useState<Record<string, { formStatus?: string; qualificationStatus?: string; pontuacao?: number }>>({});
+  const [leadsMap, setLeadsMap] = useState<Record<string, { formStatus?: string; qualificationStatus?: string; pipelineStatus?: string; pontuacao?: number }>>({});
   const [cpfComplianceMap, setCpfComplianceMap] = useState<Record<string, CPFComplianceData>>({});
   const [lastFullUpdate, setLastFullUpdate] = useState<number>(0);
 
@@ -114,18 +115,20 @@ const Index = () => {
             const hasChanged =
               conv.formStatus !== lead.formStatus ||
               conv.qualificationStatus !== lead.qualificationStatus ||
+              conv.pipelineStatus !== lead.pipelineStatus ||
               conv.pontuacao !== lead.pontuacao;
 
             if (hasChanged) {
               console.log(`✅ Atualizando conversa ${conv.nome}:`, {
-                old: { formStatus: conv.formStatus, qualificationStatus: conv.qualificationStatus },
-                new: { formStatus: lead.formStatus, qualificationStatus: lead.qualificationStatus }
+                old: { formStatus: conv.formStatus, qualificationStatus: conv.qualificationStatus, pipelineStatus: conv.pipelineStatus },
+                new: { formStatus: lead.formStatus, qualificationStatus: lead.qualificationStatus, pipelineStatus: lead.pipelineStatus }
               });
 
               return {
                 ...conv,
                 formStatus: lead.formStatus,
                 qualificationStatus: lead.qualificationStatus,
+                pipelineStatus: lead.pipelineStatus,
                 pontuacao: lead.pontuacao,
               };
             }
@@ -369,6 +372,7 @@ const Index = () => {
     // Se NÃO encontrou, significa que ainda não fez formulário
     const formStatus = lead?.formStatus || 'not_sent';
     const qualificationStatus = lead?.qualificationStatus;
+    const pipelineStatus = lead?.pipelineStatus;
     const pontuacao = lead?.pontuacao;
 
     console.log('🏷️ Status do lead:', {
@@ -378,6 +382,7 @@ const Index = () => {
       leadFound: !!lead,
       formStatus,
       qualificationStatus,
+      pipelineStatus,
       pontuacao,
       leadKeys: Object.keys(leadsMap).slice(0, 5) // Mostrar exemplos de chaves no mapa
     });
@@ -391,6 +396,7 @@ const Index = () => {
       naoLidas: unreadCount, // Sempre um número
       formStatus,
       qualificationStatus,
+      pipelineStatus,
       pontuacao,
     };
   };
@@ -753,13 +759,14 @@ const Index = () => {
       if (response.ok) {
         const leads = await response.json();
 
-        const leadsObj: Record<string, { formStatus?: string; qualificationStatus?: string; pontuacao?: number }> = {};
+        const leadsObj: Record<string, { formStatus?: string; qualificationStatus?: string; pipelineStatus?: string; pontuacao?: number }> = {};
         leads.forEach((lead: any) => {
           const normalizedPhone = lead.telefoneNormalizado;
           if (normalizedPhone) {
             leadsObj[normalizedPhone] = {
               formStatus: lead.formStatus,
               qualificationStatus: lead.qualificationStatus,
+              pipelineStatus: lead.pipelineStatus,
               pontuacao: lead.pontuacao,
             };
           }
@@ -811,6 +818,7 @@ const Index = () => {
             const leadData = {
               formStatus: result.lead.formStatus,
               qualificationStatus: result.lead.qualificationStatus,
+              pipelineStatus: result.lead.pipelineStatus,
               pontuacao: result.lead.pontuacao,
             };
 

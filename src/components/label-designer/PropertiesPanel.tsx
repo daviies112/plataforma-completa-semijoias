@@ -79,26 +79,26 @@ export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({
 
   if (!selectedObject) {
     return (
-      <Card>
+      <Card className="luxury-card border-none">
         <CardHeader>
           <CardTitle className="text-sm">Propriedades</CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-sm text-gray-500">Selecione um elemento para editar suas propriedades</p>
+          <p className="text-sm text-muted-foreground">Selecione um elemento para editar suas propriedades</p>
         </CardContent>
       </Card>
     );
   }
 
   return (
-    <Card>
+    <Card className="luxury-card border-none">
       <CardHeader>
-        <CardTitle className="text-sm">Propriedades do Elemento</CardTitle>
+        <CardTitle className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/70">Propriedades do Elemento</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <Label htmlFor="left" className="text-xs">Esquerda (mm)</Label>
+            <Label htmlFor="left" className="text-[10px] font-black uppercase tracking-widest">Esquerda (mm)</Label>
             <Input
               id="left"
               type="number"
@@ -109,7 +109,7 @@ export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({
             />
           </div>
           <div>
-            <Label htmlFor="top" className="text-xs">Topo (mm)</Label>
+            <Label htmlFor="top" className="text-[10px] font-black uppercase tracking-widest">Topo (mm)</Label>
             <Input
               id="top"
               type="number"
@@ -123,7 +123,7 @@ export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({
 
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <Label htmlFor="width" className="text-xs">Largura (mm)</Label>
+            <Label htmlFor="width" className="text-[10px] font-black uppercase tracking-widest">Largura (mm)</Label>
             <Input
               id="width"
               type="number"
@@ -134,7 +134,7 @@ export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({
             />
           </div>
           <div>
-            <Label htmlFor="height" className="text-xs">Altura (mm)</Label>
+            <Label htmlFor="height" className="text-[10px] font-black uppercase tracking-widest">Altura (mm)</Label>
             <Input
               id="height"
               type="number"

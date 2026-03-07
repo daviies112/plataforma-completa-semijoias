@@ -8,6 +8,7 @@ interface LeadStatus {
     telefone: string;
     formStatus: string;
     qualificationStatus: string;
+    pipelineStatus?: string; // ← ADD: estágio atual no Kanban
     pontuacao: number | null;
     formularioEnviado: boolean;
     formularioAberto: boolean;
@@ -72,7 +73,10 @@ export function LeadStatusProvider({ children }: { children: React.ReactNode }) 
             const cleanPhone = cleanTelefone(result.telefone);
             newCache.set(cleanPhone, {
               exists: result.exists,
-              lead: result.lead,
+              lead: result.lead ? {
+                ...result.lead,
+                pipelineStatus: result.lead.pipelineStatus, // ← ADD
+              } : undefined,
             });
           });
           return newCache;

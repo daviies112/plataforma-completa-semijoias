@@ -76,6 +76,57 @@
     /* === GRADIENT BACKGROUND VARIABLES === */
     --bg-start: 0 0% 96%;                /* Off-white para tema claro */
     --bg-end: 0 0% 94%;                  /* Cinza claro para tema claro */
+
+    /* === DESIGN palette (light) - aliases === */
+    --design-background: 0 0% 100%;
+    --design-foreground: 222.2 84% 4.9%;
+    --design-card: 0 0% 100%;
+    --design-card-foreground: 222.2 84% 4.9%;
+    --design-popover: 0 0% 100%;
+    --design-popover-foreground: 222.2 84% 4.9%;
+    --design-primary: 222.2 47.4% 11.2%;
+    --design-primary-foreground: 210 40% 98%;
+    --design-secondary: 210 40% 96.1%;
+    --design-secondary-foreground: 222.2 47.4% 11.2%;
+    --design-muted: 210 40% 96.1%;
+    --design-muted-foreground: 215.4 16.3% 46.9%;
+    --design-accent: 210 40% 96.1%;
+    --design-accent-foreground: 222.2 47.4% 11.2%;
+    --design-destructive: 0 84.2% 60.2%;
+    --design-destructive-foreground: 210 40% 98%;
+    --design-border: 214.3 31.8% 91.4%;
+    --design-input: 214.3 31.8% 91.4%;
+    --design-ring: 222.2 84% 4.9%;
+    --design-radius: 0.5rem;
+  }
+
+  /* Ative somente se quiser aplicar a paleta da Design sem perder o tema NEXUS padrão */
+  :root.theme-design {
+    --background: var(--design-background);
+    --foreground: var(--design-foreground);
+    --card: var(--design-card);
+    --card-foreground: var(--design-card-foreground);
+    --popover: var(--design-popover);
+    --popover-foreground: var(--design-popover-foreground);
+    --primary: var(--design-primary);
+    --primary-foreground: var(--design-primary-foreground);
+    --secondary: var(--design-secondary);
+    --secondary-foreground: var(--design-secondary-foreground);
+    --muted: var(--design-muted);
+    --muted-foreground: var(--design-muted-foreground);
+    --accent: var(--design-accent);
+    --accent-foreground: var(--design-accent-foreground);
+    --destructive: var(--design-destructive);
+    --destructive-foreground: var(--design-destructive-foreground);
+    --border: var(--design-border);
+    --input: var(--design-input);
+    --ring: var(--design-ring);
+    --radius: var(--design-radius);
+  }
+
+  /* Design não define .dark inteiro; mantém dark NEXUS da Base sem sobrescrever intensivamente */
+  .dark.theme-design {
+    --radius: var(--design-radius);
   }
 
   /* Dark mode - NEXUS theme */

@@ -651,7 +651,30 @@ export async function consultarPresencaCobranca(
       };
     }
 
+    // ============================================================
+    // 🔧 FIX BUG 1: Normalização de chaves da API BigDataCorp
+    // A API retorna nomes diferentes dos esperados pelo sistema.
+    // Injetamos as chaves esperadas com fallback para as da API.
+    // ============================================================
     const collections = response.data.Result?.[0]?.Collections;
+    if (collections) {
+      (collections as any).HasActiveCollections =
+        (collections as any).IsCurrentlyOnCollection ?? collections.HasActiveCollections;
+      (collections as any).TotalOccurrences =
+        (collections as any).CollectionOccurrences ?? collections.TotalOccurrences;
+      (collections as any).Last3Months =
+        (collections as any).Last90DaysCollectionOccurrences ?? collections.Last3Months;
+      (collections as any).Last12Months =
+        (collections as any).Last365DaysCollectionOccurrences ?? collections.Last12Months;
+
+      log("🔄 Collections normalizadas:", {
+        HasActiveCollections: (collections as any).HasActiveCollections,
+        TotalOccurrences: (collections as any).TotalOccurrences,
+        Last3Months: (collections as any).Last3Months,
+        Last12Months: (collections as any).Last12Months,
+      });
+    }
+
     log("Presença em Cobrança obtida com sucesso", {
       totalOcorrencias: collections?.TotalOccurrences || 0,
       ultimos12Meses: collections?.Last12Months || 0,

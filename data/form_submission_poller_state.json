@@ -1,9 +1,9 @@
 {
   "lastSyncedAt": null,
   "lastSyncedId": null,
-  "lastRunAt": "2026-03-04T17:26:35.797Z",
-  "totalSubmissionsProcessed": 33,
-  "totalErrors": 1094,
+  "lastRunAt": "2026-03-06T21:30:39.212Z",
+  "totalSubmissionsProcessed": 39,
+  "totalErrors": 1101,
   "lastError": null,
   "tenantStates": {
     "system": {
@@ -31,16 +31,16 @@
       "lastSyncedId": "fbd26920-48b0-42f0-b668-15d395b86479"
     },
     "emerick": {
-      "lastSyncedAt": "2026-03-04T16:33:27.884062+00:00",
-      "lastSyncedId": "9996cdec-06f3-4a83-a009-99c38756a178"
+      "lastSyncedAt": "2026-03-06T21:09:03.966523+00:00",
+      "lastSyncedId": "5308b03b-5fa2-46d0-91f9-c6a415c2e41f"
     },
     "davisemi-joias": {
-      "lastSyncedAt": "2026-03-04T16:33:27.884062+00:00",
-      "lastSyncedId": "9996cdec-06f3-4a83-a009-99c38756a178"
+      "lastSyncedAt": "2026-03-06T21:09:03.966523+00:00",
+      "lastSyncedId": "5308b03b-5fa2-46d0-91f9-c6a415c2e41f"
     },
     "davisemijoias": {
-      "lastSyncedAt": "2026-03-04T16:33:27.884062+00:00",
-      "lastSyncedId": "9996cdec-06f3-4a83-a009-99c38756a178"
+      "lastSyncedAt": "2026-03-06T21:09:03.966523+00:00",
+      "lastSyncedId": "5308b03b-5fa2-46d0-91f9-c6a415c2e41f"
     }
   }
 }

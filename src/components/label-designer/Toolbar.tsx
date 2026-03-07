@@ -35,14 +35,14 @@ export const Toolbar: React.FC<ToolbarProps> = ({
   };
 
   return (
-    <div className="flex flex-wrap gap-2 p-4 bg-white rounded-lg shadow-sm border">
-      <h3 className="w-full text-sm font-semibold text-gray-700 mb-2">Adicionar Elementos</h3>
+    <div className="flex flex-wrap gap-2 p-4 luxury-glass rounded-xl border border-border/20">
+      <h3 className="w-full text-[10px] font-black uppercase tracking-widest text-muted-foreground/70 mb-2">Adicionar Elementos</h3>
       
       <Button
         variant="outline"
         size="sm"
         onClick={onAddText}
-        className="flex items-center gap-2"
+        className="flex items-center gap-2 bg-background/60 border-border/40 hover:bg-primary/10"
       >
         <Type className="w-4 h-4" />
         Texto
@@ -52,7 +52,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
         variant="outline"
         size="sm"
         onClick={() => fileInputRef.current?.click()}
-        className="flex items-center gap-2"
+        className="flex items-center gap-2 bg-background/60 border-border/40 hover:bg-primary/10"
       >
         <Image className="w-4 h-4" />
         Imagem
@@ -69,7 +69,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
         variant="outline"
         size="sm"
         onClick={onAddBarcode}
-        className="flex items-center gap-2"
+        className="flex items-center gap-2 bg-background/60 border-border/40 hover:bg-primary/10"
       >
         <Barcode className="w-4 h-4" />
         Código de Barras
@@ -79,19 +79,19 @@ export const Toolbar: React.FC<ToolbarProps> = ({
         variant="outline"
         size="sm"
         onClick={onAddQRCode}
-        className="flex items-center gap-2"
+        className="flex items-center gap-2 bg-background/60 border-border/40 hover:bg-primary/10"
       >
         <QrCode className="w-4 h-4" />
         QR Code
       </Button>
 
-      <div className="border-l mx-2" />
+      <div className="border-l border-border/30 mx-2" />
 
       <Button
         variant="destructive"
         size="sm"
         onClick={onDeleteSelected}
-        className="flex items-center gap-2"
+        className="flex items-center gap-2 bg-background/60 border-border/40 hover:bg-primary/10"
       >
         <Trash2 className="w-4 h-4" />
         Deletar

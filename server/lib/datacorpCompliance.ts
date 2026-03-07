@@ -564,6 +564,55 @@ async function getCachedCheckFromSupabase(
       action: "check",
       userId: context.createdBy,
     });
+
+    // ECONOMIA GLOBAL → SALVAR NO SUPABASE LOCAL DO TENANT ATUAL
+    // O CPF foi encontrado no cache global (consultado por outro tenant),
+    // mas precisamos salvar um registro resumido no Supabase Local COM o tenant_id
+    // do tenant ATUAL para que o histórico na página "Consultar CPF" seja exibido
+    // corretamente, sem vazar dados de outros tenants.
+    // SEGURANÇA: usamos SEMPRE o tenantId que chegou como parâmetro da função
+    // (que vem da sessão autenticada), nunca o tenant_id do globalCheck original.
+    try {
+      const personCpfFromGlobal = globalCheck.person_cpf || '';
+      const personNameFromGlobal = globalCheck.person_name || null;
+      const riskScoreFromGlobal = Number(globalCheck.risk_score) || 0;
+      const statusFromGlobal = globalCheck.status || 'pending';
+
+      // Extrair processos do payload do globalCheck de forma segura
+      let processCountFromGlobal = 0;
+      try {
+        const globalPayload = globalCheck.payload || {};
+        const processData = globalPayload?.Result?.[0]?.Processes;
+        if (processData?.TotalLawsuits !== undefined) {
+          processCountFromGlobal = processData.TotalLawsuits;
+        } else if (processData?.Lawsuits && Array.isArray(processData.Lawsuits)) {
+          processCountFromGlobal = processData.Lawsuits.length;
+        }
+      } catch (_) { /* silent */ }
+
+      const clienteComplianceDataReused: CPFComplianceResult = {
+        nome: personNameFromGlobal,
+        cpf: personCpfFromGlobal,
+        telefone: null, // Não expor telefone do tenant original
+        status: statusFromGlobal,
+        dados: true,
+        risco: riskScoreFromGlobal,
+        processos: processCountFromGlobal,
+        aprovado: statusFromGlobal === 'approved',
+        data_consulta: new Date().toISOString(),
+        check_id: newTenantCheck.id,          // ID do novo registro do tenant ATUAL no Master
+        submission_id: context.submissionId,   // Submissão do tenant atual (se houver)
+      };
+
+      // Passa SEMPRE o tenantId do tenant ATUAL (nunca o do globalCheck)
+      saveComplianceToClienteSupabase(clienteComplianceDataReused, tenantId).catch(err => {
+        log(`⚠️ [CACHE-REUSE] Erro ao salvar no Supabase Local do tenant ${tenantId.substring(0, 8)}... (não crítico): ${err.message}`);
+      });
+
+      log(`💾 [CACHE-REUSE] Salvando no Supabase Local → tenant: ${tenantId.substring(0, 8)}... | CPF: ${personCpfFromGlobal.substring(0, 6)}... | Status: ${statusFromGlobal}`);
+    } catch (localSaveErr: any) {
+      log(`⚠️ [CACHE-REUSE] Exceção ao salvar no Supabase Local (não crítico): ${localSaveErr.message}`);
+    }
     
     return newTenantCheck;
 
@@ -858,8 +907,22 @@ export function calculateUnifiedRiskScore(
     const totalAsDefendant = processData.TotalLawsuitsAsDefendant || 0;
     const totalLawsuits = processData.TotalLawsuits || 0;
     
-    // +2 points per lawsuit as defendant (max 6)
-    processScore += Math.min(totalAsDefendant * 2, 6);
+    // Penalties by lawsuits as defendant, directly related to our Serasa thresholds
+    if (totalAsDefendant === 1) {
+      processScore += 1.5;
+    } else if (totalAsDefendant === 2) {
+      processScore += 3.0; 
+    } else if (totalAsDefendant === 3) {
+      processScore += 4.0;
+    } else if (totalAsDefendant === 4) {
+      processScore += 5.0; // Alto Risco
+    } else if (totalAsDefendant === 5) {
+      processScore += 6.2;
+    } else if (totalAsDefendant === 6) {
+      processScore += 7.2;
+    } else if (totalAsDefendant >= 7) {
+      processScore += 7.2 + ((totalAsDefendant - 6) * 0.8);
+    }
     
     // +1 point per active lawsuit (max 4)
     const activeLawsuits = lawsuits.filter((l: any) => 
@@ -868,24 +931,26 @@ export function calculateUnifiedRiskScore(
       !l.Status.toLowerCase().includes("baixado") &&
       !l.Status.toLowerCase().includes("encerrado")
     );
-    processScore += Math.min(activeLawsuits.length, 4);
+    processScore += Math.min(activeLawsuits.length * 0.5, 3);
     
-    // +1 if any lawsuit in last 12 months
+    // Recent lawsuits penalty
     const last365Days = processData.Last365DaysLawsuits || 0;
     if (last365Days > 0) {
       processScore += 1;
     }
     
-    // +3 if any criminal lawsuits
+    // +5 if any criminal lawsuits (very severe)
     const criminalLawsuits = lawsuits.filter((l: any) => 
-      l.CourtType?.toLowerCase().includes("criminal")
+      l.CourtType?.toLowerCase().includes("criminal") ||
+      l.Subject?.toLowerCase().includes("criminal") ||
+      l.InferredCNJSubjectName?.toLowerCase().includes("criminal")
     );
     if (criminalLawsuits.length > 0) {
-      processScore += 3;
+      processScore += 5;
     }
     
-    // +1 if total lawsuits > 5
-    if (totalLawsuits > 5) {
+    // Extra penalty for lots of lawsuits
+    if (totalLawsuits > 4) {
       processScore += 1;
     }
   }
@@ -899,22 +964,36 @@ export function calculateUnifiedRiskScore(
   let collectionsScore = 0;
   
   if (collectionsData) {
-    // +4 if HasActiveCollections is true
-    if (collectionsData.HasActiveCollections === true) {
-      collectionsScore += 4;
+    // 🔧 FIX: Fallback duplo para chaves brutas da API (consultas legadas em cache).
+    const hasActiveDebt =
+      collectionsData.HasActiveCollections ||
+      (collectionsData as any).IsCurrentlyOnCollection;
+
+    const totalOccurrences =
+      Number(collectionsData.TotalOccurrences ||
+        (collectionsData as any).CollectionOccurrences || 0);
+
+    const last3Months =
+      Number(collectionsData.Last3Months ||
+        (collectionsData as any).Last90DaysCollectionOccurrences || 0);
+
+    const last12Months =
+      Number(collectionsData.Last12Months ||
+        (collectionsData as any).Last365DaysCollectionOccurrences || 0);
+
+    // +7 if HasActiveCollections is true (Dívida ativa -> garante zona vermelha independente do resto. Punição severa)
+    if (hasActiveDebt === true) {
+      collectionsScore += 7;
     }
-    
-    // +0.5 per TotalOccurrences (max 3)
-    const totalOccurrences = collectionsData.TotalOccurrences || 0;
+
+    // +0.5 per TotalOccurrences resolveidas históricamente
     collectionsScore += Math.min(totalOccurrences * 0.5, 3);
-    
+
     // +2 if occurrences in last 6 months (approximating from Last3Months or Last12Months)
-    const last3Months = collectionsData.Last3Months || 0;
-    const last12Months = collectionsData.Last12Months || 0;
     if (last3Months > 0 || (last12Months > 0 && last12Months >= last3Months)) {
       collectionsScore += 2;
     }
-    
+
     // +1 if ConsecutiveMonths > 6
     const consecutiveMonths = collectionsData.ConsecutiveMonths || 0;
     if (consecutiveMonths > 6) {
@@ -933,13 +1012,13 @@ export function calculateUnifiedRiskScore(
   if (basicData) {
     const taxIdStatus = basicData.TaxIdStatus || '';
     
-    // +5 if TaxIdStatus !== "Regular"
-    if (taxIdStatus && taxIdStatus !== 'Regular') {
+    // +5 if TaxIdStatus !== "REGULAR"
+    if (taxIdStatus && taxIdStatus.toUpperCase() !== 'REGULAR') {
       basicDataScore += 5;
       
       // +3 if CPF is blocked/suspended (additional penalty for severe status)
       const blockedStatuses = ['Suspensa', 'Cancelada', 'Nula', 'Pendente de Regularização'];
-      if (blockedStatuses.some(s => taxIdStatus.includes(s))) {
+      if (blockedStatuses.some(s => taxIdStatus.toUpperCase().includes(s.toUpperCase()))) {
         basicDataScore += 3;
       }
     }

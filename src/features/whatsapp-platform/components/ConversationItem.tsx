@@ -15,6 +15,7 @@ interface ConversationItemProps {
     naoLidas: number;
     formStatus?: string;
     qualificationStatus?: string;
+    pipelineStatus?: string;
     pontuacao?: number;
     tags?: string[]; // IDs das tags personalizadas
     cpfCompliance?: CPFComplianceData; // Status de compliance do CPF
@@ -112,6 +113,7 @@ export const ConversationItem = memo(function ConversationItem({
             telefone={conversation.id}
             formStatus={conversation.formStatus}
             qualificationStatus={conversation.qualificationStatus}
+            pipelineStatus={conversation.pipelineStatus}
             pontuacao={conversation.pontuacao}
             className="text-[10px] px-1.5 py-0.5"
           />

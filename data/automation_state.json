@@ -1,6 +1,6 @@
 {
   "isRunning": true,
-  "startedAt": "2026-03-04T14:27:37.256Z",
+  "startedAt": "2026-03-06T21:00:39.062Z",
   "lastExecutions": {
     "system-system": {
       "clientId": "system",
@@ -101,11 +101,11 @@
     "emerick-emerick": {
       "clientId": "emerick",
       "tenantId": "emerick",
-      "lastRun": "2026-03-04T17:26:36.582Z",
-      "lastSuccess": "2026-03-04T17:26:36.582Z",
+      "lastRun": "2026-03-06T21:30:39.601Z",
+      "lastSuccess": "2026-03-06T21:30:39.601Z",
       "lastError": null,
       "consecutiveErrors": 0,
-      "totalExecutions": 686,
+      "totalExecutions": 1173,
       "totalNewClientsDetected": 0,
       "totalEventsCreated": 0,
       "status": "running"
@@ -113,11 +113,11 @@
     "emericks-emericks": {
       "clientId": "emericks",
       "tenantId": "emericks",
-      "lastRun": "2026-03-04T17:26:36.575Z",
-      "lastSuccess": "2026-03-04T17:26:36.575Z",
+      "lastRun": "2026-03-06T21:30:39.539Z",
+      "lastSuccess": "2026-03-06T21:30:39.539Z",
       "lastError": null,
       "consecutiveErrors": 0,
-      "totalExecutions": 384,
+      "totalExecutions": 861,
       "totalNewClientsDetected": 0,
       "totalEventsCreated": 0,
       "status": "running"
@@ -125,11 +125,11 @@
     "davisemi-joias-davisemi-joias": {
       "clientId": "davisemi-joias",
       "tenantId": "davisemi-joias",
-      "lastRun": "2026-03-04T17:26:36.740Z",
-      "lastSuccess": "2026-03-04T17:26:36.740Z",
+      "lastRun": "2026-03-06T21:30:39.603Z",
+      "lastSuccess": "2026-03-06T21:30:39.603Z",
       "lastError": null,
       "consecutiveErrors": 0,
-      "totalExecutions": 384,
+      "totalExecutions": 861,
       "totalNewClientsDetected": 0,
       "totalEventsCreated": 0,
       "status": "running"
@@ -137,22 +137,22 @@
     "davisemijoias-davisemijoias": {
       "clientId": "davisemijoias",
       "tenantId": "davisemijoias",
-      "lastRun": "2026-03-04T17:26:36.461Z",
-      "lastSuccess": "2026-03-04T17:26:36.461Z",
+      "lastRun": "2026-03-06T21:30:39.492Z",
+      "lastSuccess": "2026-03-06T21:30:39.492Z",
       "lastError": null,
       "consecutiveErrors": 0,
-      "totalExecutions": 277,
+      "totalExecutions": 754,
       "totalNewClientsDetected": 0,
       "totalEventsCreated": 0,
       "status": "running"
     }
   },
   "globalStats": {
-    "totalExecutions": 23702,
+    "totalExecutions": 25620,
     "totalNewClientsDetected": 0,
     "totalEventsCreated": 0,
     "totalErrors": 0,
-    "uptime": 10739
+    "uptime": 1800
   },
   "settings": {
     "detectionIntervalMinutes": 2,
