@@ -15,21 +15,21 @@ export const PremiumCard = forwardRef<HTMLDivElement, PremiumCardProps>(
         premiumTheme.glass.background.subtle,
         premiumTheme.glass.border.subtle,
         premiumTheme.shadows.md,
-        'hover:bg-white/[0.05] hover:border-white/15',
+        'hover:bg-[hsl(var(--card)/0.65)] hover:border-[hsl(var(--primary)/0.25)]',
         premiumTheme.shadows.lg.replace('shadow-', 'hover:shadow-')
       ),
       elevated: cn(
         premiumTheme.glass.background.elevated,
         premiumTheme.glass.border.subtle,
         premiumTheme.shadows.elevated,
-        'hover:shadow-[0_16px_48px_rgba(0,0,0,0.24)]',
+        'hover:shadow-[0_22px_48px_hsl(var(--background)/0.65)] hover:border-[hsl(var(--primary)/0.35)]',
         premiumTheme.interactions.hover.lift
       ),
       outlined: cn(
         'bg-transparent',
         premiumTheme.glass.border.medium,
         premiumTheme.shadows.sm,
-        'hover:bg-white/[0.02] hover:border-white/30',
+        'hover:bg-white/[0.02] hover:border-[hsl(var(--primary)/0.4)]',
         premiumTheme.shadows.md.replace('shadow-', 'hover:shadow-')
       ),
     };

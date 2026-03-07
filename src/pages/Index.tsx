@@ -167,10 +167,10 @@ const Index = () => {
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             )}
           >
-            <PremiumCard variant="elevated" padding="lg" className="space-y-5 lg:space-y-4">
+            <PremiumCard variant="elevated" padding="lg" className="luxury-card luxury-glass space-y-5 lg:space-y-4">
               <div className="text-center space-y-1">
-                <h2 className="text-2xl lg:text-xl font-bold text-foreground">Acesso Executivo</h2>
-                <p className="text-sm lg:text-xs text-muted-foreground">
+                <h2 className="text-2xl lg:text-xl font-bold luxury-text uppercase tracking-[0.2em]">Acesso Executivo</h2>
+                <p className="text-sm lg:text-xs text-muted-foreground luxury-accent font-medium">
                   Entre com suas credenciais para continuar
                 </p>
               </div>

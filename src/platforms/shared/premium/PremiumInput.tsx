@@ -76,7 +76,7 @@ export const PremiumInput = forwardRef<HTMLInputElement, PremiumInputProps>(
               premiumTheme.glass.base,
               premiumTheme.shadows.md,
               isFocused && [
-                'border-primary/40 bg-white/[0.05]',
+                'border-primary/40 bg-[hsl(var(--card)/0.8)]',
                 premiumTheme.shadows.primaryFocus,
                 'ring-4 ring-primary/10',
               ],
@@ -86,7 +86,7 @@ export const PremiumInput = forwardRef<HTMLInputElement, PremiumInputProps>(
               ],
               !isFocused && !error && cn(
                 premiumTheme.glass.border.subtle,
-                'hover:border-white/20'
+                'hover:border-[hsl(var(--primary)/0.3)]'
               ),
               className
             )}

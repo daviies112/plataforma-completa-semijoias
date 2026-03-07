@@ -24,18 +24,16 @@ export const PremiumButton = forwardRef<HTMLButtonElement, PremiumButtonProps>(
         premiumTheme.gradients.primary,
         'text-primary-foreground',
         premiumTheme.shadows.primary,
-        'hover:shadow-[0_12px_40px_rgba(212,175,55,0.4)]',
-        'active:shadow-[0_4px_16px_rgba(212,175,55,0.3)]',
+        'hover:' + premiumTheme.shadows.primaryHover,
+        'active:' + premiumTheme.shadows.primaryActive,
         premiumTheme.interactions.focus.primary,
         'border border-primary/30'
       ),
       secondary: cn(
-        premiumTheme.glass.background.subtle,
-        premiumTheme.glass.base,
+        'luxury-glass luxury-card',
         'text-foreground',
-        premiumTheme.glass.border.subtle,
         premiumTheme.shadows.md,
-        'hover:bg-white/[0.06] hover:border-white/20',
+        'hover:bg-[hsl(var(--card)/0.72)] hover:border-[hsl(var(--primary)/0.28)]',
         premiumTheme.shadows.lg.replace('shadow-', 'hover:shadow-'),
         'active:bg-white/[0.04]',
         premiumTheme.interactions.focus.white

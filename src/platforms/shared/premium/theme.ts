@@ -7,33 +7,33 @@
 export const premiumTheme = {
   // Glassmorphism Effects
   glass: {
-    base: 'backdrop-blur-xl backdrop-saturate-180',
+    base: 'backdrop-blur-2xl backdrop-saturate-200',
     background: {
-      subtle: 'bg-white/[0.03]',
-      light: 'bg-white/[0.05]',
-      medium: 'bg-white/[0.06]',
-      elevated: 'bg-gradient-to-br from-white/[0.06] to-white/[0.02]',
+      subtle: 'bg-[hsl(var(--card)/0.55)]',
+      light: 'bg-[hsl(var(--card)/0.62)]',
+      medium: 'bg-[hsl(var(--card)/0.68)]',
+      elevated: 'bg-[linear-gradient(135deg,hsl(var(--card)/0.78)_0%,hsl(var(--card)/0.58)_55%,hsl(var(--primary)/0.16)_100%)]',
     },
     border: {
-      subtle: 'border-white/10',
-      light: 'border-white/15',
-      medium: 'border-white/20',
-      strong: 'border-white/30',
+      subtle: 'border-[hsl(var(--primary)/0.18)]',
+      light: 'border-[hsl(var(--primary)/0.24)]',
+      medium: 'border-[hsl(var(--primary)/0.32)]',
+      strong: 'border-[hsl(var(--primary)/0.42)]',
     },
   },
 
   // Premium Shadows
   shadows: {
-    sm: 'shadow-[0_4px_16px_rgba(0,0,0,0.08)]',
-    md: 'shadow-[0_8px_32px_rgba(0,0,0,0.12)]',
-    lg: 'shadow-[0_12px_40px_rgba(0,0,0,0.15)]',
-    xl: 'shadow-[0_16px_48px_rgba(0,0,0,0.18)]',
-    inset: 'shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]',
-    elevated: 'shadow-[0_12px_40px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.1)]',
-    primary: 'shadow-[0_8px_32px_rgba(212,175,55,0.3)]',
-    primaryHover: 'shadow-[0_12px_40px_rgba(212,175,55,0.4)]',
-    primaryActive: 'shadow-[0_4px_16px_rgba(212,175,55,0.3)]',
-    primaryFocus: 'shadow-[0_0_24px_rgba(212,175,55,0.25),0_8px_32px_rgba(0,0,0,0.15)]',
+    sm: 'shadow-[0_6px_18px_hsl(var(--background)/0.45),inset_0_1px_0_hsl(var(--primary)/0.18)]',
+    md: 'shadow-[0_12px_32px_hsl(var(--background)/0.52),0_0_0_1px_hsl(var(--primary)/0.14),inset_0_1px_0_hsl(var(--primary)/0.2)]',
+    lg: 'shadow-[0_18px_44px_hsl(var(--background)/0.58),0_0_28px_hsl(var(--primary)/0.18),inset_0_1px_0_hsl(var(--primary)/0.24)]',
+    xl: 'shadow-[0_24px_58px_hsl(var(--background)/0.65),0_0_36px_hsl(var(--primary)/0.22),inset_0_1px_0_hsl(var(--primary)/0.28)]',
+    inset: 'shadow-[inset_0_1px_0_hsl(var(--primary)/0.2)]',
+    elevated: 'shadow-[0_20px_52px_hsl(var(--background)/0.62),0_0_34px_hsl(var(--primary)/0.2),inset_0_1px_0_hsl(var(--primary)/0.3)]',
+    primary: 'shadow-[0_12px_34px_hsl(var(--primary)/0.45),0_0_24px_hsl(var(--primary)/0.32)]',
+    primaryHover: 'shadow-[0_16px_44px_hsl(var(--primary)/0.5),0_0_32px_hsl(var(--primary)/0.38)]',
+    primaryActive: 'shadow-[0_6px_20px_hsl(var(--primary)/0.38),0_0_16px_hsl(var(--primary)/0.28)]',
+    primaryFocus: 'shadow-[0_0_0_3px_hsl(var(--primary)/0.28),0_14px_38px_hsl(var(--background)/0.58),0_0_26px_hsl(var(--primary)/0.26)]',
     danger: 'shadow-[0_8px_32px_rgba(239,68,68,0.3)]',
     dangerHover: 'shadow-[0_12px_40px_rgba(239,68,68,0.4)]',
   },
@@ -49,9 +49,9 @@ export const premiumTheme = {
 
   // Border Radius
   radius: {
-    sm: 'rounded-lg',
-    md: 'rounded-xl',
-    lg: 'rounded-2xl',
+    sm: 'rounded-xl',
+    md: 'rounded-2xl',
+    lg: 'rounded-[18px]',
     full: 'rounded-full',
   },
 
