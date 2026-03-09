@@ -2413,7 +2413,7 @@ export function registerFormulariosCompleteRoutes(app: Express) {
         }
 
         // Step 2: CRITICAL - Sync ALL fields to local Postgres forms table (independent of mapping upsert)
-        // This ensures publicCache fetchFormFromLocalDB (Layer 3) gets fresh data, not stale null design_config
+        // This ensures publicCache fetchFormForLocalDB (Layer 3) gets fresh data, not stale null design_config
         try {
           const localUpdateData: any = {
             slug: finalSlug,
@@ -2435,6 +2435,53 @@ export function registerFormulariosCompleteRoutes(app: Express) {
           console.log(`✅ [LOCAL_SYNC] Local forms table updated for form ${req.params.id}`);
         } catch (localSyncError) {
           console.error('[LOCAL_SYNC] Erro ao sincronizar forms local:', localSyncError);
+        }
+
+        // ✅ [FIX] STEP 3: Sincronizar active_form_url na app_settings (local + Supabase)
+        // Se o formulário editado for o ativo, atualiza a URL com o novo título/slug
+        try {
+          console.log(`🔍 [app_settings] Verificando se form ${req.params.id} é o ativo para atualizar URL...`);
+          const localSettings = await getOrCreateLocalAppSettings(tenantId);
+
+          if (localSettings && localSettings.activeFormId === req.params.id) {
+            const currentCompanySlug = localSettings.companySlug || companySlug;
+            
+            if (currentCompanySlug && finalSlug) {
+              const newFormUrl = generateDynamicFormUrl(currentCompanySlug, finalSlug);
+              console.log(`📝 [app_settings] Formulário ativo detectado. Nova URL: ${newFormUrl}`);
+
+              // 3a. Atualiza LOCAL
+              await db.update(appSettings)
+                .set({
+                  activeFormUrl: newFormUrl,
+                  updatedAt: new Date(),
+                })
+                .where(eq(appSettings.tenantId, tenantId));
+
+              console.log(`✅ [app_settings] URL local atualizada com sucesso.`);
+
+              // 3b. Atualiza SUPABASE (remoto)
+              if (supabase) {
+                const { error: settingsError } = await supabase
+                  .from("app_settings")
+                  .update({
+                    active_form_url: newFormUrl,
+                    updated_at: new Date().toISOString(),
+                  })
+                  .eq("tenant_id", tenantId);
+
+                if (settingsError) {
+                  console.error("❌ [app_settings] Erro ao atualizar no Supabase:", settingsError.message);
+                } else {
+                  console.log("✅ [app_settings] URL remota (Supabase) atualizada com sucesso.");
+                }
+              }
+            }
+          } else {
+            console.log(`ℹ️ [app_settings] Form ${req.params.id} não é o ativo (Ativo atual: ${localSettings?.activeFormId}). Ignorando update de URL.`);
+          }
+        } catch (settingsErr) {
+          console.error("❌ [app_settings] Falha crítica ao sincronizar settings:", settingsErr);
         }
 
         const camelData = convertKeysToCamelCase(data);
