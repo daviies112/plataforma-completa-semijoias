@@ -357,13 +357,26 @@ export function invalidateFormCache(formIdOrSlug: string): void {
   formCache.del(`form:data:${formIdOrSlug}`);
   tenantMappingCache.del(`form:mapping:${formIdOrSlug}`);
   
+  // If the key contains "emerick", also invalidate the "emericks" version
+  if (formIdOrSlug.startsWith('emerick:')) {
+    const pluralKey = formIdOrSlug.replace('emerick:', 'emericks:');
+    formCache.del(`form:data:${pluralKey}`);
+    tenantMappingCache.del(`form:mapping:${pluralKey}`);
+  } else if (formIdOrSlug.startsWith('emericks:')) {
+    const singularKey = formIdOrSlug.replace('emericks:', 'emerick:');
+    formCache.del(`form:data:${singularKey}`);
+    tenantMappingCache.del(`form:mapping:${singularKey}`);
+  }
+
   // 🔴 CRITICAL: Also clear persistent disk cache - prevent stale data after edits
   for (const [key, mapping] of persistentFormMappings.entries()) {
     if (
       key === formIdOrSlug ||
       mapping.formId === formIdOrSlug ||
       key.endsWith(`:${formIdOrSlug}`) ||
-      mapping.slug === formIdOrSlug
+      mapping.slug === formIdOrSlug ||
+      (formIdOrSlug.startsWith('emerick:') && key === formIdOrSlug.replace('emerick:', 'emericks:')) ||
+      (formIdOrSlug.startsWith('emericks:') && key === formIdOrSlug.replace('emericks:', 'emerick:'))
     ) {
       persistentFormMappings.delete(key);
     }

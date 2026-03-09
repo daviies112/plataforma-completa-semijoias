@@ -30,7 +30,7 @@ function getTenantId(): string | null {
 export function useCompanySlug() {
   const { data, isLoading, error } = useQuery<CompanySlugData>({
     queryKey: ['/api/company-slug'],
-    queryFn: async () => {
+    queryFn: async (): Promise<CompanySlugData> => {
       const headers: Record<string, string> = {};
       const tenantId = getTenantId();
       if (tenantId) {
@@ -44,13 +44,16 @@ export function useCompanySlug() {
         throw new Error('Failed to fetch company slug');
       }
       const data = await response.json();
-      if (data.companySlug) {
-        cachedSlug = data.companySlug;
+      let rawSlug = data.companySlug;
+      if (rawSlug === 'emericks' || rawSlug === 'emericks-tenant') {
+        rawSlug = 'emerick';
       }
-      return data;
+      if (rawSlug) {
+        cachedSlug = rawSlug;
+      }
+      return { ...data, companySlug: rawSlug };
     },
     staleTime: 5 * 60 * 1000, // Cache por 5 minutos
-    cacheTime: 10 * 60 * 1000, // Manter em cache por 10 minutos
   });
 
   const slug = data?.companySlug || cachedSlug || 'empresa';

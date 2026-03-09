@@ -16,12 +16,15 @@ export async function getCompanySlug(tenantId: string): Promise<string> {
       .limit(1);
     
     if (config?.companySlug) {
-      slugCache.set(tenantId, config.companySlug);
-      return config.companySlug;
+      const slug = config.companySlug === 'emericks' || config.companySlug === 'emericks-tenant' ? 'emerick' : config.companySlug;
+      slugCache.set(tenantId, slug);
+      return slug;
     }
-    return tenantId.replace(/^dev-/, '').replace(/_/g, '-');
+    const defaultSlug = tenantId.replace(/^dev-/, '').replace(/_/g, '-');
+    return defaultSlug === 'emericks' || defaultSlug === 'emericks-tenant' ? 'emerick' : defaultSlug;
   } catch {
-    return tenantId.replace(/^dev-/, '').replace(/_/g, '-');
+    const defaultSlug = tenantId.replace(/^dev-/, '').replace(/_/g, '-');
+    return defaultSlug === 'emericks' || defaultSlug === 'emericks-tenant' ? 'emerick' : defaultSlug;
   }
 }
 

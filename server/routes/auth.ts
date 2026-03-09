@@ -79,7 +79,9 @@ router.post('/login', async (req, res) => {
             const { appSettings, formTenantMapping } = await import('../../shared/db-schema.js');
             const { eq, isNull } = await import('drizzle-orm');
 
-            const [existing] = await db.select().from(appSettings).limit(1);
+            const [existing] = await db.select().from(appSettings)
+              .where(eq(appSettings.tenantId, tid))
+              .limit(1);
             if (existing) {
               await db.update(appSettings).set({ companySlug: slug }).where(eq(appSettings.id, existing.id));
             }

@@ -2024,7 +2024,9 @@ export function setupConfigRoutes(app: Express) {
 
         // Migration: clean up old credentials from app_settings
         try {
-          const oldSettings = await db.select().from(appSettings).limit(1);
+          const oldSettings = await db.select().from(appSettings)
+            .where(eq(appSettings.tenantId, tenantId))
+            .limit(1);
           if (oldSettings[0] && (oldSettings[0].supabaseUrl || oldSettings[0].supabaseAnonKey)) {
             await db
               .update(appSettings)
@@ -2238,6 +2240,7 @@ export function setupConfigRoutes(app: Express) {
         const { data: existingRow } = await supabase
           .from('app_settings')
           .select('id')
+          .eq('tenant_id', tenantId) // Multi-tenant safety
           .limit(1)
           .maybeSingle();
 
@@ -2248,7 +2251,11 @@ export function setupConfigRoutes(app: Express) {
             .eq('id', existingRow.id)
           : await supabase
             .from('app_settings')
-            .insert({ company_slug: normalizedSlug, updated_at: new Date().toISOString() });
+            .insert({ 
+              company_slug: normalizedSlug, 
+              tenant_id: tenantId, // CRITICAL: Identify tenant
+              updated_at: new Date().toISOString() 
+            });
 
         if (updateError) {
           console.error(`❌ [PublicSettings] Erro ao atualizar company_slug:`, updateError);
@@ -2269,7 +2276,9 @@ export function setupConfigRoutes(app: Express) {
               .set({ companySlug: normalizedSlug })
               .where(eqOp(formTenantMapping.tenantId, tenantId));
 
-            const [existingSettings] = await localDb.select().from(appSettingsTable).limit(1);
+            const [existingSettings] = await localDb.select().from(appSettingsTable)
+              .where(eqOp(appSettingsTable.tenantId, tenantId))
+              .limit(1);
             if (existingSettings) {
               await localDb.update(appSettingsTable).set({ companySlug: normalizedSlug }).where(eqOp(appSettingsTable.id, existingSettings.id));
             }

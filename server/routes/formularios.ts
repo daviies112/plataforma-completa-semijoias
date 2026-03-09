@@ -49,13 +49,15 @@ function generateDynamicFormUrl(companySlug: string, formSlug: string): string {
  * Helper: Busca ou cria configurações no PostgreSQL LOCAL
  */
 async function getOrCreateLocalAppSettings(tenantId?: string) {
-  const existing = await db.select().from(appSettings).limit(1);
+  const effectiveTenantId = tenantId || 'default';
+  const existing = await db.select().from(appSettings)
+    .where(eq(appSettings.tenantId, effectiveTenantId))
+    .limit(1);
 
   if (existing.length > 0) {
     return existing[0];
   }
 
-  const effectiveTenantId = tenantId || 'default';
   const newSettings = await db.insert(appSettings).values({
     tenantId: effectiveTenantId,
     companyName: 'Minha Empresa',
@@ -104,13 +106,14 @@ async function getSupabaseClientForFormularios(req?: Request): Promise<SupabaseC
 /**
  * Busca ou cria configurações no SUPABASE (não PostgreSQL local)
  */
-async function getOrCreateAppSettingsInSupabase(supabase: SupabaseClient) {
-  // Buscar primeira configuração existente no Supabase (sem depender de ID específico)
-  const { data, error } = await supabase
-    .from('app_settings')
-    .select('*')
-    .limit(1)
-    .maybeSingle();
+async function getOrCreateAppSettingsInSupabase(supabase: SupabaseClient, tenantId?: string) {
+  // Buscar configuração existente no Supabase filtrando por tenant_id se disponível
+  let query = supabase.from('app_settings').select('*');
+  if (tenantId) {
+    query = query.eq('tenant_id', tenantId);
+  }
+
+  const { data, error } = await query.limit(1).maybeSingle();
 
   if (error) {
     console.warn('⚠️ [FORMS/ativo] Erro ao buscar do Supabase:', error);
@@ -119,12 +122,15 @@ async function getOrCreateAppSettingsInSupabase(supabase: SupabaseClient) {
 
   // Se não existir, criar no Supabase
   if (!data) {
+    const insertPayload: any = {
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
+    };
+    if (tenantId) insertPayload.tenant_id = tenantId;
+
     const { data: newData, error: insertError } = await supabase
       .from('app_settings')
-      .insert({
-        created_at: new Date().toISOString(),
-        updated_at: new Date().toISOString()
-      })
+      .insert(insertPayload)
       .select()
       .single();
 
@@ -189,7 +195,10 @@ async function getCompanySlugFromSupabase(supabase: SupabaseClient, tenantId?: s
 router.get('/ativo', async (req, res) => {
   try {
     // PRIORIDADE 1: Buscar do PostgreSQL LOCAL
-    const localSettings = await db.select().from(appSettings).limit(1);
+    const tenantId = req.session?.tenantId || (req.headers['x-tenant-id'] as string) || 'default';
+    const localSettings = await db.select().from(appSettings)
+      .where(eq(appSettings.tenantId, tenantId))
+      .limit(1);
 
     if (localSettings.length > 0 && localSettings[0].activeFormId) {
       const settings = localSettings[0];
@@ -289,7 +298,8 @@ router.get('/ativo', async (req, res) => {
 
     if (supabase) {
       try {
-        const supabaseSettings = await getOrCreateAppSettingsInSupabase(supabase);
+        const tenantId = req.session?.tenantId || (req.headers['x-tenant-id'] as string) || 'default';
+        const supabaseSettings = await getOrCreateAppSettingsInSupabase(supabase, tenantId);
 
         if (supabaseSettings.active_form_id) {
           const { data, error } = await supabase
@@ -639,7 +649,8 @@ router.put('/config/ativo', async (req, res) => {
 
     if (supabaseForSync) {
       try {
-        const supabaseSettings = await getOrCreateAppSettingsInSupabase(supabaseForSync);
+        const effectiveTenantId = tenantId || 'default';
+        const supabaseSettings = await getOrCreateAppSettingsInSupabase(supabaseForSync, effectiveTenantId);
         const supabaseUpdatePayload: Record<string, any> = {
           active_form_id: formId,
           active_form_url: formUrl,
@@ -688,7 +699,10 @@ router.put('/config/ativo', async (req, res) => {
 router.get('/config/ativo', async (req, res) => {
   try {
     // PRIORIDADE 1: Buscar do PostgreSQL LOCAL
-    const localSettings = await db.select().from(appSettings).limit(1);
+    const tenantId = req.session?.tenantId || (req.headers['x-tenant-id'] as string) || 'default';
+    const localSettings = await db.select().from(appSettings)
+      .where(eq(appSettings.tenantId, tenantId))
+      .limit(1);
 
     if (localSettings.length > 0 && localSettings[0].activeFormId) {
       const settings = localSettings[0];
@@ -788,7 +802,8 @@ router.get('/config/ativo', async (req, res) => {
 
     if (supabase) {
       try {
-        const supabaseSettings = await getOrCreateAppSettingsInSupabase(supabase);
+        const tenantId = req.session?.tenantId || (req.headers['x-tenant-id'] as string) || 'default';
+        const supabaseSettings = await getOrCreateAppSettingsInSupabase(supabase, tenantId);
 
         if (supabaseSettings.active_form_id) {
           const { data, error } = await supabase
