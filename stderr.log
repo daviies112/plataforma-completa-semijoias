@@ -1,6 +1,357 @@
 Warning: connect.session() MemoryStore is not
 designed for a production environment, as it will leak
 memory, and will not scale past a single process.
-(node:12164) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(node:22824) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
 (Use `node --trace-deprecation ...` to show where the warning was created)
 [MasterSync] Credenciais do Supabase Master/Owner não configuradas (SUPABASE_OWNER_URL/KEY)
+❌ [CPFPoller] Erro ao buscar resultados CPF: TypeError: fetch failed
+❌ [MULTI-TENANT] Erro ao buscar dados para davisemi-joias: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:16416:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at runNextTicks (node:internal/process/task_queues:68:3)\n' +
+    '    at process.processImmediate (node:internal/timers:472:9)\n' +
+    '    at async getClientDashboardData (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:99010:38)\n' +
+    '    at async detectNewClients (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422133:26)\n' +
+    '    at async executeClientAutomation (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422890:29)',
+  hint: '',
+  code: ''
+}
+❌ [MULTI-TENANT] Erro ao buscar dados para davisemijoias: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:16416:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at runNextTicks (node:internal/process/task_queues:68:3)\n' +
+    '    at process.processImmediate (node:internal/timers:472:9)\n' +
+    '    at async getClientDashboardData (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:99010:38)\n' +
+    '    at async detectNewClients (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422133:26)\n' +
+    '    at async executeClientAutomation (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422890:29)',
+  hint: '',
+  code: ''
+}
+❌ [MULTI-TENANT] Erro ao buscar dados para emerick: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:16416:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at runNextTicks (node:internal/process/task_queues:68:3)\n' +
+    '    at process.processImmediate (node:internal/timers:472:9)\n' +
+    '    at async getClientDashboardData (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:99010:38)\n' +
+    '    at async detectNewClients (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422133:26)\n' +
+    '    at async executeClientAutomation (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422890:29)',
+  hint: '',
+  code: ''
+}
+❌ [MULTI-TENANT] Erro ao buscar dados para emericks: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:16416:13\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async getClientDashboardData (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:99010:38)\n' +
+    '    at async detectNewClients (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422133:26)\n' +
+    '    at async executeClientAutomation (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422890:29)',
+  hint: '',
+  code: ''
+}
+❌ [SUPABASE] Erro ao buscar configs do banco: DrizzleQueryError: Failed query: select "id", "tenant_id", "supabase_url", "supabase_anon_key", "supabase_bucket", "created_at", "updated_at" from "supabase_config"
+params: 
+    at NodePgPreparedQuery.queryWithCache (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:77746:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:78042:26
+    ... 2 lines matching cause stack trace ...
+    at async executeFormSubmissionSync (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:423191:20) {
+  query: 'select "id", "tenant_id", "supabase_url", "supabase_anon_key", "supabase_bucket", "created_at", "updated_at" from "supabase_config"',
+  params: [],
+  cause: Error: Connection terminated due to connection timeout
+      at file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:68277:15
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:78049:22
+      at async NodePgPreparedQuery.queryWithCache (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:77744:20)
+      at async file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:78042:26
+      at async getAllSupabaseConfigs (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:110223:21)
+      at async pollFormSubmissions (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422644:24)
+      at async executeFormSubmissionSync (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:423191:20) {
+    [cause]: Error: Connection terminated unexpectedly
+        at Connection2.<anonymous> (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:67770:79)
+        at Object.onceWrapper (node:events:622:28)
+        at Connection2.emit (node:events:508:28)
+        at Socket.<anonymous> (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:67188:17)
+        at Socket.emit (node:events:508:28)
+        at TCP.<anonymous> (node:net:346:12)
+  }
+}
+❌ [CPFPoller] Erro ao buscar resultados CPF: TypeError: fetch failed
+❌ [FormPoller] Erro ao buscar submissions para tenant system: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:16416:13\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async fetchUnsyncedSubmissionsForTenant (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422576:38)\n' +
+    '    at async pollFormSubmissions (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422658:29)\n' +
+    '    at async executeFormSubmissionSync (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:423191:20)',
+  hint: '',
+  code: ''
+}
+[PUBLIC_CACHE] Error getting credentials for system: Error: Connection terminated due to connection timeout
+    at file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:68277:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async getCachedSupabaseCredentials (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:98360:20)
+    at async getCachedSupabaseClient (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:98446:23)
+    at async checkApprovedSubmissionsWithoutCPF (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:128802:26)
+    at async executeCPFComplianceSync (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:423248:29) {
+  [cause]: Error: Connection terminated unexpectedly
+      at Connection2.<anonymous> (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:67770:79)
+      at Object.onceWrapper (node:events:622:28)
+      at Connection2.emit (node:events:508:28)
+      at Socket.<anonymous> (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:67188:17)
+      at Socket.emit (node:events:508:28)
+      at TCP.<anonymous> (node:net:346:12)
+}
+❌ [MULTI-TENANT] Erro ao buscar dados para davisemijoias: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:16416:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at runNextTicks (node:internal/process/task_queues:68:3)\n' +
+    '    at process.processImmediate (node:internal/timers:472:9)\n' +
+    '    at async getClientDashboardData (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:99010:38)\n' +
+    '    at async detectNewClients (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422133:26)\n' +
+    '    at async executeClientAutomation (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422890:29)',
+  hint: '',
+  code: ''
+}
+❌ [MULTI-TENANT] Erro ao buscar dados para davisemi-joias: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:16416:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at runNextTicks (node:internal/process/task_queues:68:3)\n' +
+    '    at process.processImmediate (node:internal/timers:472:9)\n' +
+    '    at async getClientDashboardData (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:99010:38)\n' +
+    '    at async detectNewClients (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422133:26)\n' +
+    '    at async executeClientAutomation (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422890:29)',
+  hint: '',
+  code: ''
+}
+❌ [MULTI-TENANT] Erro ao buscar dados para emerick: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:16416:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at runNextTicks (node:internal/process/task_queues:68:3)\n' +
+    '    at process.processImmediate (node:internal/timers:472:9)\n' +
+    '    at async getClientDashboardData (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:99010:38)\n' +
+    '    at async detectNewClients (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422133:26)\n' +
+    '    at async executeClientAutomation (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422890:29)',
+  hint: '',
+  code: ''
+}
+❌ [MULTI-TENANT] Erro ao buscar dados para emericks: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:16416:13\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async getClientDashboardData (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:99010:38)\n' +
+    '    at async detectNewClients (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422133:26)\n' +
+    '    at async executeClientAutomation (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422890:29)',
+  hint: '',
+  code: ''
+}
+⚠️ [FormMappingSync] Erro ao criar tabela: Connection terminated due to connection timeout
+❌ [SUPABASE] Erro ao buscar configs do banco: DrizzleQueryError: Failed query: select "id", "tenant_id", "supabase_url", "supabase_anon_key", "supabase_bucket", "created_at", "updated_at" from "supabase_config"
+params: 
+    at NodePgPreparedQuery.queryWithCache (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:77746:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:78042:26
+    ... 2 lines matching cause stack trace ...
+    at async executeFormSubmissionSync (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:423191:20) {
+  query: 'select "id", "tenant_id", "supabase_url", "supabase_anon_key", "supabase_bucket", "created_at", "updated_at" from "supabase_config"',
+  params: [],
+  cause: Error: Connection terminated due to connection timeout
+      at file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:68277:15
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:78049:22
+      at async NodePgPreparedQuery.queryWithCache (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:77744:20)
+      at async file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:78042:26
+      at async getAllSupabaseConfigs (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:110223:21)
+      at async pollFormSubmissions (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422644:24)
+      at async executeFormSubmissionSync (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:423191:20) {
+    [cause]: Error: Connection terminated unexpectedly
+        at Connection2.<anonymous> (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:67770:79)
+        at Object.onceWrapper (node:events:622:28)
+        at Connection2.emit (node:events:508:28)
+        at Socket.<anonymous> (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:67188:17)
+        at Socket.emit (node:events:508:28)
+        at TCP.<anonymous> (node:net:346:12)
+  }
+}
+❌ [FormPoller] Erro ao buscar submissions para tenant system: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:16416:13\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async fetchUnsyncedSubmissionsForTenant (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422576:38)\n' +
+    '    at async pollFormSubmissions (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422658:29)\n' +
+    '    at async executeFormSubmissionSync (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:423191:20)',
+  hint: '',
+  code: ''
+}
+❌ [SupabaseCredentials] Erro ao garantir tabela supabase_config: Connection terminated due to connection timeout
+❌ [CPFPoller] Erro ao buscar resultados CPF: TypeError: fetch failed
+❌ [CPFPoller] Erro ao buscar resultados CPF: TypeError: fetch failed
+❌ [MULTI-TENANT] Erro ao buscar dados para davisemijoias: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:16416:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at runNextTicks (node:internal/process/task_queues:68:3)\n' +
+    '    at process.processImmediate (node:internal/timers:472:9)\n' +
+    '    at async getClientDashboardData (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:99010:38)\n' +
+    '    at async detectNewClients (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422133:26)\n' +
+    '    at async executeClientAutomation (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422890:29)',
+  hint: '',
+  code: ''
+}
+❌ [MULTI-TENANT] Erro ao buscar dados para davisemi-joias: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:16416:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at runNextTicks (node:internal/process/task_queues:68:3)\n' +
+    '    at process.processImmediate (node:internal/timers:472:9)\n' +
+    '    at async getClientDashboardData (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:99010:38)\n' +
+    '    at async detectNewClients (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422133:26)\n' +
+    '    at async executeClientAutomation (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422890:29)',
+  hint: '',
+  code: ''
+}
+❌ [MULTI-TENANT] Erro ao buscar dados para emerick: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:16416:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at runNextTicks (node:internal/process/task_queues:68:3)\n' +
+    '    at process.processImmediate (node:internal/timers:472:9)\n' +
+    '    at async getClientDashboardData (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:99010:38)\n' +
+    '    at async detectNewClients (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422133:26)\n' +
+    '    at async executeClientAutomation (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422890:29)',
+  hint: '',
+  code: ''
+}
+❌ [MULTI-TENANT] Erro ao buscar dados para emericks: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:16416:13\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async getClientDashboardData (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:99010:38)\n' +
+    '    at async detectNewClients (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422133:26)\n' +
+    '    at async executeClientAutomation (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422890:29)',
+  hint: '',
+  code: ''
+}
+❌ [SUPABASE] Erro ao buscar configs do banco: DrizzleQueryError: Failed query: select "id", "tenant_id", "supabase_url", "supabase_anon_key", "supabase_bucket", "created_at", "updated_at" from "supabase_config"
+params: 
+    at NodePgPreparedQuery.queryWithCache (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:77746:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:78042:26
+    ... 2 lines matching cause stack trace ...
+    at async executeFormSubmissionSync (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:423191:20) {
+  query: 'select "id", "tenant_id", "supabase_url", "supabase_anon_key", "supabase_bucket", "created_at", "updated_at" from "supabase_config"',
+  params: [],
+  cause: Error: Connection terminated due to connection timeout
+      at file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:68277:15
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:78049:22
+      at async NodePgPreparedQuery.queryWithCache (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:77744:20)
+      at async file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:78042:26
+      at async getAllSupabaseConfigs (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:110223:21)
+      at async pollFormSubmissions (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422644:24)
+      at async executeFormSubmissionSync (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:423191:20) {
+    [cause]: Error: Connection terminated unexpectedly
+        at Connection2.<anonymous> (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:67770:79)
+        at Object.onceWrapper (node:events:622:28)
+        at Connection2.emit (node:events:508:28)
+        at Socket.<anonymous> (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:67188:17)
+        at Socket.emit (node:events:508:28)
+        at TCP.<anonymous> (node:net:346:12)
+  }
+}
+[PUBLIC_CACHE] Error getting credentials for system: Error: Connection terminated due to connection timeout
+    at file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:68277:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async getCachedSupabaseCredentials (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:98360:20)
+    at async getCachedSupabaseClient (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:98446:23)
+    at async checkApprovedSubmissionsWithoutCPF (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:128802:26)
+    at async executeCPFComplianceSync (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:423248:29) {
+  [cause]: Error: Connection terminated unexpectedly
+      at Connection2.<anonymous> (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:67770:79)
+      at Object.onceWrapper (node:events:622:28)
+      at Connection2.emit (node:events:508:28)
+      at Socket.<anonymous> (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:67188:17)
+      at Socket.emit (node:events:508:28)
+      at TCP.<anonymous> (node:net:346:12)
+}
+❌ [FormPoller] Erro ao buscar submissions para tenant system: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:16416:13\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async fetchUnsyncedSubmissionsForTenant (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422576:38)\n' +
+    '    at async pollFormSubmissions (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422658:29)\n' +
+    '    at async executeFormSubmissionSync (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:423191:20)',
+  hint: '',
+  code: ''
+}
+❌ [SUPABASE] Erro ao buscar configs do banco: DrizzleQueryError: Failed query: select "id", "tenant_id", "supabase_url", "supabase_anon_key", "supabase_bucket", "created_at", "updated_at" from "supabase_config"
+params: 
+    at NodePgPreparedQuery.queryWithCache (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:77746:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:78042:26
+    ... 2 lines matching cause stack trace ...
+    at async executeFormSubmissionSync (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:423191:20) {
+  query: 'select "id", "tenant_id", "supabase_url", "supabase_anon_key", "supabase_bucket", "created_at", "updated_at" from "supabase_config"',
+  params: [],
+  cause: Error: Connection terminated due to connection timeout
+      at file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:68277:15
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:78049:22
+      at async NodePgPreparedQuery.queryWithCache (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:77744:20)
+      at async file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:78042:26
+      at async getAllSupabaseConfigs (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:110223:21)
+      at async pollFormSubmissions (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422644:24)
+      at async executeFormSubmissionSync (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:423191:20) {
+    [cause]: Error: Connection terminated unexpectedly
+        at Connection2.<anonymous> (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:67770:79)
+        at Object.onceWrapper (node:events:622:28)
+        at Connection2.emit (node:events:508:28)
+        at Socket.<anonymous> (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:67188:17)
+        at Socket.emit (node:events:508:28)
+        at TCP.<anonymous> (node:net:346:12)
+  }
+}
+❌ [FormPoller] Erro ao buscar submissions para tenant system: {
+  message: 'TypeError: fetch failed',
+  details: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:16416:13\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async fetchUnsyncedSubmissionsForTenant (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422576:38)\n' +
+    '    at async pollFormSubmissions (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:422658:29)\n' +
+    '    at async executeFormSubmissionSync (file:///C:/Users/davie/Downloads/Skill%20e%20mcp/loja/plataformacompleta-store-update-20260214-165922/plataformacompleta/dist/index.mjs:423191:20)',
+  hint: '',
+  code: ''
+}
+❌ [MULTI-TENANT] Erro ao buscar dados para emericks: {
+  code: '57014',
+  details: null,
+  hint: null,
+  message: 'canceling statement due to statement timeout'
+}
+❌ [MULTI-TENANT] Erro ao buscar dados para emericks: {
+  code: '57014',
+  details: null,
+  hint: null,
+  message: 'canceling statement due to statement timeout'
+}
+^C

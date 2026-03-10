@@ -212,18 +212,60 @@ router.post('/login', async (req: Request, res: Response) => {
     }
 
     // ✅ LOGIN DIRETO: admin_users + bcrypt (sem RPC inexistente)
-    console.log(`🔍 [AUTH] Login direto via admin_users para: ${email}`);
+    // ✅ LOGIN DIRETO: Tentar DB Drizzle primeiro (PostgreSQL local), fallback para admin_users + bcrypt
+    console.log(`🔍 [AUTH] Login via banco de dados local para: ${email}`);
+    
+    let adminData: any = null;
+    let queryErr: any = null;
 
-    const { data: adminData, error: queryErr } = await supabaseOwner!
-      .from('admin_users')
-      .select('*')
-      .eq('email', email)
-      .eq('is_active', true)
-      .single();
+    try {
+      const { db } = await import('../db');
+      const schema = await import('../../shared/db-schema');
+      const { eq, and } = await import('drizzle-orm');
 
-    console.log(`🔍 [AUTH] Query admin_users - error: ${queryErr?.code || 'none'}, found: ${!!adminData}`);
+      const adminUsersTable = (schema as any).adminUsers;
+      if (adminUsersTable) {
+        const [localUser] = await db.select()
+          .from(adminUsersTable)
+          .where(and(
+            eq(adminUsersTable.email, email),
+            eq(adminUsersTable.isActive, true)
+          ))
+          .limit(1);
 
-    if (queryErr || !adminData) {
+        if (localUser) {
+          adminData = {
+            ...localUser,
+            nome: localUser.name,
+            password_hash: localUser.passwordHash,
+            company_name: localUser.companyName,
+            tenant_id: localUser.tenantId,
+            is_active: localUser.isActive,
+            role: localUser.role
+          };
+          console.log(`🔍 [AUTH] Local DB user found!`);
+        }
+      }
+    } catch (e) {
+      console.error('[AUTH] Local DB query failed', e);
+    }
+
+    if (!adminData && supabaseOwner) {
+      console.log(`🔍 [AUTH] Fallback para supabaseOwner REST: ${email}`);
+      const result = await supabaseOwner
+        .from('admin_users')
+        .select('*')
+        .eq('email', email)
+        .eq('is_active', true)
+        .single();
+      
+      adminData = result.data;
+      queryErr = result.error;
+    }
+
+    console.log(`🔍 [AUTH] Query admin_users final - error: ${queryErr?.code || 'none'}, found: ${!!adminData}`);
+
+    if (!adminData) {
       console.log(`❌ [AUTH] Usuário não encontrado: ${email}`);
       return res.status(401).json({ error: 'Email ou senha incorretos' });
     }
