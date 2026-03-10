@@ -23,10 +23,10 @@ function loadSupabaseConfigFromFile(): { url: string; key: string } | null {
   return null;
 }
 
-// Prioridade ABSOLUTA: SUPABASE_LOCAL_URL/KEY dos env vars (secrets)
+// Prioridade ABSOLUTA: SUPABASE_OWNER_URL/KEY, fallback para SUPABASE_LOCAL_URL/KEY dos env vars (secrets)
 // Esses são os secrets do Owner principal do sistema
-let supabaseOwnerUrl = process.env.SUPABASE_LOCAL_URL || '';
-let supabaseOwnerKey = process.env.SUPABASE_LOCAL_SERVICE_KEY || process.env.SUPABASE_LOCAL_KEY || '';
+let supabaseOwnerUrl = process.env.SUPABASE_OWNER_URL || process.env.SUPABASE_LOCAL_URL || '';
+let supabaseOwnerKey = process.env.SUPABASE_OWNER_SERVICE_KEY || process.env.SUPABASE_LOCAL_SERVICE_KEY || process.env.SUPABASE_LOCAL_KEY || '';
 
 // Log para debug
 if (supabaseOwnerUrl && supabaseOwnerKey) {
