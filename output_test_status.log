@@ -1,0 +1,3 @@
+[TEST] Checking /api/evolution/status...
+Status HTTP Code: 200
+Status JSON Data: {"success":true,"status":{"instance":{"instanceName":"emerick","state":"connecting","owner":null,"profilePictureUrl":null,"profileName":null}}}

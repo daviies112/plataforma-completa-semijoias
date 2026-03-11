@@ -233,14 +233,13 @@ export default function Settings() {
       const response = await fetch("/api/config/optimizer/settings", { credentials: 'include' });
       if (response.ok) {
         const data = await response.json();
-        if (data.success && data.data) {
-          setOptimizerFieldSet(data.data.defaultFieldSet ?? "compact");
-          setOptimizerPageSize(data.data.defaultPageSize ?? 50);
-          setOptimizerMaxPageSize(data.data.maxPageSize ?? 100);
-          setOptimizerPaginationType(data.data.paginationType ?? "offset");
-          setOptimizerQueryCaching(data.data.queryCachingEnabled ?? false);
-          setOptimizerCacheTtl(data.data.queryCacheTtl ?? 300);
-          setOptimizerAggregation(data.data.aggregationEnabled ?? false);
+        if (data.success && data.settings) {
+          const payload = data.settings;
+          setOptimizerFieldSet(payload.fieldSet ?? "compact");
+          setOptimizerPageSize(payload.pageSize ?? 50);
+          setOptimizerPaginationType(payload.paginationType ?? "offset");
+          setOptimizerQueryCaching(payload.queryCaching ?? false);
+          setOptimizerAggregation(payload.aggregation ?? false);
           setIsOptimizerConfigured(true);
         }
       }
@@ -575,13 +574,11 @@ export default function Settings() {
         },
         credentials: 'include',
         body: JSON.stringify({
-          defaultFieldSet: optimizerFieldSet,
-          defaultPageSize: optimizerPageSize,
-          maxPageSize: optimizerMaxPageSize,
+          fieldSet: optimizerFieldSet,
+          pageSize: optimizerPageSize,
           paginationType: optimizerPaginationType,
-          queryCachingEnabled: optimizerQueryCaching,
-          queryCacheTtl: optimizerCacheTtl,
-          aggregationEnabled: optimizerAggregation,
+          queryCaching: optimizerQueryCaching,
+          aggregation: optimizerAggregation,
         }),
       });
 

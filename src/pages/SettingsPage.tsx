@@ -1183,7 +1183,7 @@ const SettingsPage = () => {
         google_calendar: { client_id: '', client_secret: '', refresh_token: '' },
         pluggy: { client_id: '', client_secret: '' },
         n8n: { webhook_url: '' },
-        evolution_api: { api_url: '', api_key: '', instance: 'nexus-whatsapp' },
+        evolution_api: { apiUrl: '', apiKey: '', instance: 'nexus-whatsapp' },
         redis: { redis_url: '', redis_token: '' },
         sentry: { dsn: '', auth_token: '', organization: '', project: '', environment: 'production', traces_sample_rate: '0.1' },
         cloudflare: { zone_id: '', api_token: '' },
@@ -2332,11 +2332,11 @@ const SettingsPage = () => {
                 <div className="space-y-4">
                   <PremiumInput
                     label="URL da API"
-                    value={integrationForms.evolution_api.apiUrl}
+                    value={integrationForms.evolution_api.api_url}
                     onChange={(e) =>
                       setIntegrationForms((prev) => ({
                         ...prev,
-                        evolution_api: { ...prev.evolution_api, apiUrl: e.target.value },
+                        evolution_api: { ...prev.evolution_api, api_url: e.target.value },
                       }))
                     }
                     placeholder="https://api.seu-dominio.com"
@@ -2346,11 +2346,11 @@ const SettingsPage = () => {
                   <PremiumInput
                     label="API Key"
                     type="password"
-                    value={integrationForms.evolution_api.apiKey}
+                    value={integrationForms.evolution_api.api_key}
                     onChange={(e) =>
                       setIntegrationForms((prev) => ({
                         ...prev,
-                        evolution_api: { ...prev.evolution_api, apiKey: e.target.value },
+                        evolution_api: { ...prev.evolution_api, api_key: e.target.value },
                       }))
                     }
                     placeholder="Sua chave de API global"

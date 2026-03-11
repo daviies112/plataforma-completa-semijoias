@@ -1,4 +1,5 @@
 import express from 'express';
+import { authenticateConfig } from "../middleware/configAuth";
 import { attachUserData, requireAuth } from '../middleware/multiTenantAuth';
 import { authenticateConfig } from '../middleware/configAuth';
 import { credentialsStorage, encrypt, decrypt, saveCredentialsToFile } from '../lib/credentialsManager';
@@ -258,7 +259,7 @@ router.delete('/clear-all', requireAuth, async (req: any, res) => {
 });
 
 // Salvar credenciais
-router.put('/:integrationType', requireAuth, async (req: any, res) => {
+router.put('/:integrationType', authenticateConfig, async (req: any, res) => {
   try {
     const { integrationType } = req.params;
     const clientId = req.user!.clientId;
@@ -345,7 +346,7 @@ router.put('/:integrationType', requireAuth, async (req: any, res) => {
 });
 
 // Recuperar credenciais
-router.get('/:integrationType', requireAuth, async (req: any, res) => {
+router.get('/:integrationType', authenticateConfig, async (req: any, res) => {
   try {
     const { integrationType } = req.params;
     const clientId = req.user!.clientId;
@@ -620,7 +621,7 @@ router.get('/evolution-api/status/:instance', requireAuth, async (req, res) => {
 });
 
 // 🚀 Generic Credentials Test Endpoint
-router.post('/test/:integrationType', requireAuth, async (req, res) => {
+router.post('/test/:integrationType', authenticateConfig, async (req, res) => {
   try {
     const { integrationType } = req.params;
     const credentials = req.body;

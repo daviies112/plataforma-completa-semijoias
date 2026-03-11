@@ -74,16 +74,50 @@ const Index = () => {
   const [leadsMap, setLeadsMap] = useState<Record<string, { formStatus?: string; qualificationStatus?: string; pipelineStatus?: string; pontuacao?: number }>>({});
   const [cpfComplianceMap, setCpfComplianceMap] = useState<Record<string, CPFComplianceData>>({});
   const [lastFullUpdate, setLastFullUpdate] = useState<number>(0);
+  const [suppressAutoOverlay, setSuppressAutoOverlay] = useState(false);
 
   // ✅ CORREÇÃO 5: Refs para prevenir race conditions
   const loadingRef = useRef(false);
   const abortControllerRef = useRef<AbortController | null>(null);
   const messageAbortControllerRef = useRef<AbortController | null>(null);
   const messageLoadingRef = useRef(false);
+  const loadingChatsTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const qrLoadingTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // 🏷️ QR Code State
-  const [qrCode, setQrCode] = useState<{ base64: string; code: string } | null>(null);
+  const [qrCode, setQrCode] = useState<{ base64: string; code?: string } | null>(null);
   const [loadingQr, setLoadingQr] = useState(false);
+  const [qrError, setQrError] = useState<string | null>(null);
+  const [showQrCodeOverlay, setShowQrCodeOverlay] = useState(false);
+  const clearLoadingChatsTimeout = () => {
+    if (loadingChatsTimeoutRef.current) {
+      clearTimeout(loadingChatsTimeoutRef.current);
+      loadingChatsTimeoutRef.current = null;
+    }
+  };
+
+  const scheduleLoadingChatsTimeout = () => {
+    clearLoadingChatsTimeout();
+    loadingChatsTimeoutRef.current = setTimeout(() => {
+      console.warn('⚠️ Timeout forçando fim do loading das conversas');
+      setIsLoadingChats(false);
+    }, 5000);
+  };
+
+  const clearQrLoadingTimeout = () => {
+    if (qrLoadingTimeoutRef.current) {
+      clearTimeout(qrLoadingTimeoutRef.current);
+      qrLoadingTimeoutRef.current = null;
+    }
+  };
+
+  const scheduleQrLoadingTimeout = () => {
+    clearQrLoadingTimeout();
+    qrLoadingTimeoutRef.current = setTimeout(() => {
+      console.warn('⚠️ Timeout forçando fim do loading do QR Code');
+      setLoadingQr(false);
+    }, 6000);
+  };
 
   // Carregar tags salvas para cada conversa
   useEffect(() => {
@@ -94,6 +128,13 @@ const Index = () => {
         tags: allConversationTags[conv.id] || conv.tags || []
       }))
     );
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      clearLoadingChatsTimeout();
+      clearQrLoadingTimeout();
+    };
   }, []);
 
   // 🎯 OTIMIZAÇÃO: Polling de leads consolidado no useEffect principal abaixo (linha ~1122)
@@ -939,6 +980,7 @@ const Index = () => {
 
     if (!silent) {
       setIsLoadingChats(true);
+      scheduleLoadingChatsTimeout();
     }
     try {
 
@@ -1255,6 +1297,8 @@ const Index = () => {
       // ✅ CORREÇÃO 5: Liberar flag de loading no finally
       loadingRef.current = false;
       abortControllerRef.current = null;
+
+      clearLoadingChatsTimeout();
 
       if (!silent) {
         setIsLoadingChats(false);
@@ -1828,6 +1872,8 @@ const Index = () => {
 
       // Forçar atualização do QR Code
       setQrCode(null);
+      setSuppressAutoOverlay(false);
+      setShowQrCodeOverlay(true);
       fetchQRCode();
 
     } catch (error) {
@@ -1840,32 +1886,94 @@ const Index = () => {
   const fetchQRCode = async () => {
     setLoadingQr(true);
     setQrCode(null);
+    setQrError(null);
+    scheduleQrLoadingTimeout();
+
+    const rawInstance = (configManager.getConfig() as any)?.instance;
+    const normalizedInstance =
+      typeof rawInstance === 'string' && rawInstance.trim()
+        ? rawInstance.trim().toLowerCase()
+        : 'nexus-whatsapp';
 
     try {
-      // Usar endpoint do backend que já tem a correção de normalização
-      const response = await fetch('/api/evolution/qrcode');
-      const data = await response.json();
+      const data = await evolutionApi.fetchQRCode(normalizedInstance);
 
-      if (data.success) {
-        if (data.alreadyConnected) {
-          // toast.success("WhatsApp já está conectado!"); // Removido para mostrar overlay
-          checkConnection(); // Atualizar status
-          // Se já estiver conectado, manter o overlay aberto para opção de desconectar
-        } else {
-          setQrCode(data.qrcode);
-          // toast.success("QR Code gerado com sucesso!");
-        }
-      } else {
-        toast.error(data.error || 'Erro ao obter QR code');
+      if (data.connected) {
+        clearQrLoadingTimeout();
+        await checkConnection();
+        toast.success('✅ WhatsApp Conectado!', {
+          description: 'Sua conta já está ativa.',
+          duration: 4000,
+        });
+        return;
       }
-    } catch (err) {
-      toast.error('Erro ao conectar com a API');
+
+      const qrPayload =
+        data.qrCode?.base64 ||
+        (typeof data.qrCode === 'string' ? data.qrCode : undefined) ||
+        data.qrcode?.base64 ||
+        (typeof data.qrcode === 'string' ? data.qrcode : undefined) ||
+        data.base64 ||
+        data.code ||
+        data.validBase64;
+
+      if (!qrPayload) {
+        const message =
+          data.details ||
+          data.error ||
+          'QR Code não retornado pela API';
+        setQrError(message);
+        toast({
+          title: '❌ Erro ao gerar QR Code',
+          description: message,
+          variant: 'destructive',
+          duration: 8000,
+        });
+        return;
+      }
+
+      const finalQr = qrPayload.startsWith('data:')
+        ? qrPayload
+        : `data:image/png;base64,${qrPayload}`;
+
+      setQrCode({
+        base64: finalQr,
+        code: data.pairingCode || data.code,
+      });
+    } catch (error: any) {
+      const message = error?.message || 'Falha de conexão';
+      setQrError(message);
+      toast({
+        title: '❌ Erro ao gerar QR Code',
+        description: message,
+        variant: 'destructive',
+        duration: 8000,
+      });
     } finally {
+      clearQrLoadingTimeout();
       setLoadingQr(false);
     }
   };
 
-  const [showQrCodeOverlay, setShowQrCodeOverlay] = useState(false);
+  const openQrOverlay = () => {
+    setSuppressAutoOverlay(false);
+    setShowQrCodeOverlay(true);
+    fetchQRCode();
+  };
+
+  const closeQrOverlay = () => {
+    setShowQrCodeOverlay(false);
+    setSuppressAutoOverlay(true);
+  };
+
+  const autoOverlayActive =
+    useRealData &&
+    connectionState &&
+    !connectionState.connected &&
+    conversations.length === 0 &&
+    !suppressAutoOverlay;
+
+  const overlayVisible = autoOverlayActive || showQrCodeOverlay;
 
   // ... (previous code)
 
@@ -1874,30 +1982,25 @@ const Index = () => {
       <Header
         onRefreshAll={() => loadRealChats(true)}
         onRefreshLabels={refreshLabelsOnly}
-        onConnect={() => {
-          setShowQrCodeOverlay(true);
-          fetchQRCode(); // Já busca o QR Code ao abrir
-        }}
+        onConnect={openQrOverlay}
         isRefreshing={isLoadingChats}
         connectionState={connectionState}
       />
 
       <div className="flex flex-1 overflow-hidden relative">
         {/* Overlay de Desconexão / QR Code */}
-        {/* 🔥 CORREÇÃO: Só mostrar overlay se NÃO tiver conversas carregadas OU se for manual */}
-        {useRealData && ((connectionState && !connectionState.connected && conversations.length === 0) || showQrCodeOverlay) && (
+        {/* 🔥 CORREÇÃO: Mostrar overlay automático só quando não há conversas e a conexão está fora, mas permitir reconexão manual */}
+        {overlayVisible && (
           <div className="absolute inset-0 z-50 bg-black/95 flex flex-col items-center justify-center text-white p-6">
-            {/* Botão Fechar Overlay (Apenas se for manual ou se estiver conectado mas quiser ver) */}
-            {showQrCodeOverlay && (
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute top-4 right-4 text-white hover:bg-white/10"
-                onClick={() => setShowQrCodeOverlay(false)}
-              >
-                <X className="w-6 h-6" />
-              </Button>
-            )}
+            {/* Botão Fechar Overlay */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute top-4 right-4 text-white hover:bg-white/10"
+              onClick={closeQrOverlay}
+            >
+              <X className="w-6 h-6" />
+            </Button>
 
             <div className="max-w-md w-full flex flex-col items-center gap-8 animate-fade-in">
               {/* ÁREA CENTRAL DO OVERLAY - MUDA CONFORME STATUS */}
@@ -1922,7 +2025,7 @@ const Index = () => {
                       variant="outline"
                       size="lg"
                       className="flex-1 border-zinc-700 bg-transparent text-white hover:bg-zinc-800 hover:text-white h-12"
-                      onClick={() => setShowQrCodeOverlay(false)}
+                      onClick={closeQrOverlay}
                     >
                       Fechar
                     </Button>
@@ -2008,6 +2111,11 @@ const Index = () => {
                         Instância: <span className="text-zinc-300 font-mono">{(configManager.getConfig() as any)?.instance || '...'}</span>
                       </div>
                     </div>
+                    {qrError && (
+                      <p className="text-sm text-center text-red-400 px-4">
+                        {qrError}
+                      </p>
+                    )}
                   </div>
 
                   <div className="text-center max-w-sm">

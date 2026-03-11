@@ -687,14 +687,13 @@ export const cacheConfig = pgTable('cache_config', {
 // Optimizer Configuration Table
 export const optimizerConfig = pgTable('optimizer_config', {
   id: serial('id').primaryKey(),
-  defaultFieldSet: varchar('default_field_set', { length: 50 }).default('default'),
-  defaultPageSize: integer('default_page_size').default(50),
-  maxPageSize: integer('max_page_size').default(200),
+  fieldSet: varchar('field_set', { length: 50 }).default('default'),
+  pageSize: integer('page_size').default(50),
   paginationType: varchar('pagination_type', { length: 50 }).default('cursor'),
-  queryCachingEnabled: boolean('query_caching_enabled').default(true),
-  queryCacheTtl: integer('query_cache_ttl').default(3600),
-  aggregationEnabled: boolean('aggregation_enabled').default(true),
-  aggregationFunctions: text('aggregation_functions').array(),
+  queryCaching: boolean('query_caching').default(true),
+  aggregation: boolean('aggregation').default(true),
+  tenantId: text('tenant_id'),
+  revendedoraId: uuid('revendedora_id'),
   createdAt: timestamp('created_at').defaultNow(),
   updatedAt: timestamp('updated_at').defaultNow()
 });

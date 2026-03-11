@@ -1,0 +1,7 @@
+
+[TEST] Logging in...
+[TEST] Checking QR payload...
+QR Status: 200
+qrCode starts with data:image/png;base64: true
+qrCode length: 13250
+QR Response JSON: {"success":true,"instance":"emerick","qrCode":"[TRUNCATED_FOR_DISPLAY]"}

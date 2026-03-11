@@ -448,6 +448,33 @@ workspaceRoutes.get('/load', authenticateToken, async (req, res) => {
   }
 });
 
+// GET /api/workspace/notion - lista as páginas do tenant autenticado
+workspaceRoutes.get('/notion', authenticateToken, async (req, res) => {
+  try {
+    const { tenantId } = req.user;
+    const supabase = await getClientSupabaseClient(tenantId);
+    if (!supabase) {
+      return res.status(400).json({ error: 'Supabase não configurado para este tenant' });
+    }
+
+    const { data, error } = await supabase
+      .from('workspace_pages')
+      .select('*')
+      .eq('tenant_id', tenantId)
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      console.error('[Workspace Notion] Erro ao buscar páginas:', error);
+      return res.status(500).json({ error: 'Erro ao listar páginas do workspace' });
+    }
+
+    return res.json(data || []);
+  } catch (error: any) {
+    console.error('[Workspace Notion] Erro inesperado:', error);
+    return res.status(500).json({ error: 'Erro interno ao carregar páginas do workspace' });
+  }
+});
+
 // Deletar item do workspace
 workspaceRoutes.delete('/:type/:id', authenticateToken, async (req, res) => {
   try {

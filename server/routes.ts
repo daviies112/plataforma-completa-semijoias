@@ -37,6 +37,7 @@ import monitoringRoutes from "./routes/monitoring";
 import produtosRoutes from "./routes/produtos";
 import storeRoutes from "./routes/store";
 import workspacePublicRoutes from "./routes/workspacePublic";
+import settingsRoutes from "./routes/settings";
 
 // Configure multer for logo uploads
 const logoStorage = multer.diskStorage({
@@ -86,6 +87,8 @@ export async function registerRoutes(app: Express) {
   app.use("/api/public", publicStoreRoutes);
 
   registerFormulariosCompleteRoutes(app);
+
+  app.use("/api/settings", settingsRoutes);
 
   // Public endpoint for meeting room design - allows unauthenticated access to room colors
   // Must be registered BEFORE routes with requireTenant middleware

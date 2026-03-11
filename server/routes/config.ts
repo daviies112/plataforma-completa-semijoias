@@ -28,7 +28,7 @@ import { encrypt, decrypt } from '../lib/credentialsManager';
 import { authenticateConfig, AuthRequest } from '../middleware/configAuth';
 import { createRateLimiter } from '../middleware/rateLimiter';
 import { authenticateToken } from '../middleware/auth';
-import { requireAuth, attachUserData } from '../middleware/multiTenantAuth';
+import { attachUserData } from '../middleware/multiTenantAuth';
 import {
   saveSupabaseFileConfig,
   getEffectiveSupabaseConfig,
@@ -51,7 +51,7 @@ export function setupConfigRoutes(app: Express) {
 
   // ===== REDIS CONFIGURATION =====
 
-  app.get("/api/config/redis", requireAuth, async (req: AuthRequest, res) => {
+  app.get("/api/config/redis", authenticateConfig, async (req: AuthRequest, res) => {
     try {
       const tenantId = req.user!.tenantId;
       const configFromDb = await db.select().from(redisConfig)
@@ -390,7 +390,7 @@ export function setupConfigRoutes(app: Express) {
 
   // ===== SENTRY CONFIGURATION =====
 
-  app.get("/api/config/sentry", requireAuth, async (req: AuthRequest, res) => {
+  app.get("/api/config/sentry", authenticateConfig, async (req: AuthRequest, res) => {
     try {
       const tenantId = req.user!.tenantId;
       const configFromDb = await db.select().from(sentryConfig)
@@ -536,7 +536,7 @@ export function setupConfigRoutes(app: Express) {
 
   // ===== RESEND CONFIGURATION =====
 
-  app.get("/api/config/resend", requireAuth, async (req: AuthRequest, res) => {
+  app.get("/api/config/resend", authenticateConfig, async (req: AuthRequest, res) => {
     try {
       const tenantId = req.user!.tenantId;
       const configFromDb = await db.select().from(resendConfig)
@@ -700,7 +700,7 @@ export function setupConfigRoutes(app: Express) {
     }
   });
 
-  app.get("/api/config/cloudflare", requireAuth, async (req: AuthRequest, res) => {
+  app.get("/api/config/cloudflare", authenticateConfig, async (req: AuthRequest, res) => {
     try {
       const tenantId = req.user!.tenantId;
       const configFromDb = await db.select().from(cloudflareConfig)
@@ -1618,7 +1618,7 @@ export function setupConfigRoutes(app: Express) {
     }
   });
 
-  app.get("/api/config/optimizer/settings", authenticateConfig, async (req, res) => {
+  app.get("/api/config/optimizer/settings", authenticateConfig, async (req: AuthRequest, res) => {
     try {
       const configFromDb = await db.select().from(optimizerConfig).limit(1);
 
@@ -1626,14 +1626,11 @@ export function setupConfigRoutes(app: Express) {
         return res.json({
           success: true,
           settings: {
-            defaultFieldSet: configFromDb[0].defaultFieldSet,
-            defaultPageSize: configFromDb[0].defaultPageSize,
-            maxPageSize: configFromDb[0].maxPageSize,
-            paginationType: configFromDb[0].paginationType,
-            queryCachingEnabled: configFromDb[0].queryCachingEnabled,
-            queryCacheTtl: configFromDb[0].queryCacheTtl,
-            aggregationEnabled: configFromDb[0].aggregationEnabled,
-            aggregationFunctions: configFromDb[0].aggregationFunctions,
+            fieldSet: configFromDb[0].fieldSet ?? 'default',
+            pageSize: configFromDb[0].pageSize ?? 50,
+            paginationType: configFromDb[0].paginationType ?? 'cursor',
+            queryCaching: configFromDb[0].queryCaching ?? true,
+            aggregation: configFromDb[0].aggregation ?? true,
             createdAt: configFromDb[0].createdAt,
             updatedAt: configFromDb[0].updatedAt,
           }
@@ -1655,18 +1652,24 @@ export function setupConfigRoutes(app: Express) {
     }
   });
 
-  app.post("/api/config/optimizer", authenticateConfig, async (req, res) => {
+  app.post("/api/config/optimizer", authenticateConfig, async (req: AuthRequest, res) => {
     try {
       const {
-        defaultFieldSet,
-        defaultPageSize,
-        maxPageSize,
+        fieldSet,
+        pageSize,
         paginationType,
-        queryCachingEnabled,
-        queryCacheTtl,
-        aggregationEnabled,
-        aggregationFunctions
+        queryCaching,
+        aggregation,
+        tenantId,
+        revendedoraId
       } = req.body;
+
+      const normalizedPageSize =
+        typeof pageSize === 'string' ? parseInt(pageSize, 10) : pageSize;
+      const normalizedQueryCaching =
+        typeof queryCaching === 'string' ? queryCaching === 'true' : queryCaching;
+      const normalizedAggregation =
+        typeof aggregation === 'string' ? aggregation === 'true' : aggregation;
 
       const existingConfig = await db.select().from(optimizerConfig).limit(1);
 
@@ -1674,14 +1677,11 @@ export function setupConfigRoutes(app: Express) {
         await db
           .update(optimizerConfig)
           .set({
-            defaultFieldSet: defaultFieldSet ?? existingConfig[0].defaultFieldSet,
-            defaultPageSize: defaultPageSize ?? existingConfig[0].defaultPageSize,
-            maxPageSize: maxPageSize ?? existingConfig[0].maxPageSize,
+            fieldSet: fieldSet ?? existingConfig[0].fieldSet,
+            pageSize: normalizedPageSize ?? existingConfig[0].pageSize,
             paginationType: paginationType ?? existingConfig[0].paginationType,
-            queryCachingEnabled: queryCachingEnabled ?? existingConfig[0].queryCachingEnabled,
-            queryCacheTtl: queryCacheTtl ?? existingConfig[0].queryCacheTtl,
-            aggregationEnabled: aggregationEnabled ?? existingConfig[0].aggregationEnabled,
-            aggregationFunctions: aggregationFunctions ?? existingConfig[0].aggregationFunctions,
+            queryCaching: normalizedQueryCaching ?? existingConfig[0].queryCaching,
+            aggregation: normalizedAggregation ?? existingConfig[0].aggregation,
             updatedAt: new Date(),
           })
           .where(eq(optimizerConfig.id, existingConfig[0].id));
@@ -1693,14 +1693,13 @@ export function setupConfigRoutes(app: Express) {
         });
       } else {
         await db.insert(optimizerConfig).values({
-          defaultFieldSet,
-          defaultPageSize,
-          maxPageSize,
+          fieldSet,
+          pageSize: normalizedPageSize,
           paginationType,
-          queryCachingEnabled,
-          queryCacheTtl,
-          aggregationEnabled,
-          aggregationFunctions,
+          queryCaching: normalizedQueryCaching,
+          aggregation: normalizedAggregation,
+          tenantId,
+          revendedoraId,
         });
 
         console.log("✅ Configuração do Optimizer salva");
@@ -1743,7 +1742,7 @@ export function setupConfigRoutes(app: Express) {
     }
   });
 
-  app.get("/api/config/monitoring/settings", authenticateConfig, async (req, res) => {
+  app.get("/api/config/monitoring/settings", authenticateConfig, async (req: AuthRequest, res) => {
     try {
       const configFromDb = await db.select().from(monitoringConfig).limit(1);
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { QrCode, CheckCircle2, Loader2, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -13,6 +13,22 @@ export const QRCodeDisplay = () => {
   const [isConnected, setIsConnected] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [instanceName, setInstanceName] = useState<string>("");
+  const qrTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const clearQrRequestTimer = () => {
+    if (qrTimerRef.current) {
+      clearTimeout(qrTimerRef.current);
+      qrTimerRef.current = null;
+    }
+  };
+
+  const scheduleQrRequestTimer = () => {
+    clearQrRequestTimer();
+    qrTimerRef.current = setTimeout(() => {
+      console.warn('⚠️ Timeout forçando fim do loading do QR Code (QRCodeDisplay)');
+      setIsLoading(false);
+    }, 6000);
+  };
 
   useEffect(() => {
     const config = configManager.getConfig();
@@ -21,35 +37,59 @@ export const QRCodeDisplay = () => {
     }
   }, []);
 
+  useEffect(() => {
+    return () => {
+      clearQrRequestTimer();
+    };
+  }, []);
+
   const fetchQRCode = async () => {
     setIsLoading(true);
+    scheduleQrRequestTimer();
     try {
-      const result = await evolutionApi.fetchQRCode();
+      const normalizedInstance = instanceName?.trim().toLowerCase() || 'nexus-whatsapp';
+      const result = await evolutionApi.fetchQRCode(normalizedInstance);
       
       if (result.connected) {
+        clearQrRequestTimer();
         setIsConnected(true);
         setQrCode(null);
         setPairingCode(null);
         toast.success("WhatsApp conectado!", {
           description: "Sua instância está pronta",
         });
-      } else {
-        setIsConnected(false);
-        setQrCode(result.qrcode || null);
-        setPairingCode(result.pairingCode || null);
-        
-        if (!result.qrcode && !result.pairingCode) {
-          toast.info("Gerando QR Code...", {
-            description: "Aguarde alguns instantes e tente novamente",
-          });
-        }
+        return;
       }
+
+      setIsConnected(false);
+      const rawQr =
+        result.qrCode?.base64 ||
+        (typeof result.qrCode === 'string' ? result.qrCode : undefined) ||
+        result.qrcode?.base64 ||
+        (typeof result.qrcode === 'string' ? result.qrcode : undefined) ||
+        result.base64 ||
+        result.code ||
+        result.validBase64;
+
+      if (rawQr) {
+        const normalized = rawQr.startsWith('data:')
+          ? rawQr
+          : `data:image/png;base64,${rawQr}`;
+        setQrCode(normalized);
+      } else {
+        toast.info("Gerando QR Code...", {
+          description: "Aguarde alguns instantes e tente novamente",
+        });
+      }
+
+      setPairingCode(result.pairingCode || result.code || null);
     } catch (error) {
       console.error('Error fetching QR code:', error);
       toast.error("Erro ao buscar QR Code", {
         description: error instanceof Error ? error.message : "Erro desconhecido",
       });
     } finally {
+      clearQrRequestTimer();
       setIsLoading(false);
     }
   };

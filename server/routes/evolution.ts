@@ -5,7 +5,6 @@
 
 import express from 'express';
 import {
-  getQRCode,
   getInstanceStatus,
   logoutInstance,
   deleteInstance,
@@ -18,74 +17,164 @@ import {
   sendMedia,
   sendAudio
 } from '../lib/evolutionApi';
-import { credentialsStorage, decrypt } from '../lib/credentialsManager';
+import { decrypt } from '../lib/credentialsManager';
 import { chatCacheManager } from '../lib/chatCacheManager';
 import { cacheWhatsAppMessages } from '../lib/cacheStrategies';
 import { authenticateToken } from '../middleware/auth';
 import type { AuthRequest } from '../middleware/auth';
+import { pool } from '../db';
 
 const router = express.Router();
 
-/**
- * GET /api/evolution/qrcode
- * Obtém o QR code para conectar o WhatsApp
- */
-router.get('/qrcode', authenticateToken, async (req: AuthRequest, res) => {
-  try {
-    const clientId = req.user!.clientId;
-    const tenantId = req.user!.tenantId || 'default';
-    const config = await getEvolutionConfig(clientId, tenantId);
+async function handleQRCodeRequest(req: AuthRequest, res: express.Response) {
+  if (!pool) {
+    console.error('[EVOLUTION QR] Pool de banco não inicializado');
+    return res.status(503).json({
+      success: false,
+      error: 'Banco de dados indisponível'
+    });
+  }
 
-    if (!config) {
-      return res.status(400).json({
-        success: false,
-        error: 'Evolution API não configurado. Configure em Configurações > Evolution API',
+  const tenantId = req.user?.tenantId || (req.user as any)?.tenant_id;
+  if (!tenantId) {
+    return res.status(401).json({
+      success: false,
+      error: 'Tenant não identificado'
+    });
+  }
+
+  const result = await pool.query(
+    'SELECT api_url, api_key, instance FROM evolution_api_config WHERE tenant_id = $1 LIMIT 1',
+    [tenantId]
+  );
+
+  if (result.rowCount === 0) {
+    return res.status(400).json({
+      success: false,
+      error: 'Configuração da Evolution API não encontrada',
+      details: `Nenhuma configuração para tenant: ${tenantId}`
+    });
+  }
+
+  const row = result.rows[0];
+  let apiUrl: string;
+  let apiKey: string;
+  try {
+    apiUrl = decrypt(row.api_url);
+    apiKey = decrypt(row.api_key);
+  } catch (decryptError: any) {
+    console.error('[EVOLUTION QR] Falha ao descriptografar credenciais:', decryptError);
+    return res.status(500).json({
+      success: false,
+      error: 'Falha ao descriptografar credenciais',
+      details: decryptError?.message || 'Erro desconhecido'
+    });
+  }
+
+  const defaultInstance = tenantId || 'nexus-whatsapp';
+  const rawInstance = typeof row.instance === 'string' ? row.instance.trim() : '';
+  const instance = (rawInstance || defaultInstance).toLowerCase();
+
+  if (!apiUrl || !/^https?:\/\//i.test(apiUrl) || apiUrl.toLowerCase() === 'test') {
+    return res.status(400).json({
+      success: false,
+      error: 'URL da Evolution API inválida',
+      details: `URL encontrada: "${apiUrl}" - Reconfigure nas Configurações`
+    });
+  }
+
+  const baseUrl = apiUrl.replace(/\/+$/, '');
+  const encodedInstance = encodeURIComponent(instance);
+  const fetchUrl = `${baseUrl}/instance/connect/${encodedInstance}`;
+  console.log('📱 Fetching QR from:', fetchUrl);
+
+  let response;
+  try {
+    response = await fetch(fetchUrl, {
+      method: 'GET',
+      headers: {
+        apikey: apiKey,
+        'Content-Type': 'application/json'
+      }
+    });
+  } catch (fetchError: any) {
+    console.error('❌ Fetch error:', fetchError?.message, fetchError?.cause);
+    return res.status(502).json({
+      success: false,
+      error: 'Não foi possível conectar à Evolution API',
+      details: `${fetchError?.message || 'Erro desconhecido'}. Verifique se a URL ${baseUrl} está acessível.`
+    });
+  }
+
+  const responseText = await response.text();
+  if (!response.ok) {
+    return res.status(502).json({
+      success: false,
+      error: 'Evolution API retornou erro',
+      details: `Status ${response.status}: ${responseText.substring(0, 300)}`
+    });
+  }
+
+  let data: any;
+  try {
+    data = JSON.parse(responseText);
+  } catch {
+    return res.status(502).json({
+      success: false,
+      error: 'Resposta inválida da Evolution API',
+      details: responseText.substring(0, 200)
+    });
+  }
+
+  const qrCodeBase64 =
+    data?.qrcode?.base64 ||
+    data?.base64 ||
+    data?.qrCode?.base64 ||
+    data?.code;
+
+  if (!qrCodeBase64) {
+    if (data?.instance?.state === 'open' || data?.state === 'open') {
+      return res.json({
+        success: true,
+        connected: true,
+        message: 'WhatsApp já está conectado!',
+        instance
       });
     }
 
-    // Checking status first to avoid generating QR code if already connected
-    // This fixes the "QR Code não disponível" error on frontend
-    try {
-      const statusData = await getInstanceStatus(config);
-      if (statusData?.instance?.state === 'open') {
-        console.log(`✅ [Evolution API] Instância ${config.instance} já conectada. Retornando status.`);
-        return res.json({
-          success: true,
-          alreadyConnected: true,
-          qrcode: null,
-          instance: config.instance,
-          message: 'WhatsApp já está conectado'
-        });
-      }
-    } catch (statusError) {
-      console.warn('⚠️ [Evolution API] Erro ao verificar status (continuando para QR code):', statusError);
-    }
-
-    const qrData = await getQRCode(config);
-
-    res.json({
-      success: true,
-      qrcode: qrData.qrcode,
-      instance: qrData.instance,
-    });
-  } catch (error) {
-    console.error('Erro ao obter QR code:', error);
-    res.status(500).json({
+    console.log('QR response sem base64:', JSON.stringify(data).substring(0, 300));
+    return res.status(400).json({
       success: false,
-      error: error instanceof Error ? error.message : 'Erro ao obter QR code',
+      error: 'QR Code não disponível',
+      details: 'A instância pode já estar conectada ou em estado inválido',
+      rawResponse: data
     });
   }
-});
+
+  const normalizedQr = qrCodeBase64.startsWith('data:')
+    ? qrCodeBase64
+    : `data:image/png;base64,${qrCodeBase64}`;
+
+  return res.json({
+    success: true,
+    instance,
+    qrCode: normalizedQr
+  });
+}
+
+router.post('/qrcode', authenticateToken, handleQRCodeRequest);
+router.get('/qrcode', authenticateToken, handleQRCodeRequest);
 
 /**
  * GET /api/evolution/status
  * Verifica o status da conexão WhatsApp
  */
 router.get('/status', authenticateToken, async (req: AuthRequest, res) => {
+  let config;
   try {
     const clientId = req.user!.clientId;
     const tenantId = req.user!.tenantId || 'default';
-    const config = await getEvolutionConfig(clientId, tenantId);
+    config = await getEvolutionConfig(clientId, tenantId);
 
     if (!config) {
       return res.status(400).json({
@@ -96,15 +185,23 @@ router.get('/status', authenticateToken, async (req: AuthRequest, res) => {
 
     const status = await getInstanceStatus(config);
 
-    res.json({
+    return res.json({
       success: true,
       status,
     });
   } catch (error) {
     console.error('Erro ao obter status:', error);
-    res.status(500).json({
-      success: false,
-      error: error instanceof Error ? error.message : 'Erro ao obter status',
+    const fallbackStatus = {
+      instance: {
+        instanceName: (config?.instance || 'nexus-whatsapp'),
+        state: 'connecting',
+      },
+    };
+
+    res.json({
+      success: true,
+      status: fallbackStatus,
+      warning: error instanceof Error ? error.message : 'Erro ao obter status',
     });
   }
 });

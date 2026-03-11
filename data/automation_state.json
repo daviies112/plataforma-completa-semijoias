@@ -1,158 +1,62 @@
 {
   "isRunning": true,
-  "startedAt": "2026-03-11T00:42:57.907Z",
+  "startedAt": "2026-03-11T21:36:02.249Z",
   "lastExecutions": {
     "system-system": {
       "clientId": "system",
       "tenantId": "system",
-      "lastRun": "2026-03-11T00:41:49.146Z",
-      "lastSuccess": "2026-02-27T21:34:44.569Z",
-      "lastError": null,
-      "consecutiveErrors": 0,
-      "totalExecutions": 10914,
-      "totalNewClientsDetected": 0,
-      "totalEventsCreated": 0,
-      "status": "stopped"
-    },
-    "dev-daviemericko_gmail_com-dev-daviemericko_gmail_com": {
-      "clientId": "dev-daviemericko_gmail_com",
-      "tenantId": "dev-daviemericko_gmail_com",
-      "lastRun": "2026-02-12T15:33:05.991Z",
-      "lastSuccess": "2026-02-12T15:33:05.991Z",
-      "lastError": null,
-      "consecutiveErrors": 0,
-      "totalExecutions": 1570,
-      "totalNewClientsDetected": 0,
-      "totalEventsCreated": 0,
-      "status": "stopped"
-    },
-    "dev-teste_empresa_com-dev-teste_empresa_com": {
-      "clientId": "dev-teste_empresa_com",
-      "tenantId": "dev-teste_empresa_com",
-      "lastRun": "2026-02-07T12:23:19.913Z",
-      "lastSuccess": "2026-02-07T12:23:19.913Z",
-      "lastError": null,
-      "consecutiveErrors": 0,
-      "totalExecutions": 114,
-      "totalNewClientsDetected": 0,
-      "totalEventsCreated": 0,
-      "status": "stopped"
-    },
-    "emerick-sj-001-emerick-sj-001": {
-      "clientId": "emerick-sj-001",
-      "tenantId": "emerick-sj-001",
-      "lastRun": "2026-02-07T12:23:19.917Z",
-      "lastSuccess": "2026-02-07T12:23:19.917Z",
-      "lastError": null,
-      "consecutiveErrors": 0,
-      "totalExecutions": 20,
-      "totalNewClientsDetected": 0,
-      "totalEventsCreated": 0,
-      "status": "stopped"
-    },
-    "babilo-tenant-001-babilo-tenant-001": {
-      "clientId": "babilo-tenant-001",
-      "tenantId": "babilo-tenant-001",
-      "lastRun": "2026-02-07T19:09:07.234Z",
-      "lastSuccess": "2026-02-07T19:09:07.234Z",
-      "lastError": null,
-      "consecutiveErrors": 0,
-      "totalExecutions": 156,
-      "totalNewClientsDetected": 0,
-      "totalEventsCreated": 0,
-      "status": "stopped"
-    },
-    "dev-davipiano_gmail_com-dev-davipiano_gmail_com": {
-      "clientId": "dev-davipiano_gmail_com",
-      "tenantId": "dev-davipiano_gmail_com",
-      "lastRun": "2026-02-08T12:31:00.316Z",
+      "lastRun": "2026-03-11T21:42:02.456Z",
       "lastSuccess": null,
-      "lastError": null,
-      "consecutiveErrors": 0,
-      "totalExecutions": 100,
+      "lastError": "Invalid supabaseUrl: Must be a valid HTTP or HTTPS URL.",
+      "consecutiveErrors": 16,
+      "totalExecutions": 297,
       "totalNewClientsDetected": 0,
       "totalEventsCreated": 0,
-      "status": "stopped"
+      "status": "running"
     },
-    "b25cf69e-def4-4cea-afbf-0b93eabb77b2-b25cf69e-def4-4cea-afbf-0b93eabb77b2": {
-      "clientId": "b25cf69e-def4-4cea-afbf-0b93eabb77b2",
-      "tenantId": "b25cf69e-def4-4cea-afbf-0b93eabb77b2",
-      "lastRun": "2026-02-12T15:33:05.988Z",
-      "lastSuccess": "2026-02-12T15:33:05.988Z",
-      "lastError": null,
-      "consecutiveErrors": 0,
-      "totalExecutions": 88,
+    "gleice-gleice": {
+      "clientId": "gleice",
+      "tenantId": "gleice",
+      "lastRun": "2026-03-11T21:42:02.469Z",
+      "lastSuccess": null,
+      "lastError": "Invalid supabaseUrl: Must be a valid HTTP or HTTPS URL.",
+      "consecutiveErrors": 16,
+      "totalExecutions": 275,
       "totalNewClientsDetected": 0,
       "totalEventsCreated": 0,
-      "status": "stopped"
-    },
-    "emericks-tenant-emericks-tenant": {
-      "clientId": "emericks-tenant",
-      "tenantId": "emericks-tenant",
-      "lastRun": "2026-03-04T17:26:36.579Z",
-      "lastSuccess": "2026-03-04T17:26:36.579Z",
-      "lastError": null,
-      "consecutiveErrors": 0,
-      "totalExecutions": 9231,
-      "totalNewClientsDetected": 0,
-      "totalEventsCreated": 0,
-      "status": "stopped"
+      "status": "running"
     },
     "emerick-emerick": {
       "clientId": "emerick",
       "tenantId": "emerick",
-      "lastRun": "2026-03-10T19:14:32.056Z",
-      "lastSuccess": "2026-03-10T14:04:32.035Z",
+      "lastRun": "2026-03-11T21:42:02.491Z",
+      "lastSuccess": "2026-03-11T21:42:02.491Z",
       "lastError": null,
       "consecutiveErrors": 0,
-      "totalExecutions": 3789,
+      "totalExecutions": 278,
       "totalNewClientsDetected": 0,
       "totalEventsCreated": 0,
-      "status": "stopped"
-    },
-    "emericks-emericks": {
-      "clientId": "emericks",
-      "tenantId": "emericks",
-      "lastRun": "2026-03-10T19:14:32.042Z",
-      "lastSuccess": "2026-03-10T14:04:32.029Z",
-      "lastError": null,
-      "consecutiveErrors": 0,
-      "totalExecutions": 3462,
-      "totalNewClientsDetected": 0,
-      "totalEventsCreated": 0,
-      "status": "stopped"
+      "status": "running"
     },
     "davisemi-joias-davisemi-joias": {
       "clientId": "davisemi-joias",
       "tenantId": "davisemi-joias",
-      "lastRun": "2026-03-10T19:14:32.068Z",
-      "lastSuccess": "2026-03-10T14:04:32.038Z",
+      "lastRun": "2026-03-11T21:42:02.482Z",
+      "lastSuccess": null,
       "lastError": null,
       "consecutiveErrors": 0,
-      "totalExecutions": 3462,
+      "totalExecutions": 275,
       "totalNewClientsDetected": 0,
       "totalEventsCreated": 0,
-      "status": "stopped"
-    },
-    "davisemijoias-davisemijoias": {
-      "clientId": "davisemijoias",
-      "tenantId": "davisemijoias",
-      "lastRun": "2026-03-10T19:14:32.026Z",
-      "lastSuccess": "2026-03-10T14:04:32.014Z",
-      "lastError": null,
-      "consecutiveErrors": 0,
-      "totalExecutions": 3355,
-      "totalNewClientsDetected": 0,
-      "totalEventsCreated": 0,
-      "status": "stopped"
+      "status": "running"
     }
   },
   "globalStats": {
-    "totalExecutions": 36261,
+    "totalExecutions": 1125,
     "totalNewClientsDetected": 0,
     "totalEventsCreated": 0,
-    "totalErrors": 0,
-    "uptime": 0
+    "totalErrors": 32,
+    "uptime": 360
   },
   "settings": {
     "detectionIntervalMinutes": 2,

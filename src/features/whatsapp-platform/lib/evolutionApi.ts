@@ -126,46 +126,36 @@ export const evolutionApi = {
   },
 
   // Buscar QR Code para conectar WhatsApp
-  fetchQRCode: async (): Promise<{ qrcode?: string; pairingCode?: string; connected: boolean }> => {
+  fetchQRCode: async (instance?: string): Promise<any> => {
     try {
       console.log('🔄 Fetching QR Code from Evolution API...');
 
       const response = await fetch('/api/evolution/qrcode', {
-        method: 'GET',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Cache-Control': 'no-cache, no-store, must-revalidate',
         },
         credentials: 'include',
+        body: JSON.stringify({ instance }),
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Erro ao buscar QR Code');
+      const text = await response.text();
+      let data: any = {};
+      try {
+        data = text ? JSON.parse(text) : {};
+      } catch {
+        data = {};
       }
 
-      const data = await response.json();
-
-      if (!data.success) {
-        throw new Error(data.error || 'Erro ao buscar QR Code');
+      if (!response.ok || data.error) {
+        const errorMsg = data.details || data.error || `Erro ${response.status}`;
+        throw new Error(errorMsg);
       }
-
-      // Verificar se já está conectado
-      if (data.connected || data.status?.instance?.state === 'open') {
-        console.log('✅ WhatsApp já está conectado!');
-        return { connected: true };
-      }
-
-      console.log('📱 QR Code recebido:', {
-        hasQRCode: !!data.qrcode,
-        hasPairingCode: !!data.pairingCode,
-        instance: data.instance
-      });
 
       return {
-        qrcode: data.qrcode,
-        pairingCode: data.pairingCode,
-        connected: false
+        ...data,
+        connected: data.connected || data.success && data.status?.instance?.state === 'open'
       };
     } catch (error) {
       console.error('❌ Error fetching QR code:', error);

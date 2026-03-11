@@ -1,0 +1,94 @@
+
+> vite_react_shadcn_ts@0.0.0 build
+> vite build && node scripts/build-server.js
+
+NODE_ENV=production is not supported in the .env file. Only NODE_ENV=development is supported to create a development build of your project. If you need to set process.env.NODE_ENV, you can set it in the Vite config instead.
+vite v5.4.21 building for production...
+transforming...
+✓ 5627 modules transformed.
+rendering chunks...
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /var/www/plataformacompleta/src/hooks/assinatura/useFaceDetection.ts is dynamically imported by /var/www/plataformacompleta/src/components/assinatura/verification/ProcessingScreen.tsx but also statically imported by /var/www/plataformacompleta/src/components/assinatura/verification/SelfieCapture.tsx, /var/www/plataformacompleta/src/components/assinatura/verification/VerificationFlow.tsx, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /var/www/plataformacompleta/src/stores/notionStore.ts is dynamically imported by /var/www/plataformacompleta/src/contexts/AuthContext.tsx but also statically imported by /var/www/plataformacompleta/src/components/HeaderNavigation.tsx, /var/www/plataformacompleta/src/components/kanban/card-detail/CardLabelsSection.tsx, /var/www/plataformacompleta/src/components/kanban/card-detail/CardSidebarActions.tsx, /var/www/plataformacompleta/src/components/notion/Block.tsx, /var/www/plataformacompleta/src/components/notion/BlockWrapper.tsx, /var/www/plataformacompleta/src/components/notion/BoardOptionsMenu.tsx, /var/www/plataformacompleta/src/components/notion/DatabaseOptionsMenu.tsx, /var/www/plataformacompleta/src/components/notion/DatabaseView.tsx, /var/www/plataformacompleta/src/components/notion/Editor.tsx, /var/www/plataformacompleta/src/components/notion/PageOptionsMenu.tsx, /var/www/plataformacompleta/src/components/notion/Sidebar.tsx, /var/www/plataformacompleta/src/components/notion/Topbar.tsx, /var/www/plataformacompleta/src/components/notion/blocks/AudioBlock.tsx, /var/www/plataformacompleta/src/components/notion/blocks/BookmarkBlock.tsx, /var/www/plataformacompleta/src/components/notion/blocks/BreadcrumbBlock.tsx, /var/www/plataformacompleta/src/components/notion/blocks/CalloutBlock.tsx, /var/www/plataformacompleta/src/components/notion/blocks/CodeBlockAdvanced.tsx, /var/www/plataformacompleta/src/components/notion/blocks/DividerBlock.tsx, /var/www/plataformacompleta/src/components/notion/blocks/EmbedBlock.tsx, /var/www/plataformacompleta/src/components/notion/blocks/EquationBlock.tsx, /var/www/plataformacompleta/src/components/notion/blocks/FileBlock.tsx, /var/www/plataformacompleta/src/components/notion/blocks/ImageBlock.tsx, /var/www/plataformacompleta/src/components/notion/blocks/LinkToPageBlock.tsx, /var/www/plataformacompleta/src/components/notion/blocks/PageBlock.tsx, /var/www/plataformacompleta/src/components/notion/blocks/PdfBlock.tsx, /var/www/plataformacompleta/src/components/notion/blocks/QuoteBlock.tsx, /var/www/plataformacompleta/src/components/notion/blocks/SyncedBlock.tsx, /var/www/plataformacompleta/src/components/notion/blocks/TableOfContentsBlock.tsx, /var/www/plataformacompleta/src/components/notion/blocks/TemplateBlock.tsx, /var/www/plataformacompleta/src/components/notion/blocks/ToggleBlock.tsx, /var/www/plataformacompleta/src/components/notion/blocks/VideoBlock.tsx, /var/www/plataformacompleta/src/pages/notion/BoardsWrapper.tsx, /var/www/plataformacompleta/src/platforms/desktop/pages/CalendarPage.tsx, /var/www/plataformacompleta/src/platforms/desktop/pages/WorkspacePage.tsx, /var/www/plataformacompleta/src/platforms/mobile/pages/WorkspacePage.tsx, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /var/www/plataformacompleta/src/features/formularios-platform/lib/queryClient.ts is dynamically imported by /var/www/plataformacompleta/src/pages/SettingsPage.tsx but also statically imported by /var/www/plataformacompleta/src/features/formularios-platform/App.tsx, /var/www/plataformacompleta/src/features/formularios-platform/pages/Admin.tsx, /var/www/plataformacompleta/src/features/formularios-platform/pages/EditarFormulario.tsx, /var/www/plataformacompleta/src/features/formularios-platform/pages/VerFormularios.tsx, /var/www/plataformacompleta/src/features/formularios-platform/pages/VerPaginasFinal.tsx, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /var/www/plataformacompleta/node_modules/xlsx/xlsx.mjs is dynamically imported by /var/www/plataformacompleta/src/components/assinatura/ResellerImportDialog.tsx but also statically imported by /var/www/plataformacompleta/src/features/produto/lib/exportUtils.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /var/www/plataformacompleta/src/features/formularios-platform/pages/FormularioPublico.tsx is dynamically imported by /var/www/plataformacompleta/src/features/formularios-platform/App.tsx but also statically imported by /var/www/plataformacompleta/src/features/formularios-platform/pages/FormularioPublicoWrapper.tsx, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /var/www/plataformacompleta/src/features/formularios-platform/pages/FormularioPublicoWrapper.tsx is dynamically imported by /var/www/plataformacompleta/src/App.tsx but also statically imported by /var/www/plataformacompleta/src/App.tsx, /var/www/plataformacompleta/src/platforms/PlatformRouter.tsx, dynamic import will not move module into another chunk.
+
+computing gzip size...
+dist/index.html                                                     7.26 kB │ gzip:   2.32 kB
+dist/assets/nexus-logo-full-BkkrHIlv.png                           56.91 kB
+dist/assets/jewelry_with_business_analytics-CAtTbr70.png        1,366.94 kB
+dist/assets/elegant_semi-jewelry_boutique_display-DVDnE9XO.png  1,522.82 kB
+dist/assets/trophy_with_luxury_jewelry-fs0so2Xd.png             1,783.97 kB
+dist/assets/App-BKz3iPZj.css                                        0.70 kB │ gzip:   0.37 kB
+dist/assets/index-DdwzO59d.css                                    250.06 kB │ gzip:  36.11 kB
+dist/assets/check-3tCInfkp.js                                       0.29 kB │ gzip:   0.24 kB
+dist/assets/copy-DnM0cSO7.js                                        0.40 kB │ gzip:   0.31 kB
+dist/assets/camera-BpIgN6ft.js                                      0.42 kB │ gzip:   0.31 kB
+dist/assets/map-pin-DY10ABLe.js                                     0.42 kB │ gzip:   0.32 kB
+dist/assets/upload-Cret716C.js                                      0.43 kB │ gzip:   0.32 kB
+dist/assets/AssinaturaClientWrapper-Dk9ctSBy.js                     0.48 kB │ gzip:   0.34 kB
+dist/assets/html2canvas-Dh2pRcrZ.js                                 0.50 kB │ gzip:   0.36 kB
+dist/assets/file-text-DbOo3clT.js                                   0.50 kB │ gzip:   0.32 kB
+dist/assets/colorScheme-Dg89g7gw.js                                 0.57 kB │ gzip:   0.33 kB
+dist/assets/clipboard-D__Xehfv.js                                   0.58 kB │ gzip:   0.31 kB
+dist/assets/trending-up-Bwe0WWov.js                                 0.66 kB │ gzip:   0.35 kB
+dist/assets/download-BVatYEuI.js                                    0.74 kB │ gzip:   0.39 kB
+dist/assets/video-off-TP1vrLzZ.js                                   1.01 kB │ gzip:   0.49 kB
+dist/assets/shield-check-9q54AeMN.js                                1.23 kB │ gzip:   0.54 kB
+dist/assets/trophy-DBfCldRc.js                                      1.32 kB │ gzip:   0.54 kB
+dist/assets/input-wMbirIzt.js                                       1.60 kB │ gzip:   0.80 kB
+dist/assets/AssinaturaFromMeeting-fE6N-2XL.js                       1.82 kB │ gzip:   0.91 kB
+dist/assets/video-DecFg-sx.js                                       2.05 kB │ gzip:   0.70 kB
+dist/assets/branding-DVxWdLMq.js                                    3.66 kB │ gzip:   1.91 kB
+dist/assets/checkbox-D0H-gyUB.js                                    5.51 kB │ gzip:   2.48 kB
+dist/assets/SuccessStep-CkHESXdw.js                                 5.54 kB │ gzip:   1.86 kB
+dist/assets/ResellerWelcomeStep-DIt4neT_.js                         6.71 kB │ gzip:   2.17 kB
+dist/assets/MeetingLobby-BCn-6VX9.js                                6.87 kB │ gzip:   2.55 kB
+dist/assets/PrintLabelsPage-D7cZkHw0.js                             7.47 kB │ gzip:   2.72 kB
+dist/assets/ReuniaoPublica-BFK73R9j.js                              7.53 kB │ gzip:   2.73 kB
+dist/assets/PublicSignatureApp-Fjpstixc.js                          7.77 kB │ gzip:   2.77 kB
+dist/assets/AppPromotionStep-B4H3Uu7N.js                            7.83 kB │ gzip:   2.68 kB
+dist/assets/ResidenceProofStep-BQJKg5fI.js                          8.40 kB │ gzip:   2.89 kB
+dist/assets/ContractStep-BsqxZzbp.js                                9.29 kB │ gzip:   2.83 kB
+dist/assets/PublicWorkspaceApp-Rq01pKek.js                          9.53 kB │ gzip:   3.17 kB
+dist/assets/AssinaturaClientPage-DuWF3Vyv.js                       15.63 kB │ gzip:   4.67 kB
+dist/assets/PublicMeetingApp-rWmnltbr.js                           16.26 kB │ gzip:   5.29 kB
+dist/assets/PublicFormApp-DZwJmvoF.js                              20.21 kB │ gzip:   5.61 kB
+dist/assets/LojaPublica-C1b6vKWH.js                                28.11 kB │ gzip:   7.15 kB
+dist/assets/index-DGJ9ezWF.js                                      32.33 kB │ gzip:   9.39 kB
+dist/assets/LogoHeader-CJ3r6l4c.js                                 56.07 kB │ gzip:  18.18 kB
+dist/assets/card-DW5Fc77s.js                                       73.77 kB │ gzip:  25.92 kB
+dist/assets/main-D6-D0Cab.js                                      146.91 kB │ gzip:  47.45 kB
+dist/assets/index.es-D5ee1s6n.js                                  150.50 kB │ gzip:  51.46 kB
+dist/assets/supabase-EARNEnSR.js                                  171.56 kB │ gzip:  45.68 kB
+dist/assets/sentry-D15sL8hc.js                                    258.62 kB │ gzip:  85.38 kB
+dist/assets/Meeting100ms-Liu6Zh6j.js                              530.99 kB │ gzip: 148.91 kB
+dist/assets/html2pdf-BwaKr1PD.js                                  741.58 kB │ gzip: 211.49 kB
+dist/assets/VerificationFlow-Bw3rqZ6Q.js                          851.09 kB │ gzip: 221.20 kB
+dist/assets/App-DeGy-FtI.js                                     3,473.18 kB │ gzip: 913.95 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 28.36s
+🔨 Building server...
+▲ [WARNING] Import "startTransaction" will always be undefined because there is no matching export in "node_modules/@sentry/node/build/esm/index.js" [import-is-undefined]
+
+    server/lib/sentry.ts:176:16:
+      176 │   return Sentry.startTransaction({ name, op });
+          ╵                 ~~~~~~~~~~~~~~~~
+
+✅ Server build complete: dist/index.mjs
