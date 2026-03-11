@@ -218,33 +218,30 @@ router.post('/login', async (req: Request, res: Response) => {
     let adminData: any = null;
     let queryErr: any = null;
 
-    try {
-      const { db } = await import('../db');
-      const schema = await import('../../shared/db-schema');
-      const { eq, and } = await import('drizzle-orm');
-
-      const adminUsersTable = (schema as any).adminUsers;
-      if (adminUsersTable) {
-        const [localUser] = await db.select()
-          .from(adminUsersTable)
-          .where(and(
-            eq(adminUsersTable.email, email),
-            eq(adminUsersTable.isActive, true)
-          ))
-          .limit(1);
-
-        if (localUser) {
-          adminData = {
-            ...localUser,
-            nome: localUser.name,
-            password_hash: localUser.passwordHash,
-            company_name: localUser.companyName,
-            tenant_id: localUser.tenantId,
-            is_active: localUser.isActive,
-            role: localUser.role
-          };
-          console.log(`🔍 [AUTH] Local DB user found!`);
-        }
+try {
+      const { pool } = await import('../db');
+      console.log('🔍 [AUTH] Tentando via Host Postgres (raw SQL) para:', email);
+      
+      const resPg = await pool.query(
+        'SELECT * FROM admin_users WHERE email = $1 AND is_active = true LIMIT 1',
+        [email]
+      );
+      
+      if (resPg.rows.length > 0) {
+        const localUser = resPg.rows[0];
+        adminData = {
+          ...localUser,
+          nome: localUser.name || localUser.nome || localUser.company_name,
+          password_hash: localUser.password_hash || localUser.passwordHash,
+          company_name: localUser.company_name || localUser.companyName,
+          tenant_id: localUser.tenant_id || localUser.tenantId,
+          is_active: localUser.is_active || localUser.isActive,
+          role: localUser.role || 'admin',
+          id: localUser.id
+        };
+        console.log('✅ [AUTH] Local DB user found via raw SQL no Host!');
+      } else {
+        console.log('⚠️ [AUTH] Usuário não encontrado no Host DB (raw SQL).');
       }
     } catch (e) {
       console.error('[AUTH] Local DB query failed', e);
