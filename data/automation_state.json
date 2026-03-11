@@ -5,11 +5,11 @@
     "system-system": {
       "clientId": "system",
       "tenantId": "system",
-      "lastRun": "2026-03-11T21:42:02.456Z",
+      "lastRun": "2026-03-11T22:06:02.472Z",
       "lastSuccess": null,
       "lastError": "Invalid supabaseUrl: Must be a valid HTTP or HTTPS URL.",
       "consecutiveErrors": 16,
-      "totalExecutions": 297,
+      "totalExecutions": 309,
       "totalNewClientsDetected": 0,
       "totalEventsCreated": 0,
       "status": "running"
@@ -17,11 +17,11 @@
     "gleice-gleice": {
       "clientId": "gleice",
       "tenantId": "gleice",
-      "lastRun": "2026-03-11T21:42:02.469Z",
+      "lastRun": "2026-03-11T22:06:02.482Z",
       "lastSuccess": null,
       "lastError": "Invalid supabaseUrl: Must be a valid HTTP or HTTPS URL.",
       "consecutiveErrors": 16,
-      "totalExecutions": 275,
+      "totalExecutions": 287,
       "totalNewClientsDetected": 0,
       "totalEventsCreated": 0,
       "status": "running"
@@ -29,11 +29,11 @@
     "emerick-emerick": {
       "clientId": "emerick",
       "tenantId": "emerick",
-      "lastRun": "2026-03-11T21:42:02.491Z",
-      "lastSuccess": "2026-03-11T21:42:02.491Z",
+      "lastRun": "2026-03-11T22:06:02.498Z",
+      "lastSuccess": "2026-03-11T22:06:02.498Z",
       "lastError": null,
       "consecutiveErrors": 0,
-      "totalExecutions": 278,
+      "totalExecutions": 290,
       "totalNewClientsDetected": 0,
       "totalEventsCreated": 0,
       "status": "running"
@@ -41,22 +41,22 @@
     "davisemi-joias-davisemi-joias": {
       "clientId": "davisemi-joias",
       "tenantId": "davisemi-joias",
-      "lastRun": "2026-03-11T21:42:02.482Z",
+      "lastRun": "2026-03-11T22:06:02.489Z",
       "lastSuccess": null,
       "lastError": null,
       "consecutiveErrors": 0,
-      "totalExecutions": 275,
+      "totalExecutions": 287,
       "totalNewClientsDetected": 0,
       "totalEventsCreated": 0,
       "status": "running"
     }
   },
   "globalStats": {
-    "totalExecutions": 1125,
+    "totalExecutions": 1173,
     "totalNewClientsDetected": 0,
     "totalEventsCreated": 0,
     "totalErrors": 32,
-    "uptime": 360
+    "uptime": 1800
   },
   "settings": {
     "detectionIntervalMinutes": 2,
