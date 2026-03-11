@@ -13,3 +13,10 @@ build_error.log
 vps_*.js
 temp
 tmp
+
+data/automation_state.json
+data/cpf_auto_check_processed.json
+data/cpf_compliance_poller_state.json
+data/form_submission_poller_state.json
+data/*.bak
+data/*.json.bak
