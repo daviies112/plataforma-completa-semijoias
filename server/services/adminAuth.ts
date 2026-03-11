@@ -94,8 +94,20 @@ class AdminAuthService {
         console.log(`[AdminAuth] Tentando login local para: ${email}`);
         
         // Check if adminUsers exists in schema, otherwise skip local login
-        const adminUsersTable = (schema as any).adminUsers;
-        if (adminUsersTable) {
+        // Fix fallback using pg pool directly
+        const { pool } = await import('../db');
+        const result = await pool.query('SELECT * FROM admin_users WHERE email = $1 AND is_active = true LIMIT 1', [email]);
+        if (result.rows.length > 0) {
+          const localUser = result.rows[0];
+          const isValidPassword = await bcrypt.compare(password, localUser.password_hash);
+          if (isValidPassword) {
+            console.log('[AdminAuth] ✅ Login local (PG Host) bem-sucedido');
+            return this.generateLoginResponse(localUser);
+          }
+        }
+        
+        // Skip default local schema block
+        if (false) {
           const [localUser] = await db.select()
             .from(adminUsersTable)
             .where(and(
