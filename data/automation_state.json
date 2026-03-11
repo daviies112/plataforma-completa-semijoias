@@ -1,15 +1,15 @@
 {
   "isRunning": true,
-  "startedAt": "2026-03-09T15:17:25.412Z",
+  "startedAt": "2026-03-11T00:42:57.907Z",
   "lastExecutions": {
     "system-system": {
       "clientId": "system",
       "tenantId": "system",
-      "lastRun": "2026-02-28T13:24:56.812Z",
+      "lastRun": "2026-03-11T00:41:49.146Z",
       "lastSuccess": "2026-02-27T21:34:44.569Z",
       "lastError": null,
       "consecutiveErrors": 0,
-      "totalExecutions": 10692,
+      "totalExecutions": 10914,
       "totalNewClientsDetected": 0,
       "totalEventsCreated": 0,
       "status": "stopped"
@@ -96,63 +96,63 @@
       "totalExecutions": 9231,
       "totalNewClientsDetected": 0,
       "totalEventsCreated": 0,
-      "status": "running"
+      "status": "stopped"
     },
     "emerick-emerick": {
       "clientId": "emerick",
       "tenantId": "emerick",
-      "lastRun": "2026-03-09T18:37:00.002Z",
-      "lastSuccess": "2026-03-09T18:37:00.002Z",
+      "lastRun": "2026-03-10T19:14:32.056Z",
+      "lastSuccess": "2026-03-10T14:04:32.035Z",
       "lastError": null,
       "consecutiveErrors": 0,
-      "totalExecutions": 1289,
+      "totalExecutions": 3789,
       "totalNewClientsDetected": 0,
       "totalEventsCreated": 0,
-      "status": "running"
+      "status": "stopped"
     },
     "emericks-emericks": {
       "clientId": "emericks",
       "tenantId": "emericks",
-      "lastRun": "2026-03-09T18:36:59.993Z",
-      "lastSuccess": "2026-03-09T18:36:59.993Z",
+      "lastRun": "2026-03-10T19:14:32.042Z",
+      "lastSuccess": "2026-03-10T14:04:32.029Z",
       "lastError": null,
       "consecutiveErrors": 0,
-      "totalExecutions": 975,
+      "totalExecutions": 3462,
       "totalNewClientsDetected": 0,
       "totalEventsCreated": 0,
-      "status": "running"
+      "status": "stopped"
     },
     "davisemi-joias-davisemi-joias": {
       "clientId": "davisemi-joias",
       "tenantId": "davisemi-joias",
-      "lastRun": "2026-03-09T18:37:00.007Z",
-      "lastSuccess": "2026-03-09T18:37:00.007Z",
+      "lastRun": "2026-03-10T19:14:32.068Z",
+      "lastSuccess": "2026-03-10T14:04:32.038Z",
       "lastError": null,
       "consecutiveErrors": 0,
-      "totalExecutions": 975,
+      "totalExecutions": 3462,
       "totalNewClientsDetected": 0,
       "totalEventsCreated": 0,
-      "status": "running"
+      "status": "stopped"
     },
     "davisemijoias-davisemijoias": {
       "clientId": "davisemijoias",
       "tenantId": "davisemijoias",
-      "lastRun": "2026-03-09T18:36:59.984Z",
-      "lastSuccess": "2026-03-09T18:36:59.984Z",
+      "lastRun": "2026-03-10T19:14:32.026Z",
+      "lastSuccess": "2026-03-10T14:04:32.014Z",
       "lastError": null,
       "consecutiveErrors": 0,
-      "totalExecutions": 868,
+      "totalExecutions": 3355,
       "totalNewClientsDetected": 0,
       "totalEventsCreated": 0,
-      "status": "running"
+      "status": "stopped"
     }
   },
   "globalStats": {
-    "totalExecutions": 26078,
+    "totalExecutions": 36261,
     "totalNewClientsDetected": 0,
     "totalEventsCreated": 0,
     "totalErrors": 0,
-    "uptime": 11985
+    "uptime": 0
   },
   "settings": {
     "detectionIntervalMinutes": 2,

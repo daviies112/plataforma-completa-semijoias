@@ -1,0 +1,23 @@
+---
+name: Multimodal Voice (Realtime)
+description: Protocols for voice interaction (Hearing & Speaking).
+---
+
+# Multimodal Voice Protocol ðŸŽ™ï¸
+
+**Objective:** "Talk to the Machine."
+
+## 1. The Ears (Whisper) ðŸ‘‚
+*   **Trigger:** User sends an audio file or activates "Voice Mode".
+*   **Process:**
+    *   Transcribe Audio -> Text Command -> Agent Brain.
+    *   *Nuance:* Detect emotion/urgency in voice ("STOP!" vs "Stop.").
+
+## 2. The Mouth (ElevenLabs/OpenAI) ðŸ—£ï¸
+*   **Trigger:** User asks for a "Briefing" or "Explanation".
+*   **Process:**
+    *   Generate Text -> TTS Engine -> Stream Audio.
+    *   *Persona:* Use a professional, calm engineer voice.
+
+## 3. The "Interrupt" Standard ðŸ›‘
+*   **Rule:** If the user speaks while the agent is talking, the agent must stop immediately (VAD - Voice Activity Detection).

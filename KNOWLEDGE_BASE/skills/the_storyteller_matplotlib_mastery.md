@@ -1,0 +1,28 @@
+---
+name: The Storyteller (Matplotlib Mastery)
+description: Protocols for creating editorial-grade, decision-focused visualizations.
+---
+
+# The Storyteller Protocol ðŸ“‰
+
+**Objective:** "Information without decision is noise."
+
+## 1. The Matplotlib Standard ðŸŽ¨
+*   **Why:** Total control. Reproducible via code. No dependency hell.
+*   **Style:** `plt.style.use('seaborn-v0_8-whitegrid')` (Clean base).
+*   **Customization:**
+    *   **Spines:** Remove Top and Right spines (`ax.spines['top'].set_visible(False)`).
+    *   **Titles:** Left-aligned, bold, telling the *conclusions*, not just "Sales vs Time".
+        *   *Bad:* "Monthly Revenue"
+        *   *Good:* "Revenue grew 40% after Q3 Marketing Push"
+
+## 2. The "So What?" Annotation ðŸ’¬
+*   **Rule:** Every graph must have at least one valid annotation pointing to the key insight.
+*   **Mechanism:**
+    *   Find the Max/Min point.
+    *   Add `ax.annotate()`: "Peak Traffic (Black Friday)".
+
+## 3. The "Vibe" Palette ðŸŒˆ
+*   **Consistency:** Use the project's `design_system_tokens.json` colors even in Python graphs.
+    *   `#Primary` -> Bar Charts.
+    *   `#Danger` -> Drop-offs/Errors.

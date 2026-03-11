@@ -1,0 +1,31 @@
+---
+name: Future Tech Scout (Trends & LAMs)
+description: Protocol for weekly research on AI advancements (LAMs, OpenSource models) and business application recommendations.
+---
+
+# Future Tech Scout Protocol ðŸ”­
+
+**Objective:** "Future-Proof the Business."
+
+## 1. The Weekly Scan ðŸ—“ï¸
+*   **Trigger:** Every Monday at 08:00 AM (via N8n Cron).
+*   **Sources:**
+    *   HuggingFace Trending, GitHub Trending (Python/AI), TechCrunch, YCombinator.
+*   **Keywords:** "Large Action Model (LAM)", "Contexto Infinito", "Open Source vs API", "Agentic Automation".
+
+## 2. Analysis & Filtration ðŸ§ 
+*   **Filter:** specific to *User's Business* (Semijoias, Logistics, Sales).
+*   **Question:** "Does this new tool solve a problem cheaper or faster than our current API?"
+    *   *Example:* "DeepSeek V3 is now cheaper than GPT-4o for coding tasks." -> **Proposal:** Switch coding agent model.
+
+## 3. The "Build vs Buy" Advisor ðŸ—ï¸
+*   **Goal:** Determine when to switch from Paid APIs to Self-Hosted OpenSource.
+*   **Calculation:**
+    *   Cost of API per month vs. Cost of VPS GPU.
+    *   If (VPS Cost < API Cost) **AND** (Performance >= 90%), trigger **Implementation Plan**.
+
+## 4. Innovation Report ðŸ“
+*   **Output:** A markdown summary delivered to the User.
+    *   **New Tech Found:** [Name]
+    *   **Impact:** [High/Medium/Low]
+    *   **Action Item:** "Test this for the 'Trucker' niche."

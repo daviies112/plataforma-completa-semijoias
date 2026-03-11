@@ -1,0 +1,23 @@
+---
+name: Command Center (Arize Phoenix)
+description: Protocols for the "Agent Observability" dashboard.
+---
+
+# Command Center Protocol ðŸ“Š
+
+**Objective:** "See the Thought Process."
+
+## 1. The Dashboard (Arize Phoenix)
+*   **Role:** The "Black Box" Recorder.
+*   **Infrastructure:** Runs locally on Docker (`port 6006`).
+*   **Data Flow:**
+    *   Agent thinks -> OpenTelemetry Trace -> Phoenix Server.
+
+## 2. Visual Debugging ðŸ•µï¸â€â™‚ï¸
+*   **Trace View:** Visualization of the `analysis_chain.md` execution.
+*   **Latency Charts:** "Why did the 'Deep Reasoning' step take 45s?"
+*   **Token Usage:** Real-time cost tracking per step.
+
+## 3. Evaluation ðŸ“‰
+*   **Golden Datasets:** Store "perfect interactions" to benchmark future updates.
+*   **Regression Testing:** If we upgrade the prompt, did the agent get dumber? Phoenix tells us.

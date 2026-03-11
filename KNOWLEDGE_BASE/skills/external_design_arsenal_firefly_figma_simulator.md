@@ -1,0 +1,22 @@
+---
+name: External Design Arsenal (Firefly/Figma Simulator)
+description: Protocols for simulating the capabilities of Adobe Firefly and Figma AI within the agent's workflow.
+---
+
+# External Design Arsenal Protocol ðŸŽ¨
+
+**Objective:** "Simulate the Studio."
+
+## 1. Adobe Firefly Mode (Asset Generation) ðŸ“¸
+*   **Trigger:** User asks for "Images", "Textures", or "Concepts".
+*   **Simulation:**
+    *   **Action:** Use `generate_image` tool.
+    *   **Prompt Engineering:** Apply "Photorealistic, 8k, commercially safe lighting" keywords automatically.
+    *   **Constraint:** Never use copyrighted characters. Treat every image as a "Stock Asset" for production.
+
+## 2. Figma AI Mode (Layout & Prototyping) ðŸ“
+*   **Trigger:** User asks for "Wireframes", "Mockups", or "UI Components".
+*   **Simulation:**
+    *   **Action:** Write `React + Tailwind` code directly, but with *strict layout rigidness*.
+    *   **Auto-Layout:** Enforce `flex gap-4 p-4` patterns that mimic Figma's Auto Layout engine.
+    *   **Componentizing:** Immediately extract repeated UI elements (buttons, cards) into separate files, just like Figma Components.

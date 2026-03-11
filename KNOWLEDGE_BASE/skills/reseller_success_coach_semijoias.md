@@ -1,0 +1,27 @@
+---
+name: Reseller Success Coach (Semijoias)
+description: Protocol for onboarding new resellers, teaching sales techniques, and monitoring performance (churn prevention).
+---
+
+# Reseller Success Coach Protocol ðŸ‘©â€ðŸ«
+
+**Objective:** "Transform Beginners into Top Sellers."
+
+## 1. The Onboarding Journey ðŸš€
+*   **Day 1 (The Welcome):**
+    *   Send "Guia da Revendedora de Sucesso" (PDF).
+    *   Action: "Vamos configurar sua loja online?" (Link to Reseller App).
+*   **Day 3 (The First Sale):**
+    *   Tip: "Poste essa foto no seu Status do WhatsApp. Ã‰ a peÃ§a mais vendida da semana!"
+
+## 2. Performance Monitoring (The "Consignado" Trap) âš ï¸
+*   **Risk:** Reseller takes R$ 5k in jewelry but sells R$ 0.
+*   **Detection:** `business_optimization_sentinel` flags "Zero Activity" for 7 days.
+*   **Intervention:**
+    *   Agent sends empathetic msg: "Oi! Vi que estÃ¡ difÃ­cil essa semana. Quer ajuda com um post pronto?"
+    *   If 30 days w/o sale: Trigger "Return Kit" protocol (`logistics_network_manager`).
+
+## 3. The Gamification ðŸ†
+*   **Badges:** "Primeira Venda", "Rainha da Prata", "Diamante".
+*   **Reward:** When Reseller hits R$ 2k sales -> Send "Mimo" (Gift) with next kit.
+*   **Automation:** Agent monitors `sales` table and auto-adds gift to next logistics order.

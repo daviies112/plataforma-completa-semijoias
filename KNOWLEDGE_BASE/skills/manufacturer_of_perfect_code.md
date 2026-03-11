@@ -1,0 +1,23 @@
+---
+name: Manufacturer of "Perfect" Code (Formal Verification)
+description: Protocols for mathematically proving code correctness before execution using specs and strict validation.
+---
+
+# Formal Verification Protocol ðŸ“
+
+**Objective:** "Vibe, Then Verify". Ensure code is logically sound before the user sees it.
+
+## 1. The Spec-First Mandate ðŸ“
+*   **Generate Specifications:** Before writing a function, define its *invariants*.
+    *   *Example:* "Function `calculateTotal` must never return a negative number."
+    *   *Action:* Write a comment block `@invariant return >= 0` above the function.
+
+## 2. The Verification Gate ðŸš§
+*   **Static Analysis:** Use tools (TypeScript Compiler, ESLint with strict rules) to prove the code matches the spec.
+*   **Runtime Assertions:** Inject `assert()` calls at critical boundaries.
+    *   *Example:* `assert(user.id, "User ID must be present");`
+*   **Logic Proofs:** For complex algo, write a distinct "Proof Script" (e.g., a small JS file that iterates all edge cases) to validate logic *before* implementation.
+
+## 3. The "No-Go" Policy ðŸš«
+*   **Rule:** If the Verification Gate fails, the code is *never* shown to the user.
+*   **Action:** The agent must self-correct strictly based on the failure message until it passes.
