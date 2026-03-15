@@ -126,8 +126,11 @@ async function handleDirectLogin(req: Request, res: Response, adminData: any, em
     .eq('id', adminData.id).then().catch(console.error);
 
   console.log(`✅ [AUTH] Login direto bem-sucedido para: ${email} (tenant: ${tenantId})`);
+  console.log('[LOGIN][DEBUG] Iniciando save da sessão, sessionID:', req.sessionID);
 
   return req.session.save((err) => {
+    console.log('[LOGIN][DEBUG] session.save callback - err:', err);
+    console.log('[LOGIN][DEBUG] session.save callback - session:', JSON.stringify(req.session));
     if (err) {
       console.error('[Session] Erro ao salvar sessão:', err);
       return res.status(500).json({ error: 'Erro ao criar sessão' });
@@ -157,7 +160,8 @@ router.post('/login', async (req: Request, res: Response) => {
   try {
     // DEVELOPMENT BYPASS: Quando auth não está configurado, permitir login mock
     if (!SUPABASE_CONFIGURED) {
-      const { email, senha } = req.body;
+      const { email, senha: _senha, password: _pw } = req.body;
+      const senha = _senha || _pw;
       
       if (!email || !senha) {
         return res.status(400).json({ error: 'Email e senha são obrigatórios' });
@@ -177,9 +181,12 @@ router.post('/login', async (req: Request, res: Response) => {
       
       console.log(`⚠️ AVISO: Login de desenvolvimento aceito (auth desabilitado) - tenantId: ${tenantId}`);
       console.log(`🔐 [MULTI-TENANT] Tenant isolado criado para: ${email}`);
-      
+
       // IMPORTANT: Save session explicitly before responding to ensure cookie is persisted
+      console.log('[LOGIN][DEBUG] Iniciando save da sessão, sessionID:', req.sessionID);
       return req.session.save((err) => {
+        console.log('[LOGIN][DEBUG] session.save callback - err:', err);
+        console.log('[LOGIN][DEBUG] session.save callback - session:', JSON.stringify(req.session));
         if (err) {
           console.error('[Session] Erro ao salvar sessão:', err);
           return res.status(500).json({ error: 'Erro ao criar sessão' });
@@ -205,7 +212,8 @@ router.post('/login', async (req: Request, res: Response) => {
       });
     }
 
-    const { email, senha } = req.body;
+    const { email, senha: _senha, password: _pw } = req.body;
+      const senha = _senha || _pw;
 
     if (!email || !senha) {
       return res.status(400).json({ error: 'Email e senha são obrigatórios' });
